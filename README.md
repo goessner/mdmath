@@ -34,7 +34,7 @@ npm install
 
 ### ... from Windows Command Line
 ```
-cd $HOME/.vscode/extensions
+cd  %USERPROFILE%\.vscode\extensions
 git clone https://github.com/goessner/mdmath.git
 cd mdmath
 npm install
