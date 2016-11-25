@@ -51,7 +51,7 @@ npm install
 
 ![mdmath html export](img/htmlExport.png)
 
->**Note**: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your your markdown source window *active* first.
+>**Note**: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
 
 
 ## Dependencies
