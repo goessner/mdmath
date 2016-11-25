@@ -56,13 +56,14 @@ npm install
 
 ## Dependencies
 
-* [markdown-it](https://github.com/markdown-it/markdown-it)
-* [markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)
-* [highlight.js](https://github.com/isagalaev/highlight.js)
+* [markdown-it](https://github.com/markdown-it/markdown-it). The markdown renderer also used in VS Code.
+* [markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex). This is where credits for integrating KaTeX with `markdown-it` go to. Credits for fast rendering 
+  TeX math in HTML go to [KaTeX](https://khan.github.io/KaTeX/).
+* [highlight.js](https://github.com/isagalaev/highlight.js). The code highlighter also used in VS Code.
 
 ## Issues, Hints and Wishes
 
-* VS Code is a great piece of software from Microsoft. It is based on [Electron](http://electron.atom.io/). Maybe someday TeX math within Markdown is supported without extensions.
+* VS Code is a great piece of software from Microsoft. It is based on [Electron](http://electron.atom.io/). Maybe someday TeX math within Markdown is supported natively without extensions.
 * In order to create `*.pdf` output from your Markdown you should consider using [Pandoc](http://pandoc.org/).
 * Opening multiple preview windows is not possible at current. Even changing the active markdown source window doesn't update the
 preview window properly. Close the preview window first as a workaround here.
