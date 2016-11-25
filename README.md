@@ -7,7 +7,7 @@ In fact it functions and renders identically to the build in markdown viewer. Ad
 
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
-This extension is a comfortable tool for scientists and engineers with markdown as their first choice 
+This extension is a comfortable tool for scientists, engineers and students with markdown as their first choice 
 document format.
 
 * Inline math by `$ ... $`

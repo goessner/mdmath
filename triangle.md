@@ -3,7 +3,7 @@
 
 ![right triangle](img/triangle.png "triangle")
 
-Let the right triangle hypothenuse be aligned with the coordinate systems *x-axis*. 
+Let the right triangle hypothenuse be aligned with the coordinate system *x-axis*. 
 The vector loop closure equation then reads
 
 $$a{\bold e}_\alpha - b\tilde{\bold e}_\alpha - c{\bold e}_x = \bold 0$$ 
