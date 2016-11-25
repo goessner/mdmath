@@ -1,0 +1,52 @@
+{
+    "name": "mdmath",
+    "displayName": "Markdown+Math",
+    "description": "Extending the Markdown Viewer for Handling TeX Math",
+    "icon": "img/icon.png",
+    "version": "0.8.0",
+    "publisher": "sg",
+    "galleryBanner": {
+		"color": "#ffffff",
+		"theme": "dark"
+	},
+    "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/goessner/mdmath.git"
+    },
+    "license": "SEE LICENSE IN licence.txt",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages", "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "contributes": {
+      "commands": [
+        { "command": "extension.mdmath",
+          "title": "mdmath"
+        },
+        { "command": "extension.mdmathToHtml",
+          "title": "mdmath-tohtml"
+        }
+      ],
+      "keybindings": [{
+          "command": "extension.mdmath",
+          "key": "ctrl+shift+.",
+          "when": "editorTextFocus"
+      }]
+    },
+    "main": "./extension",
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^1.0.3",
+        "highlight.js": "^9.8.0",
+        "markdown-it": "^8.1.0",
+        "markdown-it-katex": "^2.0.3"
+    }
+}
