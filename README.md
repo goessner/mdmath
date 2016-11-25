@@ -1,4 +1,4 @@
-# ![mdmath](img/icon.png) mdmath
+# ![mdmath](img/icon.png) Markdown+Math
 
 **mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.
 In fact it functions and renders identically to the build in markdown viewer. Additionally KaTeX works as fast math renderer.
