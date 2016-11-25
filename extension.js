@@ -83,7 +83,7 @@ function activate(context) {
     vscode.window.onDidChangeActiveTextEditor(provider.onDidChangeActiveTextEditor, provider);
 
     context.subscriptions.push(reg1, reg2, reg3);
-//vscode.window.showWarningMessage('My warning message!');
+
     console.log("mdmath activated !")
 }
 
