@@ -1,7 +1,12 @@
 # ![mdmath](img/icon.png) Markdown+Math
 
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/goessner/mdmath/license.txt)
+[![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
+[![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
+
+
 **mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.
-In fact it functions and renders identically to the build in markdown viewer. Additionally KaTeX works as fast math renderer.
+In fact it functions and renders identically to the built in markdown viewer. Additionally KaTeX works as fast math renderer.
 
 ![mdmath editing](img/edit.gif)
 
