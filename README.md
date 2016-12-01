@@ -6,7 +6,7 @@
 
 
 **mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.
-In fact it functions and renders identically to the built in markdown viewer. Additionally KaTeX works as fast math renderer.
+In fact it functions and renders identically to the built in markdown viewer. Additionally KaTeX works inside as the fast math renderer.
 
 ![mdmath editing](img/edit.gif)
 
