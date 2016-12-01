@@ -22,7 +22,8 @@
         "Languages", "Other"
     ],
     "activationEvents": [
-        "onLanguage:markdown"
+        "onLanguage:markdown",
+        "onCommand:extension.mdmath"
     ],
     "contributes": {
       "commands": [
