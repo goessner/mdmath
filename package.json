@@ -3,7 +3,7 @@
     "displayName": "Markdown+Math",
     "description": "Extending the VS Code Markdown Viewer for Handling TeX Math",
     "icon": "img/icon.png",
-    "version": "0.8.6",
+    "version": "0.8.7",
     "publisher": "goessner",
     "galleryBanner": {
         "color": "#ffffff",
@@ -16,7 +16,7 @@
     },
     "license": "SEE LICENSE IN licence.txt",
     "engines": {
-        "vscode": "^1.5.0"
+        "vscode": "^1.0.0"
     },
     "categories": [
         "Languages",
