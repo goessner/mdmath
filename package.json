@@ -3,7 +3,7 @@
     "displayName": "Markdown+Math",
     "description": "Extending the VS Code Markdown Viewer for Handling TeX Math",
     "icon": "img/icon.png",
-    "version": "0.8.5",
+    "version": "0.8.6",
     "publisher": "goessner",
     "galleryBanner": {
         "color": "#ffffff",
@@ -50,7 +50,8 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "dependencies": {
-        "markdown-it-katex": "^2.0.3"
+        "markdown-it-katex": "^2.0.3",
+        "katex": "^0.6.0"
     },
     "devDependencies": {
         "vscode": "^1.0.3",
