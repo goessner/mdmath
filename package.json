@@ -3,42 +3,47 @@
     "displayName": "Markdown+Math",
     "description": "Extending the VS Code Markdown Viewer for Handling TeX Math",
     "icon": "img/icon.png",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "publisher": "goessner",
     "galleryBanner": {
-		"color": "#ffffff",
-		"theme": "dark"
-	},
+        "color": "#ffffff",
+        "theme": "dark"
+    },
     "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/goessner/mdmath.git"
+        "type": "git",
+        "url": "https://github.com/goessner/mdmath.git"
     },
     "license": "SEE LICENSE IN licence.txt",
     "engines": {
         "vscode": "^1.5.0"
     },
     "categories": [
-        "Languages", "Other"
+        "Languages",
+        "Other"
     ],
     "activationEvents": [
         "onLanguage:markdown",
         "onCommand:extension.mdmath"
     ],
     "contributes": {
-      "commands": [
-        { "command": "extension.mdmath",
-          "title": "Markdown+Math"
-        },
-        { "command": "extension.mdmathToHtml",
-          "title": "Markdown+Math as HTML"
-        }
-      ],
-      "keybindings": [{
-          "command": "extension.mdmath",
-          "key": "ctrl+shift+.",
-          "when": "editorTextFocus"
-      }]
+        "commands": [
+            {
+                "command": "extension.mdmath",
+                "title": "Markdown+Math"
+            },
+            {
+                "command": "extension.mdmathToHtml",
+                "title": "Markdown+Math as HTML"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.mdmath",
+                "key": "ctrl+shift+.",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "main": "./extension",
     "scripts": {
