@@ -29,6 +29,8 @@ document format.
 Press <kbd>F1</kbd> key inside of *Visual Studio Code* and type `extension`. Choose `Extensions: Install Extension` 
 and then select the `Markdown+Math` extension from the list.
 
+> *Note:* I apologize to the users for an initial bug in the installer. The bug is fixed now. An update of the extension should be sufficient.
+
 ### ... from Mac & Linux Command Line
 ```
 cd $HOME/.vscode/extensions
@@ -56,7 +58,7 @@ npm install
 
 ![mdmath html export](img/htmlExport.png)
 
->**Note**: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
+>*Note*: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
 
 
 ## Dependencies
@@ -79,8 +81,13 @@ See [contributing.md](contributing.md)
 
 ## ChangeLog
 
+* December 2, 2016
+  * Release 0.9.0
+  * Installation bug resolved
+
 * November 25, 2016
   * First Release 0.8.0
+
 
 ## License
 

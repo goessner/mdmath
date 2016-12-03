@@ -50,7 +50,6 @@ const provider = {
                        .then(success => {}, error => {console.error(error)});
     },
     saveAsHtmlCmd: function() {
-
         if (vscode.window.activeTextEditor) {
             let markdown = md.render(vscode.window.activeTextEditor.document.getText()),
                 channel = vscode.window.createOutputChannel('\''+path.basename(provider.fname)+'\' as html');
@@ -68,6 +67,17 @@ ${markdown}
         else
           vscode.window.showInformationMessage('Cannot show source of that document !');
     }
+/*
+    viewColumn: function(sideBySide) {
+        var active = vscode.window.activeTextEditor;
+
+        return !active ? vscode.ViewColumn.One
+             : !sideBySide ? active.viewColumn
+             : active.viewColumn === vscode.ViewColumn.One ? vscode.ViewColumn.Two
+//             : active.viewColumn === vscode.ViewColumn.Two ? vscode.ViewColumn.Three
+             : active.viewColumn;
+    }
+*/
 };
 
 // this method is called when your extension is activated ..

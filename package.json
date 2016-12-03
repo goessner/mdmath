@@ -3,18 +3,19 @@
     "displayName": "Markdown+Math",
     "description": "Extending the VS Code Markdown Viewer for Handling TeX Math",
     "icon": "img/icon.png",
-    "version": "0.8.8",
+    "version": "0.9.0",
+    "author": "Stefan Goessner",
     "publisher": "goessner",
     "galleryBanner": {
-        "color": "#ffffff",
-        "theme": "dark"
+        "color": "#efefef",
+        "theme": "light"
     },
     "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
     "repository": {
         "type": "git",
         "url": "https://github.com/goessner/mdmath.git"
     },
-    "license": "SEE LICENSE IN licence.txt",
+    "license": "SEE LICENSE IN license.txt",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -50,12 +51,19 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "dependencies": {
-        "markdown-it-katex": "^2.0.3"
+        "highlight.js":"^9.8.0",
+        "markdown-it":"^8.2.1",
+        "argparse":"^1.0.9",
+        "sprintf-js":"^1.0.3",
+        "entities":"^1.1.1",
+        "linkify-it":"^2.0.2",
+        "mdurl":"^1.0.1",
+        "uc.micro":"^1.0.3",
+        "markdown-it-katex":"^2.0.3",
+        "katex":"^0.6.0",
+        "match-at":"^0.1.0"
     },
     "devDependencies": {
-        "vscode": "^1.0.3",
-        "highlight.js": "^9.8.0",
-        "markdown-it": "^8.1.0",
-        "markdown-it-katex": "^2.0.3"
+        "vscode": "^1.0.0"
     }
 }

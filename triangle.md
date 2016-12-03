@@ -16,9 +16,9 @@ Resolving for the hypothenuse part $c{\bold e}_x$ in the loop closure equation
 
 $$ c{\bold e}_x = a{\bold e}_\alpha - b\tilde{\bold e}_\alpha$$
 
-and squaring finally results in the Pythagorean theorem
+and squaring results in the Pythagorean theorem finally
 
-$$c^2 = a^2 + b^2 $$ 
+$$c^2 = a^2 + b^2 $$
 
 Introducing the hypothenuse segments $p={\bold a}\cdot{\bold e}_x$ and  $q={\bold b}\cdot{\bold e}_x$ we can further obtain the following useful formulas.
 
