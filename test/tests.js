@@ -34,20 +34,16 @@ var tests = [
   comment: "exponentiation"
 },
 { valid: true,
-  src: "product $a^\*b$, where some $a^\*$",
+  src: "$a^\*b$ with $a^\*$",
   comment: "conjugate complex"
 },
 { valid: true,
   src: "${e}_x$\n$$e_\\alpha$$",
-  comment: "bug !"
+  comment: "greek index"
 },
 { valid: true,
-  src: "${e}_x$  $e_\\alpha$",
-  comment: "bug test"
-},
-{ valid: true,
-  src: "$c{\\bold e}_x$\n$$c{\\bold e}_x = a{\\bold e}_\\alpha - b\\tilde{\\bold e}_\\alpha$$",
-  comment: "bug test 2"
+  src: "$$c{\\bold e}_x = a{\\bold e}_\\alpha - b\\tilde{\\bold e}_\\alpha$$",
+  comment: "underline tests"
 },
 { valid: true,
   src: "a$1+1=2$\n$1+1=2$b\nc$x$d",
@@ -80,6 +76,10 @@ var tests = [
 { valid: true,
   src: "$$f(x) = x^2 - 1$$ (1)",
   comment: "display equation with equation number."
+},
+{ valid: true,
+  src: "$\\sum\_{i=1}^n$",
+  comment: "Inline sum."
 },
 { valid: true,
   src: "$$\\sum\_{i=1}^n$$",

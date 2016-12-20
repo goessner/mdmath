@@ -15,8 +15,9 @@ Simplify the process of authoring and live previewing markdown documents contain
 This extension is a comfortable tool for scientists, engineers and students with markdown as their first choice 
 document format.
 
-* Inline math by `\$ ... \$`
-* Display math by `\$\$ ... \$\$`
+* Inline math by `$ ... $`
+* Display math by `$$ ... $$`
+* Add formula numbering by `$$ ... $$ (1)`
 * Inline math with tables
 * Embedded HTML
 * Syntax highlighting with code sections
@@ -84,6 +85,7 @@ See [contributing.md](contributing.md)
   * KaTeX error highlighting activated.
   * Footnotes by `markdown-it-footnote` added.
   * Standalone tests for math rendering added.
+  * Markdown+Math CSS file added to [CDN](https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css)
 
 * December 2, 2016
   * Release 0.9.0
