@@ -1,69 +1,71 @@
 {
-    "name": "mdmath",
-    "displayName": "Markdown+Math",
-    "description": "Extending the VS Code Markdown Viewer for Handling TeX Math",
-    "icon": "img/icon.png",
-    "version": "0.9.0",
-    "author": "Stefan Goessner",
-    "publisher": "goessner",
-    "galleryBanner": {
-        "color": "#efefef",
-        "theme": "light"
-    },
-    "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/goessner/mdmath.git"
-    },
-    "license": "SEE LICENSE IN license.txt",
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "categories": [
-        "Languages",
-        "Other"
+  "name": "mdmath",
+  "displayName": "Markdown+Math",
+  "description": "LaTeX Math for Markdown",
+  "icon": "img/icon.png",
+  "version": "0.9.8",
+  "author": "Stefan Goessner",
+  "publisher": "goessner",
+  "galleryBanner": {
+    "color": "#efefef",
+    "theme": "light"
+  },
+  "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goessner/mdmath.git"
+  },
+  "license": "SEE LICENSE IN license.txt",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onCommand:mdmath.showPreview"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdmath.showPreview",
+        "title": "Markdown+Math",
+        "category": "Markdown"
+      },
+      {
+        "command": "mdmath.exportToHtml",
+        "title": "Markdown+Math as HTML",
+        "category": "Markdown"
+      }
     ],
-    "activationEvents": [
-        "onLanguage:markdown",
-        "onCommand:extension.mdmath"
-    ],
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.mdmath",
-                "title": "Markdown+Math"
-            },
-            {
-                "command": "extension.mdmathToHtml",
-                "title": "Markdown+Math as HTML"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "extension.mdmath",
-                "key": "ctrl+shift+.",
-                "when": "editorTextFocus"
-            }
-        ]
-    },
-    "main": "./extension",
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "dependencies": {
-        "highlight.js":"^9.8.0",
-        "markdown-it":"^8.2.1",
-        "argparse":"^1.0.9",
-        "sprintf-js":"^1.0.3",
-        "entities":"^1.1.1",
-        "linkify-it":"^2.0.2",
-        "mdurl":"^1.0.1",
-        "uc.micro":"^1.0.3",
-        "markdown-it-katex":"^2.0.3",
-        "katex":"^0.6.0",
-        "match-at":"^0.1.0"
-    },
-    "devDependencies": {
-        "vscode": "^1.0.0"
-    }
+    "keybindings": [
+      {
+        "command": "mdmath.showPreview",
+        "key": "ctrl+shift+.",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "main": "./extension",
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "dependencies": {
+    "argparse": "^1.0.9",
+    "entities": "^1.1.1",
+    "highlight.js": "^9.8.0",
+    "katex": "^0.6.0",
+    "linkify-it": "^2.0.2",
+    "markdown-it": "^8.2.1",
+    "markdown-it-footnote": "^3.0.1",
+    "match-at": "^0.1.0",
+    "mdurl": "^1.0.1",
+    "sprintf-js": "^1.0.3",
+    "uc.micro": "^1.0.3"
+  },
+  "devDependencies": {
+    "vscode": "^1.0.0"
+  }
 }

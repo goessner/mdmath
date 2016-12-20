@@ -15,8 +15,8 @@ Simplify the process of authoring and live previewing markdown documents contain
 This extension is a comfortable tool for scientists, engineers and students with markdown as their first choice 
 document format.
 
-* Inline math by `$ ... $`
-* Display math by `$$ ... $$`
+* Inline math by `\$ ... \$`
+* Display math by `\$\$ ... \$\$`
 * Inline math with tables
 * Embedded HTML
 * Syntax highlighting with code sections
@@ -28,8 +28,6 @@ document format.
 
 Press <kbd>F1</kbd> key inside of *Visual Studio Code* and type `extension`. Choose `Extensions: Install Extension` 
 and then select the `Markdown+Math` extension from the list.
-
-> *Note:* I apologize to the users for an initial bug in the installer. The bug is fixed now. An update of the extension should be sufficient.
 
 ### ... from Mac & Linux Command Line
 ```
@@ -64,22 +62,28 @@ npm install
 ## Dependencies
 
 * [markdown-it](https://github.com/markdown-it/markdown-it). The markdown renderer also used in VS Code.
-* [markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex). This is where credits for integrating KaTeX with `markdown-it` go to. Credits for fast rendering 
-  TeX math in HTML go to [KaTeX](https://khan.github.io/KaTeX/).
+* [katex](https://github.com/Khan/KaTeX). This is where credits for fast rendering TeX math in HTML go to.
+* [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote). Using footnotes in markdown.
 * [highlight.js](https://github.com/isagalaev/highlight.js). The code highlighter also used in VS Code.
 
-## Issues, Hints and Wishes
+## Issues, Hints
 
-* VS Code is a great piece of software from Microsoft. It is based on [Electron](http://electron.atom.io/). Maybe someday TeX math within Markdown is supported natively without extensions.
 * In order to create `*.pdf` output from your Markdown you should consider using [Pandoc](http://pandoc.org/).
-* Opening multiple preview windows is not possible at current. Even changing the active markdown source window doesn't update the
-preview window properly. Close the preview window first as a workaround here.
+* Opening multiple preview windows is not possible at current. Even changing the active markdown source window doesn't update the preview window properly. Close the preview window first as a workaround here.
 
 ## Contributing
 
 See [contributing.md](contributing.md)
 
 ## ChangeLog
+
+* December 20, 2016
+  * Release 1.0.0
+  * Dependency on `markdown-it-katex` removed in favour of some lightweight regular expressions.
+  * Very simple (manual) equation numbering implemented.
+  * KaTeX error highlighting activated.
+  * Footnotes by `markdown-it-footnote` added.
+  * Standalone tests for math rendering added.
 
 * December 2, 2016
   * Release 0.9.0

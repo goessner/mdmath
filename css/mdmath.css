@@ -1,0 +1,20 @@
+eq { display: inline-block; }
+eqn { display: block}
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+
+}
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+section.eqno > eqn > .katex-display {
+    margin: 0;
+}
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}

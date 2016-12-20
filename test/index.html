@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Markdown+Math Debug Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+    <link rel="stylesheet" href="../css/mdmath.css">
+    <style>
+       body {
+          color: darkslategray;
+          background-color: cornsilk;
+        	max-width: 40rem;
+          margin: 2rem;
+       }
+       a {
+          color: orangered;
+       }
+      .inverse {
+          color: cornsilk;
+          background-color: darkslategray;
+      }
+      td, th { border: 1px solid black; white-space:pre; font:12px monospace; overflow:hidden; text-overflow: ellipsis; padding:3px; }
+      th { font-weight:bold; }
+
+      eq, eqn { background-color:antiquewhite; }
+    </style>
+<!--
+    <script src="../../g2/g2.js"></script>
+    <script src="../g2.svg.js"></script>
+-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.2.1/markdown-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+    <script src="tests.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Markdown+Math Tests</h1>
+    <table id="test-table" style="table-layout:fixed; border:solid black 1px; border-collapse: collapse; max-width:100%;">
+      <thead>
+        <tr>
+          <th style="width:20px">i</th>
+          <th style="width:20px">valid</th>
+          <th style="width:250px;max-width:250px">src</th>
+          <th style="width:201px">render</th>
+          <th style="width:201px">comment</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+      </tbody>
+    </table>
+
+  </body>
+  <template id="row-tmpl">
+    <tr id="row">
+      <td style="text-align:right;"></td>
+      <td style="text-align:center;"></td>
+      <td style="text-align:left;"></td>
+      <td style="text-align:center;"></td>
+      <td style="text-align:left;"></td>
+    </tr>
+  </template>
+</html>
