@@ -4,11 +4,17 @@
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 [![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 
+## What is it ...
 
 **mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.
-In fact it functions and renders identically to the built in markdown viewer. Additionally KaTeX works inside as the fast math renderer.
+In fact it functions and renders identically to the built in markdown viewer. Additionally KaTeX works inside as a fast math renderer.
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
+
+Release 1.0 published with support of ...
+
+* Formula numbers.
+* Footnotes
 
 ![mdmath editing](img/edit.gif)
 
@@ -24,6 +30,10 @@ document format.
 * Embedded HTML
 * Syntax highlighting with code sections
 * Export resulting HTML code for web usage
+
+## Test Table
+
+Some math expressions are collected in a [test table](http://goessner.github.io/mdmath/test/).
 
 ## Installation ...
 
@@ -61,6 +71,8 @@ npm install
 
 >*Note*: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
 
+You can see HTML export of `triangle.md` live in [your browser](http://goessner.github.io/mdmath/triangle.html).
+
 
 ## Dependencies
 
@@ -86,8 +98,9 @@ See [contributing.md](contributing.md)
   * Very simple (manual) equation numbering implemented.
   * KaTeX error highlighting activated.
   * Footnotes by `markdown-it-footnote` added.
-  * Standalone tests for math rendering added.
+  * Standalone [tests](http://goessner.github.io/mdmath/test/) for math rendering added.
   * Markdown+Math CSS file added to [CDN](https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css)
+  * Some minor bugs removed.
 
 * December 2, 2016
   * Release 0.9.0
