@@ -78,6 +78,18 @@ var tests = [
   comment: "display equation with equation number."
 },
 { valid: true,
+  src: "`code`$a-b$",
+  comment: "inline equation following code section."
+},
+{ valid: true,
+  src: "```\ncode\n```\n$$a+b$$",
+  comment: "equation following code block."
+},
+{ valid: true,
+  src: "```\ncode\n```\n$$a+b$$(1)",
+  comment: "numbered equation following code block."
+},
+{ valid: true,
   src: "$\\sum\_{i=1}^n$",
   comment: "Inline sum."
 },

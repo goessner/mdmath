@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------------------------
- *  Copyright (c) Stefan Goessner. All rights reserved.
+ *  Copyright (c) Stefan Goessner - 2016. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 'use strict';
@@ -51,9 +51,9 @@ const MathProvider = {
     create: function() { var o = Object.create(this.prototype); o.constructor.apply(o,arguments); return o; },
     rules: [
         { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
-        { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2) => `<section class="eqno"><eqn>${MathProvider.math($1,true)}</eqn><span>(${$2})</span></section>` }, // display equation $$...$$
-        { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1) => `<eqn>${MathProvider.math($1,true)}</eqn>` }, // display equation $$...$$
-        { rex:/(^|\D|\$)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` }, // multi-character inline equation $...$
+        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${MathProvider.math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
+        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<eqn>${MathProvider.math($2,true)}</eqn>` }, // display equation $$...$$
+        { rex:/(^|\D|[`$])\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` }, // multi-character inline equation $...$
         { rex:/(^|\D)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // single-character inline equation $...$
         { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
     ],
@@ -115,6 +115,6 @@ ${MathProvider.document}
             channel.append(html);
         }
         else
-            vscode.window.showInformationMessage('Cannot show source of that document !');
+            vscode.window.showInformationMessage('Cannot show source of that document. Make source window active!');
     }
 };

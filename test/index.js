@@ -40,26 +40,15 @@ function toMath(str) {
     }
     var rules = [
         { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
-        { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2) => `<section class="eqno"><eqn>${math($1,true)}</eqn><span>(${$2})</span></section>` }, // display equation $$...$$
-        { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1) => `<eqn>${math($1,true)}</eqn>` }, // display equation $$...$$
+        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
+        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<eqn>${math($2,true)}</eqn>` }, // display equation $$...$$
         { rex:/(^|\D|\$)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` }, // multi-character inline equation $...$
         { rex:/(^|\D)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` },  // single-character inline equation $...$
         { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
-/*
-            { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
-            { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)]*?)\)(?=$|\r?\n)/g, tmpl: ($0,$1,$2) => '<section style=""><eqn style="width:90%;">'+katex.renderToString($1)+'</eqn><span style="width:10%;">('+$2+')</span></section>' }, // display equation $$...$$
-            { rex:/(?:^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?(?=$|\r?\n)/g, tmpl: ($0,$1) => "<eqn>"+katex.renderToString($1)+"</eqn>" }, // display equation $$...$$
-            { rex:/(^|\D)\$(\S[^$\r\n]*?\S)\$(?!\d|\$)/g, tmpl: ($0,$1,$2) => $1 + "<eq>"+$2+"</eq>" }, // multi-character inline equation $...$
-//            { rex:/(^|\D)\$(\S[^$\r\n]*?\S)\$(?!\d|\$)/g, tmpl: ($0,$1,$2) => $1 + "<eq>"+katex.renderToString($2)+"</eq>" }, // multi-character inline equation $...$
-            { rex:/(^|\D)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => $1 + "<eq>"+katex.renderToString($2)+"</eq>" },  // single-character inline equation $...$
-            { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
-*/
         ];
 
     for (var i in rules)
         str = str.replace(rules[i].rex, rules[i].tmpl);
-console.log(str)
-//    return str;
     return md.render(str);
 }
 

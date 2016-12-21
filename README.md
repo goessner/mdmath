@@ -84,13 +84,18 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
 ## Issues, Hints
 
 * In order to create `*.pdf` output from your Markdown you should consider using [Pandoc](http://pandoc.org/).
-* Opening multiple preview windows is not possible at current. Even changing the active markdown source window doesn't update the preview window properly. Close the preview window first as a workaround here.
+* Opening multiple preview windows is not possible at current. Even changing the active markdown source window 
+  doesn't update the preview window properly. Close the preview window first as a workaround here.
 
 ## Contributing
 
 See [contributing.md](contributing.md)
 
 ## ChangeLog
+
+* December 21, 2016
+  * Release 1.0.1
+  * `code block` bug removed.
 
 * December 20, 2016
   * Release 1.0.0
