@@ -1,9 +1,6 @@
 ## The Right Triangle
 ---
 
- 
-$a=b$
-
 ![right triangle](img/triangle.png "triangle")
 
 Let the right triangle hypothenuse[^hypothenuse] be aligned with the coordinate system *x-axis*. 

@@ -81,6 +81,17 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
 * [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote). Using footnotes in markdown.
 * [highlight.js](https://github.com/isagalaev/highlight.js). The code highlighter also used in VS Code.
 
+
+## FAQ
+
+* __Which functions does KaTeX support ?__
+  * See them listed at [KaTeX Reference](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX).
+* __The preview window does not scroll in sync with source window__
+  * No, not as long as VSCode's native preview window isn't able to do that.
+* __Can I use math markup in code blocks ?__
+  * In order to prevent converting formulas in code blocks you must escape the enclosing dollars as in `\$\frac{a}{b}\$`.
+
+
 ## Issues, Hints
 
 * In order to create `*.pdf` output from your Markdown you should consider using [Pandoc](http://pandoc.org/).
