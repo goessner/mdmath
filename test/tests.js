@@ -18,6 +18,14 @@ var tests = [
   comment: "inline equation with single greek character"
 },
 { valid: true,
+  src: "You get 3$ if you solve $1+2$",
+  comment: "use of currency symbol"
+},
+{ valid: true,
+  src: "If you solve $1+2$ you get $3",
+  comment: "use of currency symbol"
+},
+{ valid: true,
   src: "$\\frac{1}{2}$",
   comment: "inline fraction"
 },
@@ -105,10 +113,6 @@ var tests = [
   src: "$${\\bold e}(\\varphi) = \\begin{pmatrix}\n\\cos\\varphi\\\\\\sin\\varphi\n\\end{pmatrix}$$ (3)",
   comment: "equation number always vertically aligned."
 },
-{ valid: true,
-  src: "$$c{\\bold e}_x = a{\\bold e}_\\alpha - b{\\tilde\\bold e}_\\alpha$$",
-  comment: "equation number always vertically aligned."
-},
 { valid: false,
   src: "3$1+1=2$\n$1+1=2$4\n5$x$6",
   comment: "numeric character before opening $ or\nafter closing $ is not allowed."
@@ -120,6 +124,10 @@ var tests = [
 { valid: false,
   src: "\\$1+1=2$\n$1+1=2\\$",
   comment: "escaped dollars '\\$' are interpreted as\ndollar '$' characters."
+},
+{ valid: false,
+  src: "$1+1=2$$1+1=2$",
+  comment: "at least one character (whitespace) is required\nbetween two inline formulas."
 },
 { valid: false,
   src: "$1+1=\n2$",

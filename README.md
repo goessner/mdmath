@@ -88,6 +88,16 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
   * See them listed at [KaTeX Reference](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX).
 * __The preview window does not scroll in sync with source window__
   * No, not as long as VSCode's native preview window isn't able to do that.
+* __What if I need to use the currency symbol `$` also in my markup ?__
+  * It should be safe to use it. If in doubt escape it.
+* __What are the restrictions with inline formulas ?__
+  * Whitespace after opening `$` and before closing `$` is not allowed.
+  * Numeric character before opening `$` and after closing `$` is not allowed.
+  * At least one character (whitespace ?) is required between two consecutive inline formulas.
+  * Line break inside is not allowed.
+* __What are the restrictions with display formulas ?__
+  * Not allowed inline of text. Write them on a separate line.
+  * Restrictions for inline formulas do not apply.
 * __Can I use math markup in code blocks ?__
   * In order to prevent converting formulas in code blocks you must escape the enclosing dollars as in `\$\frac{a}{b}\$`.
 

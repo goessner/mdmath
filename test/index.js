@@ -35,7 +35,7 @@ function applyTemplate(tmpl,obj) {
 var eqno = [], md = markdownit({html:true});
 
 function toMath(str) {
-    function math(tex,disp) { // don't forget to escape '_' and '\' ..
+    function math(tex,disp) { // don't forget to escape '_','*', and '\' ..
         return katex.renderToString(tex,{throwOnError:false,displayMode:disp}).replace(/([_*\\])/g, "\\$1");
     }
     var rules = [
