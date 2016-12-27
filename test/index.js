@@ -36,14 +36,22 @@ var eqno = [], md = markdownit({html:true});
 
 function toMath(str) {
     function math(tex,disp) { // don't forget to escape '_','*', and '\' ..
-        return katex.renderToString(tex,{throwOnError:false,displayMode:disp}).replace(/([_*\\])/g, "\\$1");
+        let res;
+        try {
+        // don't forget to escape '_' and '\' ..
+            res = katex.renderToString(tex,{throwOnError:false,displayMode:disp}).replace(/([_*\\])/g, "\\$1");
+        }
+        catch(err) {
+            res = err;
+        }
+        return res;
     }
     var rules = [
         { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
-        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
-        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<eqn>${math($2,true)}</eqn>` }, // display equation $$...$$
-        { rex:/(^|\D|\$)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` }, // multi-character inline equation $...$
-        { rex:/(^|\D)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` },  // single-character inline equation $...$
+        { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
+        { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<section><eqn>${math($2,true)}</eqn></section>` }, // display equation $$...$$
+        { rex:/(\D|^)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` },  // single-character inline equation $...$
+        { rex:/(\D|\$|^)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${math($2,false)}</eq>` }, // multi-character inline equation $...$
         { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
         ];
 

@@ -28,7 +28,6 @@ exports.activate = function activate(context) {
         reg1 = vscode.workspace.registerTextDocumentContentProvider('mdmath', provider),
         reg2 = vscode.commands.registerCommand('mdmath.showPreview', MathProvider.showPreviewCmd),
         reg3 = vscode.commands.registerCommand('mdmath.exportToHtml', MathProvider.exportHtmlCmd);
-
 	vscode.workspace.onDidChangeTextDocument(event => {
 		if (event.document.languageId === 'markdown'
          && event.document.uri.scheme !== 'markdown'   // prevent processing of own documents
@@ -51,19 +50,25 @@ const MathProvider = {
     create: function() { var o = Object.create(this.prototype); o.constructor.apply(o,arguments); return o; },
     rules: [
         { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
-        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${MathProvider.math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
-        { rex:/(^|\r?\n)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<eqn>${MathProvider.math($2,true)}</eqn>` }, // display equation $$...$$
-        { rex:/(^|\D|[`$])\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` }, // multi-character inline equation $...$
-        { rex:/(^|\D)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // single-character inline equation $...$
+        { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${MathProvider.math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
+        { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<section><eqn>${MathProvider.math($2,true)}</eqn></section>` }, // display equation $$...$$
+        { rex:/(\D|^)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // single-character inline equation $...$
+        { rex:/(\D|\$|^)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // multi-character inline equation $...$
         { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
     ],
     math: function(tex,disp) {
-        // don't forget to escape '_' and '\' ..
-        return kt.renderToString(tex,{throwOnError:false,displayMode:disp}).replace(/([_*\\])/g, "\\$1");
+        let res;
+        try {
+            // don't forget to escape '_','*', and '\' .. after math rendering
+            res = kt.renderToString(tex,{throwOnError:false,displayMode:disp}).replace(/([_\*\\])/g, "\\$1");
+        }
+        catch(err) {
+            res = err;
+        }
+        return res;
     },
     viewUri: vscode.Uri.parse('mdmath://extension/mdmath'),
     get fname() { return vscode.window.activeTextEditor.document.uri.fsPath; },
-//    get fname() { return vscode.window.activeTextEditor.document.fileName; },
     get document() {
         let markdown = vscode.window.activeTextEditor.document.getText();   // get raw markdown code ...
 
@@ -97,7 +102,7 @@ const MathProvider = {
                                         MathProvider.viewUri, 
                                         vscode.ViewColumn.Two, 
                                         "Preview: "+path.basename(MathProvider.fname))
-                        .then(success => {}, error => {console.error(error)});
+                       .then(success => {}, error => {console.error(error)});
     },
     exportHtmlCmd: function() {
         if (vscode.window.activeTextEditor) {

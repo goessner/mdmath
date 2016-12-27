@@ -10,7 +10,7 @@ section.eqno > eqn {
     width: 100%;
     margin-left: 3em;
 }
-section.eqno > eqn > .katex-display {
+section > eqn > .katex-display {
     margin: 0;
 }
 section.eqno > span {

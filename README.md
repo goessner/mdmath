@@ -114,6 +114,12 @@ See [contributing.md](contributing.md)
 
 ## ChangeLog
 
+* December 27, 2016
+  * Release 1.1.0
+  * Single character inline formula bug fixed.
+  * Handling of KaTeX errors improved.
+  * Micro-improvement of regular expressions.
+
 * December 21, 2016
   * Release 1.0.1
   * `code block` bug removed.
