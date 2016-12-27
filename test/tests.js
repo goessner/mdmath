@@ -98,6 +98,10 @@ var tests = [
   comment: "numbered equation following code block."
 },
 { valid: true,
+  src: "1. $1+2$\n2. $2+3$\n    1. $3+4$",
+  comment: "Equations in list."
+},
+{ valid: true,
   src: "$\\sum\_{i=1}^n$",
   comment: "Inline sum."
 },

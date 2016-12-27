@@ -117,6 +117,7 @@ See [contributing.md](contributing.md)
 * December 27, 2016
   * Release 1.1.0
   * Single character inline formula bug fixed.
+  * Formula in lists bug fixed.
   * Handling of KaTeX errors improved.
   * Micro-improvement of regular expressions.
 
