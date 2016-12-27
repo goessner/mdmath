@@ -52,8 +52,8 @@ const MathProvider = {
         { rex:/\\\$/g, tmpl: "\xB6" }, // substitute '\$' by '¶' temporarily ...
         { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}\s*?\(([^)$\r\n]*?)\)(?=$|\r?\n|\s)/g, tmpl: ($0,$1,$2,$3) => `${$1}<section class="eqno"><eqn>${MathProvider.math($2,true)}</eqn><span>(${$3})</span></section>` }, // display equation $$...$$
         { rex:/(\r?\n|^)\s*?\${2}([^$]*?)\${2}/g, tmpl: ($0,$1,$2) => `${$1}<section><eqn>${MathProvider.math($2,true)}</eqn></section>` }, // display equation $$...$$
-        { rex:/(\D|^)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // single-character inline equation $...$
         { rex:/(\D|\$|^)\$(\S[^$\r\n]*?\S)\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // multi-character inline equation $...$
+        { rex:/(\D|^)\$([^$\r\n\t ]{1})\$(?!\d)/g, tmpl: ($0,$1,$2) => `${$1}<eq>${MathProvider.math($2,false)}</eq>` },  // single-character inline equation $...$
         { rex:/\xB6/g, tmpl: "$" } // reverse temporary substitution ...
     ],
     math: function(tex,disp) {
