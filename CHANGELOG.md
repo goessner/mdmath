@@ -2,9 +2,13 @@
 
 ### unreleased
 
-* moved CHANGELOG to its own file
-* moved CONTRIBUTING guide
-* updated links in README
+* some minor documentation changes
+  * moved CHANGELOG to its own file
+  * moved CONTRIBUTING guide
+  * added ISSUE_TEMPLATE
+  * updated links in README
+* updated CSS links for generated HTML code
+* updated dependencies and added bugs section to `package.json`
 
 ### [1.1.0](https://github.com/goessner/mdmath/compare/5329d04...fcfcbdf) on December 27, 2016
 
