@@ -110,38 +110,11 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
 
 ## Contributing
 
-See [contributing.md](contributing.md)
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 ## ChangeLog
 
-* December 27, 2016
-  * Release 1.1.0
-  * Single character inline formula bug fixed.
-  * Formula in lists bug fixed.
-  * Handling of KaTeX errors improved.
-  * Micro-improvement of regular expressions.
-
-* December 21, 2016
-  * Release 1.0.1
-  * `code block` bug removed.
-
-* December 20, 2016
-  * Release 1.0.0
-  * Dependency on `markdown-it-katex` removed in favour of some lightweight regular expressions.
-  * Very simple (manual) equation numbering implemented.
-  * KaTeX error highlighting activated.
-  * Footnotes by `markdown-it-footnote` added.
-  * Standalone [tests](http://goessner.github.io/mdmath/test/) for math rendering added.
-  * Markdown+Math CSS file added to [CDN](https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css)
-  * Some minor bugs removed.
-
-* December 2, 2016
-  * Release 0.9.0
-  * Installation bug resolved
-
-* November 25, 2016
-  * First Release 0.8.0
-
+See [CHANGELOG.md](CHANGELOG.md)
 
 ## License
 
