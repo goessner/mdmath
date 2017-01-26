@@ -1,6 +1,6 @@
 # ![mdmath](img/icon.png) Markdown+Math
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/goessner/mdmath/license.txt)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/goessner/mdmath/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 [![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 
