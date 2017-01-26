@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/goessner/mdmath.git"
   },
-  "license": "SEE LICENSE IN license.txt",
+  "license": "SEE LICENSE.txt",
   "engines": {
     "vscode": "^1.0.0"
   },
@@ -55,10 +55,10 @@
   "dependencies": {
     "argparse": "^1.0.9",
     "entities": "^1.1.1",
-    "highlight.js": "^9.8.0",
+    "highlight.js": "^9.9.0",
     "katex": "^0.6.0",
-    "linkify-it": "^2.0.2",
-    "markdown-it": "^8.2.1",
+    "linkify-it": "^2.0.3",
+    "markdown-it": "^8.2.2",
     "markdown-it-footnote": "^3.0.1",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
