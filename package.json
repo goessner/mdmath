@@ -13,9 +13,12 @@
   "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/goessner/mdmath.git"
+    "url": "git+https://github.com/goessner/mdmath.git"
   },
-  "license": "SEE LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/goessner/mdmath/issues"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.0.0"
   },
