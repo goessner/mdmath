@@ -1,6 +1,6 @@
 # ![mdmath](img/icon.png) Markdown+Math
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/goessner/mdmath/license.txt)
+[![License](https://img.shields.io/github/license/goessner/mdmath.svg)](https://github.com/goessner/mdmath/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 [![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 
@@ -11,7 +11,7 @@ In fact it functions and renders identically to the built in markdown viewer. Ad
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
-Release 1.0 published with support of ...
+**mdmath** supports ...
 
 * Formula numbers.
 * Footnotes
@@ -69,18 +69,16 @@ npm install
 
 ![mdmath html export](img/htmlExport.png)
 
->*Note*: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
+>*Note*: Attempts to show HTML output with *Preview Window* as *Active Window* result in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
 
-You can see HTML export of `triangle.md` live in [your browser](http://goessner.github.io/mdmath/triangle.html).
-
+You can see HTML export of [`triangle.md`](triangle.md) live in [your browser](http://goessner.github.io/mdmath/triangle.html).
 
 ## Dependencies
 
-* [markdown-it](https://github.com/markdown-it/markdown-it). The markdown renderer also used in VS Code.
-* [katex](https://github.com/Khan/KaTeX). This is where credits for fast rendering TeX math in HTML go to.
-* [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote). Using footnotes in markdown.
-* [highlight.js](https://github.com/isagalaev/highlight.js). The code highlighter also used in VS Code.
-
+* [`markdown-it`](https://github.com/markdown-it/markdown-it): The markdown renderer also used in VS Code.
+* [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
+* [`markdown-it-footnote`](https://github.com/markdown-it/markdown-it-footnote): Using footnotes in markdown.
+* [`highlight.js`](https://github.com/isagalaev/highlight.js): The code highlighter also used in VS Code.
 
 ## FAQ
 
@@ -110,38 +108,11 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
 
 ## Contributing
 
-See [contributing.md](contributing.md)
+See [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md)
 
-## ChangeLog
+## Changelog
 
-* December 27, 2016
-  * Release 1.1.0
-  * Single character inline formula bug fixed.
-  * Formula in lists bug fixed.
-  * Handling of KaTeX errors improved.
-  * Micro-improvement of regular expressions.
-
-* December 21, 2016
-  * Release 1.0.1
-  * `code block` bug removed.
-
-* December 20, 2016
-  * Release 1.0.0
-  * Dependency on `markdown-it-katex` removed in favour of some lightweight regular expressions.
-  * Very simple (manual) equation numbering implemented.
-  * KaTeX error highlighting activated.
-  * Footnotes by `markdown-it-footnote` added.
-  * Standalone [tests](http://goessner.github.io/mdmath/test/) for math rendering added.
-  * Markdown+Math CSS file added to [CDN](https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css)
-  * Some minor bugs removed.
-
-* December 2, 2016
-  * Release 0.9.0
-  * Installation bug resolved
-
-* November 25, 2016
-  * First Release 0.8.0
-
+See [`CHANGELOG.md`](CHANGELOG.md)
 
 ## License
 
