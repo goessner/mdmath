@@ -100,7 +100,8 @@ npm install
 * [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
 * [`markdown-it-footnote`](https://github.com/markdown-it/markdown-it-footnote): Using footnotes in markdown.
 * [`highlight.js`](https://github.com/isagalaev/highlight.js): The code highlighter also used in VS Code.
-* [`copy-paste`](https://github.com/xavi-/node-copy-paste): A command line utility that allows copy/paste (r/w) access to the system clipboard.
+* [`copy-paste`](https://github.com/xavi-/node-copy-paste): A command line utility that allows copy/paste (r/w access) 
+  to the system clipboard.
 
 ## FAQ
 
@@ -128,7 +129,9 @@ npm install
   * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`).
     Please note, to have the markdown source window activated here (not the preview window!).
 * __Can I prepend a frontmatter section to my markdown file ?__
-  * Yes. You can either use a *yaml* (`--- ... ---`) or a *JSON* (`{{{...}}}`) fromtmatter section.
+  * Yes. That section is displayed depending on the `markdown.previewFrontMatter` setting. Its default
+    value is `hide`, which supresses output. You can either use a *yaml* (`--- ... ---`) or a *JSON* (`{{{...}}}`) fromtmatter 
+    section.
 * __Is PDF output supported ?__
   * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first 
   and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).

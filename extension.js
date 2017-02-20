@@ -101,15 +101,16 @@ const MathProvider = {
         let markdown = MathProvider.activeDocument.getText();   // get raw markdown code ...
 
         // extract front-matter (json style {{{...}}} or yaml style ---...---) from markdown content.
-        if (MathProvider.hideFrontMatter)  
+        if (MathProvider.hideFrontMatter) {
             markdown = markdown.replace(/^\s*?[{-]{3}([\s\S]+?)[}-]{3}\s*?/, '');
-
+        }
         for (let rule of MathProvider.rules) { // apply rules ...
             markdown = markdown.replace(rule.rex, rule.tmpl);
         }
         return md.render(markdown);
     },
     get styleSheet() { return vscode.workspace.getConfiguration('mdmath')['style'] },
+    get hideFrontMatter() { return vscode.workspace.getConfiguration('markdown')['previewFrontMatter'] === 'hide' },
 
     // see https://github.com/Microsoft/vscode/blob/master/extensions/markdown/src/extension.ts@getViewColumn
     targetPreviewColumn(sideBySide) {
