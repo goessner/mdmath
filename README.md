@@ -18,6 +18,7 @@ You can install the extension directly from [Visual Studio Code Marketplace](htt
 * User Stylesheet
 * User Settings
 
+
 ![mdmath editing](img/edit.gif)
 
 ## Features
