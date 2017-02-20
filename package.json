@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -38,6 +38,46 @@
     "onCommand:mdmath.showPreview"
   ],
   "contributes": {
+		"configuration": {
+			"title": "mdmath",
+			"properties": {
+				"mdmath.style": {
+					"type": "string",
+					"default": "",
+					"description": "Path to custom stylesheet file (css)."
+				},
+				"mdmath.footnotes": {
+					"type": "boolean",
+					"default": true,
+					"description": "Footnotes in markdown enabled."
+				},
+				"mdmath.toc.enabled": {
+					"type": "boolean",
+					"default": false,
+					"description": "'Table of Contents' generation in markdown enabled."
+				},
+				"mdmath.toc.includeLevel": {
+					"type": "array",
+					"default": [2,3],
+					"description": "Heading levels included in table of contents."
+				},
+				"mdmath.toc.permalink": {
+					"type": "boolean",
+					"default": true,
+					"description": "Add permalink symbols to headings."
+				},
+				"mdmath.toc.permalinkLevel": {
+					"type": "number",
+					"default": 2,
+					"description": "Begin adding permalink symbols starting from heading level."
+				},
+				"mdmath.toc.permalinkSymbol": {
+					"type": "string",
+					"default": "#",
+					"description": "Permalink symbol."
+				}
+			}
+		},
     "commands": [
       {
         "command": "mdmath.showPreview",
@@ -48,12 +88,22 @@
         "command": "mdmath.exportToHtml",
         "title": "Markdown+Math as HTML",
         "category": "Markdown"
+      },
+      {
+        "command": "mdmath.clipToHtml",
+        "title": "Clip Markdown+Math to HTML",
+        "category": "Markdown"
       }
     ],
     "keybindings": [
       {
         "command": "mdmath.showPreview",
         "key": "ctrl+shift+.",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "mdmath.clipToHtml",
+        "key": "ctrl+K .",
         "when": "editorTextFocus"
       }
     ]
@@ -70,6 +120,7 @@
     "linkify-it": "^2.0.3",
     "markdown-it": "^8.2.2",
     "markdown-it-footnote": "^3.0.1",
+    "copy-paste": "^1.3.0",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
     "sprintf-js": "^1.0.3",
