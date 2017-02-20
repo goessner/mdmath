@@ -1,6 +1,6 @@
 # ![mdmath](img/icon.png) Markdown+Math
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/goessner/mdmath/license.txt)
+[![License](https://img.shields.io/github/license/goessner/mdmath.svg)](https://github.com/goessner/mdmath/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 [![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 
@@ -11,10 +11,12 @@ In fact it functions and renders identically to the built in markdown viewer. Ad
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
-Release 1.0 published with support of ...
+### What is new in **mdmath** ...
 
-* Formula numbers.
-* Footnotes
+* Support of table of Contents
+* Support of Front Matter (YAML or JSON style)
+* User Stylesheet
+* User Settings
 
 ![mdmath editing](img/edit.gif)
 
@@ -64,30 +66,47 @@ npm install
 * Press <kbd>Ctrl+Shift+.</kbd> to open a preview window side by side, or ...
 * .. alternatively press <kbd>Ctrl+Shift+P</kbd> and run the command `Markdown+Math` to achive the same.
 * Typeset in your markdown source window and see the preview window live updating.
-* Press <kbd>Ctrl+Shift+P</kbd> and run the command `Markdown+Math as HTML` to open an output window for 
-  viewing and possibly copying the corresponding HTML source.
+* Press <kbd>Ctrl+K .</kbd> and run the command `Clip Markdown+Math to HTML` to copy the 
+  corresponding HTML source to the underlying systems clipboard.
 
-![mdmath html export](img/htmlExport.png)
+## Default User Settings
+```json
+  // Path to custom stylesheet file (css).
+  "mdmath.style": "",
 
->*Note*: Attempt to show HTML output with *Preview Window* as *Active Window* results in a warning `Cannot show source of that document!`. Make your markdown source window *active* first.
+  // Footnotes in markdown enabled.
+  "mdmath.footnotes": true,
 
-You can see HTML export of `triangle.md` live in [your browser](http://goessner.github.io/mdmath/triangle.html).
+  // 'Table of Contents' generation in markdown enabled.
+  "mdmath.toc.enabled": false,
 
+  // Heading levels included in table of contents.
+  "mdmath.toc.includeLevel": [2,3],
+
+  // Add permalink symbols to headings.
+  "mdmath.toc.permalink": true,
+
+  // Begin adding permalink symbols starting from heading level.
+  "mdmath.toc.permalinkLevel": 2,
+
+  // Add permalink symbol in front of heading.
+  "mdmath.toc.permalinkSymbol": "#"
+```
 
 ## Dependencies
 
-* [markdown-it](https://github.com/markdown-it/markdown-it). The markdown renderer also used in VS Code.
-* [katex](https://github.com/Khan/KaTeX). This is where credits for fast rendering TeX math in HTML go to.
-* [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote). Using footnotes in markdown.
-* [highlight.js](https://github.com/isagalaev/highlight.js). The code highlighter also used in VS Code.
-
+* [`markdown-it`](https://github.com/markdown-it/markdown-it): The markdown renderer also used in VS Code.
+* [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
+* [`markdown-it-footnote`](https://github.com/markdown-it/markdown-it-footnote): Using footnotes in markdown.
+* [`highlight.js`](https://github.com/isagalaev/highlight.js): The code highlighter also used in VS Code.
+* [`copy-paste`](https://github.com/xavi-/node-copy-paste): A command line utility that allows copy/paste (r/w) access to the system clipboard.
 
 ## FAQ
 
 * __Which functions does KaTeX support ?__
   * See them listed at [KaTeX Reference](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX).
 * __The preview window does not scroll in sync with source window__
-  * No, not as long as VSCode's native preview window isn't able to do that.
+  * No. Maybe VSCode's new native preview window behavior is supported in future.
 * __What if I need to use the currency symbol `$` also in my markup ?__
   * It should be safe to use it. If in doubt escape it.
 * __What are the restrictions with inline formulas ?__
@@ -98,50 +117,39 @@ You can see HTML export of `triangle.md` live in [your browser](http://goessner.
 * __What are the restrictions with display formulas ?__
   * Not allowed inline of text. Write them on a separate line.
   * Restrictions for inline formulas do not apply.
+* __Can I use math markup in blockquotes ?__
+  * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'`
+    being part of a multiline display formula, display formulas have to be written on a single line
+    in blockquote sections.
 * __Can I use math markup in code blocks ?__
   * In order to prevent converting formulas in code blocks you must escape the enclosing dollars as in `\$\frac{a}{b}\$`.
-
-
-## Issues, Hints
-
-* In order to create `*.pdf` output from your Markdown you should consider using [Pandoc](http://pandoc.org/).
-* Opening multiple preview windows is not possible at current. Even changing the active markdown source window 
+* __Can I access the HTML source of the markdown file ?__
+  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`).
+    Please note, to have the markdown source window activated here (not the preview window!).
+* __Can I prepend a frontmatter section to my markdown file ?__
+  * Yes. You can either use a *yaml* (`--- ... ---`) or a *JSON* (`{{{...}}}`) fromtmatter section.
+* __Is PDF output supported ?__
+  * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first 
+  and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).
+* __I cannot open multiple preview windows.__
+  *  Opening multiple preview windows is not possible at current. Even changing the active markdown source window 
   doesn't update the preview window properly. Close the preview window first as a workaround here.
+* __How to automatically generate a table of contents ?__
+  *  Set `mdmath.toc.enabled` in user settings to `true` first. Then add the string `[[toc]]` at your document location,
+     where you want the table of content appear. Please note, that only heading levels *two* and *three*
+     are collected. They are prepended by a permalink symbol `#`. This behavior can also be fine tuned 
+     by user settings.
+* __Can I use custom CSS styles for the preview window ?__
+  *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path
+     must be relative to this extension root.
 
 ## Contributing
 
-See [contributing.md](contributing.md)
+See [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md)
 
-## ChangeLog
+## Changelog
 
-* December 27, 2016
-  * Release 1.1.0
-  * Single character inline formula bug fixed.
-  * Formula in lists bug fixed.
-  * Handling of KaTeX errors improved.
-  * Micro-improvement of regular expressions.
-
-* December 21, 2016
-  * Release 1.0.1
-  * `code block` bug removed.
-
-* December 20, 2016
-  * Release 1.0.0
-  * Dependency on `markdown-it-katex` removed in favour of some lightweight regular expressions.
-  * Very simple (manual) equation numbering implemented.
-  * KaTeX error highlighting activated.
-  * Footnotes by `markdown-it-footnote` added.
-  * Standalone [tests](http://goessner.github.io/mdmath/test/) for math rendering added.
-  * Markdown+Math CSS file added to [CDN](https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css)
-  * Some minor bugs removed.
-
-* December 2, 2016
-  * Release 0.9.0
-  * Installation bug resolved
-
-* November 25, 2016
-  * First Release 0.8.0
-
+See [`CHANGELOG.md`](CHANGELOG.md)
 
 ## License
 
