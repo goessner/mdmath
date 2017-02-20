@@ -59,8 +59,6 @@ exports.activate = function activate(context) {
         console.log("'markdown-it-table-of-contents' enabled.");
     }
 
-    MathProvider.hideFrontMatter = vscode.workspace.getConfiguration('markdown')['previewFrontMatter'] === 'hide';  // use native markdown setting ...
-
     console.log("'mdmath' activated !")
 }
 

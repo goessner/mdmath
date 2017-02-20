@@ -120,32 +120,21 @@ npm install
   * Not allowed inline of text. Write them on a separate line.
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
-  * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'`
-    being part of a multiline display formula, display formulas have to be written on a single line
-    in blockquote sections.
+  * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'` being part of a multiline display formula, display formulas have to be written on a single line in blockquote sections.
 * __Can I use math markup in code blocks ?__
   * In order to prevent converting formulas in code blocks you must escape the enclosing dollars as in `\$\frac{a}{b}\$`.
 * __Can I access the HTML source of the markdown file ?__
-  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`).
-    Please note, to have the markdown source window activated here (not the preview window!).
+  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`). Please note, to have the markdown source window activated here (not the preview window!).
 * __Can I prepend a frontmatter section to my markdown file ?__
-  * Yes. That section is displayed depending on the `markdown.previewFrontMatter` setting. Its default
-    value is `hide`, which supresses output. You can either use a *yaml* (`--- ... ---`) or a *JSON* (`{{{...}}}`) fromtmatter 
-    section.
+  * Yes. That section is displayed depending on the `markdown.previewFrontMatter` setting. Its default value is `hide`, which supresses output. You can either use a *yaml* (`--- ... ---`) or a *JSON* (`{{{...}}}`) frontmatter section.
 * __Is PDF output supported ?__
-  * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first 
-  and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).
+  * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).
 * __I cannot open multiple preview windows.__
-  *  Opening multiple preview windows is not possible at current. Even changing the active markdown source window 
-  doesn't update the preview window properly. Close the preview window first as a workaround here.
+  *  Opening multiple preview windows is not possible at current. Even changing the active markdown source window doesn't update the preview window properly. Close the preview window first as a workaround here.
 * __How to automatically generate a table of contents ?__
-  *  Set `mdmath.toc.enabled` in user settings to `true` first. Then add the string `[[toc]]` at your document location,
-     where you want the table of content appear. Please note, that only heading levels *two* and *three*
-     are collected. They are prepended by a permalink symbol `#`. This behavior can also be fine tuned 
-     by user settings.
+  *  Set `mdmath.toc.enabled` in user settings to `true` first. Then add the string `[[toc]]` at your document location, where you want the table of content appear. Please note, that only heading levels *two* and *three* are collected. They are prepended by a permalink symbol `#`. This behavior can also be fine tuned by user settings.
 * __Can I use custom CSS styles for the preview window ?__
-  *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path
-     must be relative to this extension root.
+  *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
 
 ## Contributing
 
