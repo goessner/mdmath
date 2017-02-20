@@ -22,7 +22,7 @@ and squaring
 
 > finally results in the Pythagorean theorem (2)
 >
-> $$c^2 = a^2 + b^2 $$ (2) 
+> $$c = \sqrt{a^2 + b^2}$$ (2)
 
 ## More Triangle Stuff
 
