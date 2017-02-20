@@ -117,6 +117,10 @@ var tests = [
   src: "$${\\bold e}(\\varphi) = \\begin{pmatrix}\n\\cos\\varphi\\\\\\sin\\varphi\n\\end{pmatrix}$$ (3)",
   comment: "equation number always vertically aligned."
 },
+{ valid: true,
+  src: "> see $a = b + c$ \n> $$c^2=a^2+b^2$$ (2) \n> $$c^2=a^2+b^2$$ ",
+  comment: "equations in blockquote."
+},
 { valid: false,
   src: "3$1+1=2$\n$1+1=2$4\n5$x$6",
   comment: "numeric character before opening $ or\nafter closing $ is not allowed."
