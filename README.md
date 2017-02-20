@@ -19,7 +19,7 @@ You can install the extension directly from [Visual Studio Code Marketplace](htt
 * User Settings
 
 
-![mdmath editing](img/edit2.gif)
+![mdmath editing](img/edit.gif)
 
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
