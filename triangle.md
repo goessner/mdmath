@@ -1,6 +1,3 @@
-{{{
-    "title":"hi"
-}}}
 # The Right Triangle
 
 [[toc]]
