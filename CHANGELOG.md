@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+###  [1.2.4]() on February 24, 2017
+* *debounce/throttle* update events to prevent misbehaving scrolling of preview window with large math documents.
+
 ###  [1.2.0]() on February 20, 2017
 * *blockquote* bug removed.
 * Support of user settings.

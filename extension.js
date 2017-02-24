@@ -108,7 +108,12 @@ const MathProvider = {
         return md.render(markdown);
     },
     get styleSheet() { return vscode.workspace.getConfiguration('mdmath')['style'] },
-    get hideFrontMatter() { return vscode.workspace.getConfiguration('markdown')['previewFrontMatter'] === 'hide' },
+    // implement 'hideFrontMatter' as a lazy getter for better performance.
+    // ... (see https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/get)
+    get hideFrontMatter() {
+        delete this.hideFrontMatter;
+        return this.hideFrontMatter = vscode.workspace.getConfiguration('markdown')['previewFrontMatter'] === 'hide';
+    },
 
     // see https://github.com/Microsoft/vscode/blob/master/extensions/markdown/src/extension.ts@getViewColumn
     targetPreviewColumn(sideBySide) {
@@ -128,7 +133,17 @@ const MathProvider = {
             this.basePath = context.asAbsolutePath('.');
         },
         get onDidChange() { return this.emitter.event; },
-        update: function(uri) { this.emitter.fire(uri); },
+        // debounce/throttle update events ...
+        // see https://github.com/Microsoft/vscode/blob/master/extensions/markdown/src/previewContentProvider.ts
+        update: function(uri) { 
+            if (!this._waiting) {
+                this._waiting = true;
+                setTimeout(() => {
+                    this._waiting = false;
+                    this.emitter.fire(uri);
+                }, 400);
+            }           
+        },
         provideTextDocumentContent: function(uri,token) {
             if (!token || !token.isCancellationRequested) {
                 // save current document for accessing it from preview window later ...
