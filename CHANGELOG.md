@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+###  [1.2.5]() on March 01, 2017
+* `mdmath.css` modified in order to align KaTeX font-size with surrounding text.
+
 ###  [1.2.4]() on February 24, 2017
 * *debounce/throttle* update events to prevent misbehaving scrolling of preview window with large math documents.
 

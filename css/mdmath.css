@@ -1,3 +1,5 @@
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
 eq { display: inline-block; }
 eqn { display: block}
 section.eqno {
@@ -11,7 +13,8 @@ section.eqno > eqn {
     margin-left: 3em;
 }
 section > eqn > .katex-display {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 16px;
 }
 section.eqno > span {
     width:3em;
