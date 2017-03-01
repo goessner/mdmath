@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+###  [1.2.6]() on March 01, 2017
+* Bug in `mdmath.css` removed.
+
 ###  [1.2.5]() on March 01, 2017
 * `mdmath.css` modified in order to align KaTeX font-size with surrounding text.
 
