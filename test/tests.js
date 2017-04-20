@@ -17,6 +17,10 @@ var tests = [
   comment: "inline equation with single greek character"
 },
 { valid: true,
+  src: "$\\text{中日韩}$",
+  comment: "inline text with CJK characters"
+},
+{ valid: true,
   src: "You get 3$ if you solve $1+2$",
   comment: "use of currency symbol"
 },

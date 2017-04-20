@@ -121,7 +121,7 @@
         "entities": "^1.1.1",
         "highlight.js": "^9.9.0",
         "iconv-lite": "^0.4.15",
-        "katex": "^0.6.0",
+        "katex": "^0.7.1",
         "linkify-it": "^2.0.3",
         "lodash.assign": "^4.2.0",
         "markdown-it": "^8.2.2",
