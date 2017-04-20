@@ -88,7 +88,7 @@ const MathProvider = {
         }
         return res;
     },
-    viewUri: vscode.Uri.parse('mdmath://extension/mdmath'),    
+    viewUri: vscode.Uri.parse('mdmath://extension/mdmath'),
     get activeDocument() {
         let doc = vscode.window.activeTextEditor && vscode.window.activeTextEditor.document || MathProvider._activeDocument || false;
         if (!doc) vscode.window.showInformationMessage('Cannot locate current text document!');
@@ -118,7 +118,7 @@ const MathProvider = {
     // see https://github.com/Microsoft/vscode/blob/master/extensions/markdown/src/extension.ts@getViewColumn
     targetPreviewColumn(sideBySide) {
         const vuecol = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.viewColumn : false;
-        
+
         return !vuecol                          ? vscode.ViewColumn.One
              : !sideBySide                      ? vuecol
              : vuecol === vscode.ViewColumn.One ? vscode.ViewColumn.Two
@@ -135,14 +135,14 @@ const MathProvider = {
         get onDidChange() { return this.emitter.event; },
         // debounce/throttle update events ...
         // see https://github.com/Microsoft/vscode/blob/master/extensions/markdown/src/previewContentProvider.ts
-        update: function(uri) { 
+        update: function(uri) {
             if (!this._waiting) {
                 this._waiting = true;
                 setTimeout(() => {
                     this._waiting = false;
                     this.emitter.fire(uri);
                 }, 400);
-            }           
+            }
         },
         provideTextDocumentContent: function(uri,token) {
             if (!token || !token.isCancellationRequested) {
@@ -163,9 +163,9 @@ ${MathProvider.document}
     },
 
     showPreviewCmd: function() {
-        vscode.commands.executeCommand('vscode.previewHtml', 
-                                        MathProvider.viewUri, 
-                                        vscode.ViewColumn.Two, 
+        vscode.commands.executeCommand('vscode.previewHtml',
+                                        MathProvider.viewUri,
+                                        vscode.ViewColumn.Two,
                                         "Preview: "+path.basename(MathProvider.fname))
                        .then(success => {}, error => {console.error(error)});
     },
@@ -173,7 +173,7 @@ ${MathProvider.document}
         let html = `<!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css">
 </head><body class="markdown-body">
 ${MathProvider.document}
@@ -181,13 +181,13 @@ ${MathProvider.document}
 
         cp.copy(html,()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
     },
-    exportHtmlCmd: function() {    // 
+    exportHtmlCmd: function() {    //
         if (vscode.window.activeTextEditor) {
            let channel = vscode.window.createOutputChannel('\''+path.basename(MathProvider.fname)+'\' as html'),
                html = `<!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css">
 </head><body class="markdown-body">
 ${MathProvider.document}
