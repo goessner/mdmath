@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### unreleased
+* Support of CJK characters inside `\text` blocks
+
 ###  [1.2.6]() on March 01, 2017
 * Bug in `mdmath.css` removed.
 
