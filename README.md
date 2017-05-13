@@ -100,8 +100,7 @@ npm install
 * [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
 * [`markdown-it-footnote`](https://github.com/markdown-it/markdown-it-footnote): Using footnotes in markdown.
 * [`highlight.js`](https://github.com/isagalaev/highlight.js): The code highlighter also used in VS Code.
-* [`copy-paste`](https://github.com/xavi-/node-copy-paste): A command line utility that allows copy/paste (r/w access) 
-  to the system clipboard.
+* [`clipboardy`](https://github.com/sindresorhus/clipboardy): Access the system clipboard (copy/paste)
 
 ## FAQ
 

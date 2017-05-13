@@ -6,7 +6,7 @@
 
 const vscode = require('vscode');
 const path = require('path');
-const cp = require('copy-paste');
+const cp = require('clipboardy');
 const hl = require('highlight.js');
 const kt = require('katex');
 const md = require('markdown-it')({ html: true,
@@ -179,7 +179,7 @@ ${MathProvider.document}
 ${MathProvider.document}
 </body></html>`;
 
-        cp.copy(html,()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
+        cp.write(html).then(()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
     },
     exportHtmlCmd: function() {    // 
         if (vscode.window.activeTextEditor) {
