@@ -100,8 +100,7 @@ npm install
 * [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
 * [`markdown-it-footnote`](https://github.com/markdown-it/markdown-it-footnote): Using footnotes in markdown.
 * [`highlight.js`](https://github.com/isagalaev/highlight.js): The code highlighter also used in VS Code.
-* [`copy-paste`](https://github.com/xavi-/node-copy-paste): A command line utility that allows copy/paste (r/w access) 
-  to the system clipboard.
+* [`clipboardy`](https://github.com/sindresorhus/clipboardy): Access the system clipboard (copy/paste).
 
 ## FAQ
 
@@ -112,8 +111,8 @@ npm install
 * __What if I need to use the currency symbol `$` also in my markup ?__
   * It should be safe to use it. If in doubt escape it.
 * __What are the restrictions with inline formulas ?__
-  * Whitespace after opening `$` and before closing `$` is not allowed.
-  * Numeric character before opening `$` and after closing `$` is not allowed.
+  * Whitespace after opening `\$` and before closing `\$` is not allowed.
+  * Numeric character before opening `\$` and after closing `\$` is not allowed.
   * At least one character (whitespace ?) is required between two consecutive inline formulas.
   * Line break inside is not allowed.
 * __What are the restrictions with display formulas ?__
@@ -135,6 +134,13 @@ npm install
   *  Set `mdmath.toc.enabled` in user settings to `true` first. Then add the string `[[toc]]` at your document location, where you want the table of content appear. Please note, that only heading levels *two* and *three* are collected. They are prepended by a permalink symbol `#`. This behavior can also be fine tuned by user settings.
 * __Can I use custom CSS styles for the preview window ?__
   *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
+
+## Thank You
+
+The following folks helped to make `mdmath` even better.
+
+* [TonySFU](https://github.com/TonySFU): Helped with fixing encoding problems with Chinese language under macOS when using `mdmath.clipToHtml`.
+* [floatdrop](https://github.com/floatdrop): Verifying that [clipboardy](https://github.com/sindresorhus/clipboardy) is a better alternative to `copy-paste` by implementing.
 
 ## Contributing
 

@@ -1,5 +1,8 @@
 /* style for html inside of browsers */
 .katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+body { font-family: serif !important; }
+
+p { text-align: justify; }
 eq { display: inline-block; }
 eqn { display: block}
 section.eqno {
@@ -13,11 +16,47 @@ section.eqno > eqn {
     margin-left: 3em;
 }
 section > eqn > .katex-display {
-    margin-top: 0;
-    margin-bottom: 16px;
+    margin: 0 auto;
 }
 section.eqno > span {
     width:3em;
     margin-bottom: 16px;
     text-align:right;
+}
+/* centering and avoid splitting images inside of 'figure' elements while printing */
+figure {
+    margin: 0.5em auto;
+    page-break-inside: avoid;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+}
+figcaption { 
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+figcaption { 
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+table {   /* centering tables */
+    margin-left: auto;
+    margin-right: auto;
+    display: table !important; /* overwrite .markdown-body table */
+    width: auto !important;
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    border: none;
+}
+th, td { border: none !important; }
+tr:nth-child(1) {
+    border-top: 1px solid #666 !important;
+}
+tr {
+    border-bottom: 1px solid #666;
 }

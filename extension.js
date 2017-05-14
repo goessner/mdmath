@@ -6,7 +6,8 @@
 
 const vscode = require('vscode');
 const path = require('path');
-const cp = require('copy-paste');
+(process.env["LC_CTYPE"] = process.env.LC_CTYPE || "UTF-8");
+const cp = require('clipboardy');
 const hl = require('highlight.js');
 const kt = require('katex');
 const md = require('markdown-it')({ html: true,
@@ -38,7 +39,6 @@ exports.activate = function activate(context) {
 		}
     });
 
-//    context.subscriptions.push(reg1, reg2, reg3);
     context.subscriptions.push(reg1, reg2, reg3, reg4);
 
     // load additional extensions upon configuration ...
@@ -172,22 +172,21 @@ ${MathProvider.document}
     clipHtmlCmd: function() {
         let html = `<!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css">
 </head><body class="markdown-body">
 ${MathProvider.document}
 </body></html>`;
-
-        cp.copy(html,()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
+        cp.write(html).then(()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
     },
     exportHtmlCmd: function() {    // 
         if (vscode.window.activeTextEditor) {
            let channel = vscode.window.createOutputChannel('\''+path.basename(MathProvider.fname)+'\' as html'),
                html = `<!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/mdmath.css">
 </head><body class="markdown-body">
 ${MathProvider.document}

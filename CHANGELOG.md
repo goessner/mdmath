@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+###  [1.2.7]() on May 14, 2017
+* Height increase in `mdmath.css` with block equations and formula numbers removed.
+* Chinese language bug with `mdmath.clipToHtml` removed ([issue](https://github.com/goessner/mdmath/issues/13#ref-commit-0e32c99)).
+* KaTeX version upgrade to 0.7.1.
+* `highlight.js` version upgrade to 9.11.0.
+
 ###  [1.2.6]() on March 01, 2017
 * Bug in `mdmath.css` removed.
 
