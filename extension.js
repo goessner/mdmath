@@ -6,7 +6,6 @@
 
 const vscode = require('vscode');
 const path = require('path');
-(process.env["LC_CTYPE"] = process.env.LC_CTYPE || "UTF-8");
 const cp = require('clipboardy');
 const hl = require('highlight.js');
 const kt = require('katex');

@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+###  [1.2.8]() on May 15, 2017
+* Setting of `process.env["LC_CTYPE"]` removed, which is done by `clipboardy` itself. 
+
 ###  [1.2.7]() on May 14, 2017
 * Height increase in `mdmath.css` with block equations and formula numbers removed.
 * Chinese language bug with `mdmath.clipToHtml` removed ([issue](https://github.com/goessner/mdmath/issues/13#ref-commit-0e32c99)).
