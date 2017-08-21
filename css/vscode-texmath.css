@@ -1,0 +1,14 @@
+p { text-align: justify; }
+
+table, figure {
+    margin: 0.5em auto;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+}
+figcaption { 
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}
