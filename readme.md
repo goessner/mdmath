@@ -44,6 +44,7 @@ document format.
 * Support of Table of contents (ToC) and footnotes removed. Use other extensions instead.
 * **Breaking Change:** Before and after display formulas empty lines are required.
 
+
 ![mdmath editing](./img/mdmath.gif)
 
 ## Installation ...
