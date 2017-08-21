@@ -1,8 +1,9 @@
 # ![mdmath](img/icon.png) Markdown+Math
 
+[![marketplace](https://vsmarketplacebadge.apphb.com/version/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
+[![marketplace](https://vsmarketplacebadge.apphb.com/installs-short/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 [![License](https://img.shields.io/github/license/goessner/mdmath.svg)](https://github.com/goessner/mdmath/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
-[![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
 
 ## What is it ...
 
