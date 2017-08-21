@@ -33,13 +33,11 @@ exports.activate = function activate(context) {
           };
     let   mdit = null,
           cb = null;
-    
+
     context.subscriptions.push(vscode.commands.registerCommand('extension.clipToHtml', clip));
     return {
         extendMarkdownIt: function(md) {
-//            let tm = require('markdown-it-texmath').use(kt);
-            mdit = md;
-            return md.use(tm, {delimiters:delimiters});
+            return (mdit = md).use(tm, {delimiters:delimiters});
         }
     }
 }
