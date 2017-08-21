@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -11,15 +11,13 @@
     "LaTeX",
     "KaTeX",
     "markdown",
-    "markdown-it",
-    "math",
-    "math formulas"
+    "math"
   ],
   "galleryBanner": {
     "color": "#efefef",
     "theme": "light"
   },
-  "homepage": "https://github.com/goessner/mdmath/blob/master/README.md",
+  "homepage": "https://github.com/goessner/mdmath/blob/master/readme.md",
   "repository": {
       "type": "git",
       "url": "git+https://github.com/goessner/mdmath.git"
@@ -86,7 +84,7 @@
     "get-stream": "^3.0.0",
     "isexe": "^2.0.0",
     "is-stream": "^1.1.0",
-    "katex": "^0.7.1",
+    "katex": "^0.8.2",
     "linkify-it": "^2.0.3",
     "lru-cache": "^4.0.1",
     "markdown-it": "^8.3.1",
