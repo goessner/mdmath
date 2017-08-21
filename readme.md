@@ -83,6 +83,7 @@ npm install
   "mdmath.delimiters": "dollars"
 ```
 
+
 ## Dependencies
 
 * [`markdown-it`](https://github.com/markdown-it/markdown-it): The markdown renderer also used in VS Code.
