@@ -96,13 +96,13 @@ npm install
 * __What if I need to use the currency symbol `$` also in my markup ?__
   * It should be safe to use it. If in doubt escape it.
 * __What are the restrictions with inline formulas ?__
-  * Whitespace after opening `\$` and before closing `\$` is not allowed.
-  * Numeric character before opening `\$` and after closing `\$` is not allowed.
+  * Whitespace after opening `$` and before closing `$` is not allowed.
+  * Numeric character before opening `$` and after closing `$` is not allowed.
   * At least one character (whitespace ?) is required between two consecutive inline formulas.
   * Line break inside is not allowed.
 * __What are the restrictions with display formulas ?__
   * Not allowed inline of text.
-  * Blank lines before and behind rewuired.
+  * Blank lines before and behind required.
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
   * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'` being part of a multiline display formula, display formulas have to be written on a single line in blockquote sections.
