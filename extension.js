@@ -26,7 +26,7 @@ exports.activate = function activate(context) {
                if (!doc || doc.languageId !== 'markdown')
                    return vscode.window.showInformationMessage('Active document is no markdown source document!');
                if (!mdit)
-                   return vscode.window.showErrorMessage('vscode\'s markdown-it instance inaccessible!');
+                   return vscode.window.showInformationMessage('Corresponding markdown preview document needs to be opened at least once!');
                if (!cb) cb = require('clipboardy');
                cb.write(clipTmpl(mdit.render(doc.getText())))
                  .then(()=>vscode.window.showInformationMessage('Html copied to clipboard!'));
