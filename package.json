@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -48,7 +48,7 @@
       }
     },
     "markdown.previewStyles": [
-        "./css/katex.min.css",
+        "./node_modules/katex/dist/katex.min.css",
         "./css/texmath.css",
         "./css/vscode-texmath.css"
       ],
