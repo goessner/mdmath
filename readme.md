@@ -30,6 +30,7 @@ document format.
 * Using vscode's [Markdown Extension API](https://code.visualstudio.com/docs/extensionAPI/api-markdown).
 * Editor view and Preview are synchronized while scrolling.
 * Heavily reduced code size.
+* Works offline.
 * Due to [markdown-it-texmath's](https://github.com/goessner/markdown-it-texmath) support of different formula delimiters, these are also available and user configurable with mdmath:
   * `dollars` (default)
     * inline  `$...$`
@@ -44,6 +45,7 @@ document format.
 * The former [test table](https://goessner.github.io/markdown-it-texmath/index.html) was moved to [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).
 * Support of Table of contents (ToC) and footnotes removed. Use other extensions instead.
 * **Breaking Change:** Before and after display formulas empty lines are required.
+* **Breaking Change:** Math formulas in code sections not supported.
 
 ![mdmath editing](./img/mdmath.gif)
 
@@ -108,7 +110,7 @@ npm install
 * __Can I use math markup in blockquotes ?__
   * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'` being part of a multiline display formula, display formulas have to be written on a single line in blockquote sections.
 * __Can I use math markup in code blocks ?__
-  * In order to prevent converting formulas in code blocks you must escape the enclosing dollars as in `\$\frac{a}{b}\$`.
+  * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
 * __Can I access the HTML source of the markdown file ?__
   * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`). Please note, to have the markdown source window activated here (not the preview window!).
   * The markdown preview window has to be opened once for this in order to function properly.

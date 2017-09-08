@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -48,10 +48,10 @@
       }
     },
     "markdown.previewStyles": [
-        "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.2/katex.min.css",
-        "https://gitcdn.xyz/cdn/goessner/markdown-it-texmath/master/css/texmath.css",
-        "https://gitcdn.xyz/cdn/goessner/markdown-it-texmath/master/css/vscode-texmath.css"
-    ],
+        "./css/katex.min.css",
+        "./css/texmath.css",
+        "./css/vscode-texmath.css"
+      ],
     "markdown.markdownItPlugins": true,
     "commands": [
       {

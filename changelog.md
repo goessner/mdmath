@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+###  [2.0.4]() on September 08, 2017
+* Using extension local 'css' files instead of 'cdn'-served files for enabling offline usage of mdmath. 
+* Update to KaTex version 0.8.3.
+
 ###  [2.0.0]() on August 20, 2017
 * Fundamental rewrite using vscode markdown extension api. 
 
