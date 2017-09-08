@@ -112,8 +112,10 @@ npm install
 * __Can I use math markup in code blocks ?__
   * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
 * __Can I access the HTML source of the markdown file ?__
-  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`). Please note, to have the markdown source window activated here (not the preview window!).
+  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`). 
   * The markdown preview window has to be opened once for this in order to function properly.
+  * You need to have the markdown source window activated here (not the preview window!). 
+  * Please note, that the resulting HTML source references 'CDN'-located remote css files. Change those references to local URL's if necessary.
 * __Is PDF output supported ?__
   * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).
   * See [Compiling Markdown into HTML](https://code.visualstudio.com/docs/languages/markdown).
