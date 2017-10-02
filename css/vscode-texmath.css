@@ -6,6 +6,7 @@ table, figure {
 figure > img {
     display: block;
     margin: 0 auto;
+    page-break-inside: avoid;
 }
 figcaption { 
     display: block;
