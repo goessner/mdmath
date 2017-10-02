@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+###  [2.0.7]() on October 02, 2017
+* Fixing a css bug in the `clip-to-html` template.
+
 ###  [2.0.6]() on September 27, 2017
 * Fixing the `newline` bug with `gitlab` delimiters.
 

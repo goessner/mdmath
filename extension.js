@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 'use strict';
 
+ 
 const vscode = require('vscode'),
       clipTmpl = (html,usrcss) => `<!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
