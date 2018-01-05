@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+###  [2.1.0]() on January 05, 2018
+* Fixing escaped underscore bug with `markdown-it-texmath`.
+* Experimentally implementing syntax highlighting in markdown source code.
+
 ###  [2.0.7]() on October 02, 2017
 * Fixing a css bug in the `clip-to-html` template.
 

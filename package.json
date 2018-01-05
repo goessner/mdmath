@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.0.7",
+  "version": "2.1.0",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -65,6 +65,18 @@
           "command": "extension.clipToHtml",
           "key": "ctrl+K .",
           "when": "editorTextFocus"
+      }
+    ],
+    "languages": [
+       { "id":"source.markdown.math",
+         "extensions": ["md"]
+       }
+    ],
+    "grammars": [
+      {
+        "injectTo": ["text.html.markdown"],
+        "scopeName": "markdown.math",
+        "path": "./syntaxes/dollars.json"
       }
     ]
   },

@@ -13,9 +13,6 @@ section.eqno > eqn {
     width: 100%;
     margin-left: 3em;
 }
-section > eqn > .katex-display {
-    margin: 0 auto;
-}
 section.eqno > span {
     width:3em;
     text-align:right;

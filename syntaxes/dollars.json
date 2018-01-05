@@ -1,0 +1,19 @@
+{
+	"fileTypes": ["md","markdown"],
+	"injectionSelector": "meta.paragraph.markdown",
+	"patterns": [
+		{
+			"name":"block-dollars",
+			"begin": "(\\$\\$)",
+			"end": "(\\$\\$)",
+			"contentName": "markup.inline.raw"
+		},
+		{
+			"name":"inline-dollars",
+			"begin": "(^|\\s*)\\$",
+			"end": "\\$",
+            "contentName": "markup.inline.raw"
+		}
+    ],
+	"scopeName": "markdown.math"
+}

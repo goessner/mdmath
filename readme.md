@@ -94,6 +94,12 @@ npm install
 
 ## FAQ
 
+* __Formula highlighting is broken ?__
+  * Math formula highlighting is experimental.
+  * It is implemented only for `$` delimiters at present.
+  * `$` characters in markdown text are sometimes confused with math delimiters. Enclose them by backticks (`) then.
+  * Formula highlighting is possible only for formulas on a single line. It breaks with every newline character.
+  * Math highlighting is completely different from LaTeX math parsing.
 * __Which functions does KaTeX support ?__
   * See them listed at [KaTeX Reference](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX).
 * __What if I need to use the currency symbol `$` also in my markup ?__

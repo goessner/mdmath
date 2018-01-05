@@ -7,7 +7,7 @@
 Let the right triangle hypothenuse be aligned with the coordinate system *x-axis*. 
 The vector loop closure equation running counter-clockwise then reads
 
-$$a{\bold e}_\alpha + b\tilde{\bold e}_\alpha + c{\bold e}_x = \bold 0$$ (1)
+$$a{\bold e}_\alpha + b\tilde{\bold e}_\alpha + c{\bold e}_x = \bold 0$$
 
 with
 
