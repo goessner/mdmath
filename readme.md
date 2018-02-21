@@ -38,7 +38,7 @@ document format.
     * inline  `\(...\)`
     * display `\[...\]`
   * `gitlab`
-    * inline ``$`...`$``</code>
+    * inline ``$`...`$``
     * display ` ```math ... ``` `
 
 ![mdmath editing](./img/mdmath.gif)
