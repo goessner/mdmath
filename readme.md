@@ -126,7 +126,9 @@ npm install
   * Not directly. In order to create `*.pdf` output from your Markdown you can create a `*.html` document first and print it then using a `PDF` printer or use [Pandoc](http://pandoc.org/).
   * See [Compiling Markdown into HTML](https://code.visualstudio.com/docs/languages/markdown).
 * __Can I use custom CSS styles for the preview window ?__
-  *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
+  * Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
+* __Cannot copy to clipboard on Linux ?__
+  * This is because the upstream `clipboardy` needs `xsel` on Linux. Run `sudo apt-get install xsel` to install and the copy command will work.
 
 ## Thank You
 
