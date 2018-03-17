@@ -31,7 +31,7 @@ exports.activate = function activate(context) {
                if (!cb) cb = require('clipboardy');
                cb.write(clipTmpl(mdit.render(doc.getText())))
                  .then(()=>vscode.window.showInformationMessage('Html copied to clipboard!'),
-                       ()=>vscode.window.showInformationMessage('Html copying to clipboard failed!'));
+                       ()=>vscode.window.showInformationMessage('Html copying to clipboard failed! Install `xles` if you working on Linux env'));
           };
     let   mdit = null,
           cb = null;
