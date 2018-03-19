@@ -2,7 +2,7 @@
 
 ## Base Geometry
 
-![right triangle](img/triangle.png "triangle")
+![at](img/icon.png)
 
 Let the right triangle hypothenuse be aligned with the coordinate system *x-axis*. 
 The vector loop closure equation running counter-clockwise then reads

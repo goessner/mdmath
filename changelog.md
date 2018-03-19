@@ -1,4 +1,6 @@
 ## CHANGELOG
+###  [2.2.0]() on March 19, 2018
+* `clip-to-html` bug with Ubuntu fixed.
 
 ###  [2.1.0]() on January 05, 2018
 * Fixing escaped underscore bug with `markdown-it-texmath`.

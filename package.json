@@ -2,8 +2,8 @@
   "name": "mdmath",
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
-  "icon": "img/icon.png",
-  "version": "2.1.0",
+  "icon": "https://github.com/goessner/mdmath/img/icon.png",
+  "version": "2.2.0",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -88,6 +88,7 @@
      "vscode": "^1.0.0"
   },
   "dependencies": {
+    "arch":"^2.1.0",
     "argparse": "^1.0.9",
     "clipboardy": "^1.1.2",
     "cross-spawn": "^5.0.1",

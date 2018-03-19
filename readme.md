@@ -40,7 +40,7 @@ document format.
     * display `\[...\]`
   * `gitlab`
     * inline ``$`...`$``</code>
-    * display ```` ```math ... ``` ````
+    * display ` ```math ... ``` `
 
 * The former [test table](https://goessner.github.io/markdown-it-texmath/index.html) was moved to [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).
 * Support of Table of contents (ToC) and footnotes removed. Use other extensions instead.
@@ -127,11 +127,15 @@ npm install
   * See [Compiling Markdown into HTML](https://code.visualstudio.com/docs/languages/markdown).
 * __Can I use custom CSS styles for the preview window ?__
   *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
+* __Cannot copy to clipboard on Linux ?__
+  * This may be because the upstream `clipboardy` needs `xsel` on Linux. Run `sudo apt-get install xsel` to install.
+
 
 ## Thank You
 
 The following folks helped to make `mdmath` even better.
 
+* [lincr](https://github.com/LCAR979): Helped with fixing problems with `mdmath.clipToHtml` under Ubuntu.
 * [TonySFU](https://github.com/TonySFU): Helped with fixing encoding problems with Chinese language under macOS when using `mdmath.clipToHtml`.
 * [floatdrop](https://github.com/floatdrop): Verifying that [clipboardy](https://github.com/sindresorhus/clipboardy) is a better alternative to `copy-paste` by implementing.
 * [zhanglix](https://github.com/zhanglix): Helped with fixing the `newline` bug with `gitlab` delimiters.
