@@ -1,6 +1,9 @@
 ## CHANGELOG
 ###  [2.2.0]() on March 19, 2018
 * `clip-to-html` bug with Ubuntu fixed.
+* `markdown-it` dependency upgrade to `8.4.1`.
+* `katex` dependency upgrade to `0.9.0`.
+* `clipboardy` dependency upgrade to `1.2.3`.
 
 ###  [2.1.0]() on January 05, 2018
 * Fixing escaped underscore bug with `markdown-it-texmath`.

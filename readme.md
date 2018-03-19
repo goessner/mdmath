@@ -1,4 +1,4 @@
-# ![mdmath](img/icon.png) Markdown+Math
+# ![mdmath](https://github.com/goessner/mdmath/img/icon.png) Markdown+Math
 
 [![marketplace](https://vsmarketplacebadge.apphb.com/version/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 [![marketplace](https://vsmarketplacebadge.apphb.com/installs-short/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
@@ -23,7 +23,6 @@ document format.
 * Inline math with tables
 * Export resulting HTML code for web usage
 
-
 ### What is new in **mdmath** 2.0 ...
 * Integrated in native markdown viewer. So after installing the extension, TeX math is properly displayed in the markdown preview window.
 * Based on [markdown-it](https://github.com/markdown-it/markdown-it) plugin [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).
@@ -42,12 +41,7 @@ document format.
     * inline ``$`...`$``</code>
     * display ` ```math ... ``` `
 
-* The former [test table](https://goessner.github.io/markdown-it-texmath/index.html) was moved to [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).
-* Support of Table of contents (ToC) and footnotes removed. Use other extensions instead.
-* **Breaking Change:** Before and after display formulas empty lines are required.
-* **Breaking Change:** Math formulas in code sections not supported.
-
-![mdmath editing](./img/mdmath.gif)
+![mdmath editing](https://github.com/goessner/mdmath/img/mdmath.gif)
 
 ## Installation ...
 
