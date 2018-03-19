@@ -1,4 +1,4 @@
-# ![mdmath](https://github.com/goessner/mdmath/img/icon.png) Markdown+Math
+# ![mdmath](img/icon.png) Markdown+Math
 
 [![marketplace](https://vsmarketplacebadge.apphb.com/version/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 [![marketplace](https://vsmarketplacebadge.apphb.com/installs-short/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
