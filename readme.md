@@ -41,7 +41,7 @@ document format.
     * inline ``$`...`$``</code>
     * display ` ```math ... ``` `
 
-![mdmath editing](https://github.com/goessner/mdmath/img/mdmath.gif)
+![mdmath editing](./img/mdmath.gif)
 
 ## Installation ...
 
