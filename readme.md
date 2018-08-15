@@ -124,12 +124,14 @@ npm install
   *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
 * __Cannot copy to clipboard on Linux ?__
   * This may be because the upstream `clipboardy` needs `xsel` on Linux. Run `sudo apt-get install xsel` to install.
-
+* __Can we store Latex macros with mdmath ?__
+  * Yes, there is a new section `mdmath.globalMacros` in `package.json`. Try to expand it with your own macros.
 
 ## Thank You
 
 The following folks helped to make `mdmath` even better.
 
+* [colinfang](https://github.com/colinfang): Implemented global Macros with mdmath 2.3.0.
 * [lincr](https://github.com/LCAR979): Helped with fixing problems with `mdmath.clipToHtml` under Ubuntu.
 * [TonySFU](https://github.com/TonySFU): Helped with fixing encoding problems with Chinese language under macOS when using `mdmath.clipToHtml`.
 * [floatdrop](https://github.com/floatdrop): Verifying that [clipboardy](https://github.com/sindresorhus/clipboardy) is a better alternative to `copy-paste` by implementing.
