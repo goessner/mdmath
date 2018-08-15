@@ -95,7 +95,7 @@ npm install
   * Formula highlighting is possible only for formulas on a single line. It breaks with every newline character.
   * Math highlighting is completely different from LaTeX math parsing.
 * __Which functions does KaTeX support ?__
-  * See them listed at [KaTeX Reference](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX).
+  * See them listed at [KaTeX Reference](https://khan.github.io/KaTeX/docs/supported.html).
 * __What if I need to use the currency symbol `$` also in my markup ?__
   * It should be safe to use it. If in doubt escape it.
 * __What are the restrictions with inline formulas ?__
