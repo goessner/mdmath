@@ -1,4 +1,10 @@
 ## CHANGELOG
+###  [2.3.0]() on March 19, 2018
+* fatal `blockquote` behavior gone with VSCode 1.26.0. Obsolete bug fix removed.
+* fatal `blockquote` bug fixed.
+* `markdown-it` dependency upgrade to `8.5.0`.
+* `katex` dependency upgrade to `0.10.0-beta`.
+
 ###  [2.2.0]() on March 19, 2018
 * `clip-to-html` bug with Ubuntu fixed.
 * `markdown-it` dependency upgrade to `8.4.1`.

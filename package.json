@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -19,15 +19,15 @@
   },
   "homepage": "https://github.com/goessner/mdmath/blob/master/readme.md",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/goessner/mdmath.git"
+    "type": "git",
+    "url": "git+https://github.com/goessner/mdmath.git"
   },
   "bugs": {
-      "url": "https://github.com/goessner/mdmath/issues"
+    "url": "https://github.com/goessner/mdmath/issues"
   },
   "license": "MIT",
   "engines": {
-      "vscode": "^1.8.0"
+    "vscode": "^1.8.0"
   },
   "categories": [
     "Languages",
@@ -40,41 +40,55 @@
     "configuration": {
       "title": "mdmath",
       "properties": {
-          "mdmath.delimiters": {
-              "type": "string",
-              "default": "dollars",
-              "description": "Math formula delimiters."
-          }
+        "mdmath.delimiters": {
+          "type": "string",
+          "default": "dollars",
+          "description": "Math formula delimiters."
+        },
+        "mdmath.globalMacros": {
+          "type": "array",
+          "default": [
+            "\\gdef\\E#1{\\operatorname{\\mathbb{E}}\\!\\big[#1\\big]}",
+            "\\gdef\\Eq#1#2{\\operatorname{\\mathbb{E}}_{#1}\\!\\big[#2\\big]}"
+          ],
+          "items": "string",
+          "description": "A list of global macros"
+        }
       }
     },
     "markdown.previewStyles": [
-        "./node_modules/katex/dist/katex.min.css",
-        "./css/texmath.css",
-        "./css/vscode-texmath.css"
-      ],
+      "./node_modules/katex/dist/katex.min.css",
+      "./css/texmath.css",
+      "./css/vscode-texmath.css"
+    ],
     "markdown.markdownItPlugins": true,
     "commands": [
       {
-          "command": "extension.clipToHtml",
-          "title": "Clip Markdown+Math to HTML",
-          "category": "Markdown"
+        "command": "extension.clipToHtml",
+        "title": "Clip Markdown+Math to HTML",
+        "category": "Markdown"
       }
     ],
     "keybindings": [
       {
-          "command": "extension.clipToHtml",
-          "key": "ctrl+K .",
-          "when": "editorTextFocus"
+        "command": "extension.clipToHtml",
+        "key": "ctrl+K .",
+        "when": "editorTextFocus"
       }
     ],
     "languages": [
-       { "id":"source.markdown.math",
-         "extensions": ["md"]
-       }
+      {
+        "id": "source.markdown.math",
+        "extensions": [
+          "md"
+        ]
+      }
     ],
     "grammars": [
       {
-        "injectTo": ["text.html.markdown"],
+        "injectTo": [
+          "text.html.markdown"
+        ],
         "scopeName": "markdown.math",
         "path": "./syntaxes/dollars.json"
       }
@@ -82,39 +96,39 @@
   },
   "main": "./extension",
   "scripts": {
-     "postinstall": "node ./node_modules/vscode/bin/install"
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-     "vscode": "^1.0.0"
+    "vscode": "^1.0.0"
   },
   "dependencies": {
-    "arch":"^2.1.0",
+    "arch": "^2.1.1",
     "argparse": "^1.0.9",
     "clipboardy": "^1.1.2",
-    "cross-spawn": "^5.0.1",
+    "cross-spawn": "^6.0.1",
     "entities": "^1.1.1",
-    "execa": "^0.8.0",
-    "get-stream": "^3.0.0",
-    "isexe": "^2.0.0",
+    "execa": "^0.10.0",
+    "get-stream": "^4.0.0",
     "is-stream": "^1.1.0",
-    "katex": "^0.9.0",
+    "isexe": "^2.0.0",
+    "katex": "^0.10.0-beta",
     "linkify-it": "^2.0.3",
-    "lru-cache": "^4.0.1",
-    "markdown-it": "^8.3.1",
-    "markdown-it-texmath": "^0.4.0",
+    "lru-cache": "^4.1.3",
+    "markdown-it": "^8.4.2",
+    "markdown-it-texmath": "^0.5.0",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
     "npm-run-path": "^2.0.0",
-    "path-key": "^2.0.0",
     "p-finally": "^1.0.0",
+    "path-key": "^2.0.0",
     "pseudomap": "^1.0.1",
     "shebang-command": "^1.2.0",
-    "shebang-regex": "^1.0.0",
+    "shebang-regex": "^2.0.0",
     "signal-exit": "^3.0.0",
-    "sprintf-js": "^1.0.3",
+    "sprintf-js": "^1.1.1",
     "strip-eof": "^1.0.0",
     "uc.micro": "^1.0.3",
-    "which": "^1.2.9",
-    "yallist": "^2.0.0"
+    "which": "^1.3.1",
+    "yallist": "^3.0.0"
   }
 }

@@ -14,7 +14,7 @@ const vscode = require('vscode'),
 ${usrcss ? `<link rel="stylesheet" href="${usrcss}">` : ''}
 </head><body class="markdown-body">
 ${html}
-</body></html>`;
+</body></html>`.replace('vscode-resource:','');
 
 // this method is called when extension is activated ..
 exports.activate = function activate(context) {
@@ -22,6 +22,7 @@ exports.activate = function activate(context) {
           tm = require('markdown-it-texmath').use(kt),
           cfg = (key) => vscode.workspace.getConfiguration('mdmath')[key],
           delimiters = cfg('delimiters') || 'dollars',
+          globalMacros = cfg('globalMacros'),
           clip = () => {
                const doc = vscode.window.activeTextEditor && vscode.window.activeTextEditor.document;
                if (!doc || doc.languageId !== 'markdown')
@@ -39,7 +40,7 @@ exports.activate = function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.clipToHtml', clip));
     return {
         extendMarkdownIt: function(md) {
-            return (mdit = md).use(tm, {delimiters:delimiters});
+            return (mdit = md).use(tm, {delimiters:delimiters, globalMacros: globalMacros});
         }
     }
 }
