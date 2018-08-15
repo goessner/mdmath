@@ -3,7 +3,7 @@
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
   "icon": "img/icon.png",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -44,15 +44,6 @@
           "type": "string",
           "default": "dollars",
           "description": "Math formula delimiters."
-        },
-        "mdmath.globalMacros": {
-          "type": "array",
-          "default": [
-            "\\gdef\\E#1{\\operatorname{\\mathbb{E}}\\!\\big[#1\\big]}",
-            "\\gdef\\Eq#1#2{\\operatorname{\\mathbb{E}}_{#1}\\!\\big[#2\\big]}"
-          ],
-          "items": "string",
-          "description": "A list of global macros"
         }
       }
     },
