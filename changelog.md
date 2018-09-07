@@ -1,4 +1,8 @@
 ## CHANGELOG
+
+###  [2.3.3]() on September 07, 2018
+* Add support for [Kramdown](https://kramdown.gettalong.org/) . Simply write `"mdmath.delimiters": "kramdown"` into your user settings for activating it. Please note, that syntax highlighting is only properly supported with `dollars`.
+
 ###  [2.3.0]() on August 15, 2018
 * fatal `blockquote` behavior gone with VSCode 1.26.0. Obsolete bug fix removed.
 * fatal `blockquote` bug fixed.

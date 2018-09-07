@@ -31,15 +31,22 @@ document format.
 * Heavily reduced code size.
 * Works offline.
 * Due to [markdown-it-texmath's](https://github.com/goessner/markdown-it-texmath) support of different formula delimiters, these are also available and user configurable with mdmath:
-  * `dollars` (default)
-    * inline  `$...$`
-    * display `$$...$$`
-  * `brackets`
-    * inline  `\(...\)`
-    * display `\[...\]`
-  * `gitlab`
-    * inline ``$`...`$``</code>
-    * display ` ```math ... ``` `
+  * `'dollars'` (default)
+    * inline: `$...$`
+    * display: `$$...$$`
+    * display + equation number: `$$...$$ (1)`
+  * `'brackets'`
+    * inline: `\(...\)`
+    * display: `\[...\]`
+    * display + equation number: `\[...\] (1)`
+  * `'gitlab'`
+    * inline: ``$`...`$``
+    * display: `` ```math ... ``` ``
+    * display + equation number: `` ```math ... ``` (1)``
+  * `'kramdown'`
+    * inline: ``$$...$$``
+    * display: `$$...$$`
+    * display + equation number: `$$...$$ (1)`
 
 ![mdmath editing](./img/mdmath.gif)
 
