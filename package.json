@@ -44,6 +44,16 @@
           "type": "string",
           "default": "dollars",
           "description": "Math formula delimiters."
+        },
+        "mdmath.savePath": {
+          "type": "string",
+          "default": "./${file.name}.html",
+          "description": "Relative path to save generated HTML files. \nPaths are interpreted relative to the source file with the workspace folder as the root directory. \nYou can use the variables ${file.name} and ${file.ext}."
+        },
+        "mdmath.autosave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run the 'Save Markdown+Math to HTML' command when a markdown file is changed."
         }
       }
     },
@@ -58,12 +68,22 @@
         "command": "extension.clipToHtml",
         "title": "Clip Markdown+Math to HTML",
         "category": "Markdown"
+      },
+      {
+        "command": "extension.renderToHtml",
+        "title": "Save Markdown+Math to HTML",
+        "category": "Markdown"
       }
     ],
     "keybindings": [
       {
         "command": "extension.clipToHtml",
         "key": "ctrl+K .",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.renderToHtml",
+        "key": "ctrl+K ,",
         "when": "editorTextFocus"
       }
     ],
@@ -109,6 +129,7 @@
     "markdown-it-texmath": "^0.5.2",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
+    "mkdirp": "^0.5.1",
     "npm-run-path": "^2.0.0",
     "p-finally": "^1.0.0",
     "path-key": "^2.0.0",
