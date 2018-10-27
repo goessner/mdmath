@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### [2.3.4]() (Awaiting Review)  on October 25, 2018
+* Command to save HTML to file
+* Autosave option for saving HTML when Markdown file is changed
+* Ability to configure where HTML files are saved
+
 ###  [2.3.3]() on September 07, 2018
 * Add support for [Kramdown](https://kramdown.gettalong.org/) . Simply write `"mdmath.delimiters": "kramdown"` into your user settings for activating it. Please note, that syntax highlighting is only properly supported with `dollars`.
 
