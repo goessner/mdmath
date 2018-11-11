@@ -84,7 +84,9 @@ npm install
 ## Default User Settings
 ```json
   // Path to custom stylesheet file (css).
-  "mdmath.delimiters": "dollars"
+  "mdmath.delimiters": "dollars",
+  "mdmath.savePath": "./${file.name}.html",
+  "mdmath.autosave": false
 ```
 
 ## Dependencies
