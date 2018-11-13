@@ -2,8 +2,8 @@
   "name": "mdmath",
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
-  "icon": "img/icon.png",
-  "version": "2.3.4",
+  "icon": "./img/icon.png",
+  "version": "2.3.5",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -45,6 +45,14 @@
           "default": "dollars",
           "description": "Math formula delimiters."
         },
+        "mdmath.macros": {
+          "type": "object",
+          "default": {
+            "\\RR": "\\mathbb{R}",
+            "\\vek": "{\\begin{pmatrix}#1\\\\#2\\end{pmatrix}}"
+          },
+          "description": "TeX macros definition."
+        },
         "mdmath.savePath": {
           "type": "string",
           "default": "./${file.name}.html",
@@ -70,7 +78,7 @@
         "category": "Markdown"
       },
       {
-        "command": "extension.renderToHtml",
+        "command": "extension.saveToHtml",
         "title": "Save Markdown+Math to HTML",
         "category": "Markdown"
       }
@@ -82,7 +90,7 @@
         "when": "editorTextFocus"
       },
       {
-        "command": "extension.renderToHtml",
+        "command": "extension.saveToHtml",
         "key": "ctrl+K ,",
         "when": "editorTextFocus"
       }
@@ -117,16 +125,16 @@
     "argparse": "^1.0.9",
     "clipboardy": "^1.1.2",
     "cross-spawn": "^6.0.1",
-    "entities": "^1.1.1",
+    "entities": "^1.1.2",
     "execa": "^1.0.0",
-    "get-stream": "^4.0.0",
+    "get-stream": "^4.1.0",
     "is-stream": "^1.1.0",
     "isexe": "^2.0.0",
-    "katex": "^0.10.0-rc.1",
+    "katex": "^0.10.0",
     "linkify-it": "^2.0.3",
     "lru-cache": "^4.1.3",
     "markdown-it": "^8.4.2",
-    "markdown-it-texmath": "^0.5.2",
+    "markdown-it-texmath": "^0.5.3",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
     "mkdirp": "^0.5.1",
@@ -138,7 +146,7 @@
     "shebang-regex": "^2.0.0",
     "signal-exit": "^3.0.0",
     "sprintf-js": "^1.1.1",
-    "strip-eof": "^1.0.0",
+    "strip-eof": "^2.0.0",
     "uc.micro": "^1.0.3",
     "which": "^1.3.1",
     "yallist": "^3.0.0"

@@ -12,6 +12,11 @@ In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
+### What is new in **mdmath** 2.3.5 ...
+* KaTeX macros are supported. Simply define them by user settings `mdmath.macros`. See FAQ's for details.
+* Save corresponding HTML source to the file system. The markdown file name is used for this (extension `.html` though). The destination folder is the same, which is the default. You can change this behavior with help of user setting `mdmath.savePath`.
+* Activate `autosave` feature (default: `false`), so whenever you are saving the markdown file, its corresponding HTML file is also saved (to `mdmath.savePath`). Simply set user setting `mdmath.autosave: true` for this.
+
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
 This extension is a comfortable tool for scientists, engineers and students with markdown as their first choice 
@@ -21,15 +26,12 @@ document format.
 * Display math
 * Formula numbering
 * Inline math with tables
-* Export resulting HTML code for web usage
-
-### What is new in **mdmath** 2.0 ...
+* Works offline.
 * Integrated in native markdown viewer. So after installing the extension, TeX math is properly displayed in the markdown preview window.
 * Based on [markdown-it](https://github.com/markdown-it/markdown-it) plugin [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).
 * Using vscode's [Markdown Extension API](https://code.visualstudio.com/docs/extensionAPI/api-markdown).
 * Editor view and Preview are synchronized while scrolling.
-* Heavily reduced code size.
-* Works offline.
+* Copy resulting HTML code to the system clipboard.
 * Due to [markdown-it-texmath's](https://github.com/goessner/markdown-it-texmath) support of different formula delimiters, these are also available and user configurable with mdmath:
   * `'dollars'` (default)
     * inline: `$...$`
@@ -78,13 +80,18 @@ npm install
 * Launch *VS Code*, create or open a markdown file (`.md`).
 * Open a preview window.
 * Typeset in your markdown source window and see the preview window live updating.
-* Press <kbd>Ctrl+K .</kbd> or run the command `Clip Markdown+Math to HTML` to copy the 
-  corresponding HTML source to the underlying systems clipboard.
+* Press <kbd>Ctrl+K ,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
+* Press <kbd>Ctrl+K .</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
 
 ## Default User Settings
 ```json
   // Path to custom stylesheet file (css).
   "mdmath.delimiters": "dollars",
+  "mdmath.macros": {
+      "type": "object",
+      "default": {},
+      "description": "TeX macros definition."
+  },
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false
 ```
@@ -96,15 +103,42 @@ npm install
 * [`clipboardy`](https://github.com/sindresorhus/clipboardy): Access the system clipboard (copy/paste).
 
 ## FAQ
+* __How to define and use macros ?__
+  * Define them in user settings. For example ...
+  ```json
+  "mdmath.macros": {
+      "type": "object",
+      "default": {
+          "\\RR": "\\mathbb{R}",
+          "\\vek": "{\\begin{pmatrix}#1\\\\#2\\end{pmatrix}}"
+      },
+      "description": "TeX macros definition."
+  }
+  ```
+  * Use them in your markdown document. For example ...
+  ```
+  Vectors in $\RR^2$ have a shape of
+
+  $$\vek{x}{y}$$
+  ```
+* __Are there global predefined macros ?__
+  * No. Macros are user defined with user settings `mdmath.macros`. So they are available in all user specific markdown documents.
+* __Can I write the HTML source to a file ?__
+  * Yes. Use the <kbd>Markdown: Save Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K ,'`). 
+  * The Html file is written to the folder where the markdown file resides in. This is the default.
+  * You can change the destination folder by specifying a relative path to your working directory with the help of the user setting `mdmath.savePath`. So for an example you might choose `mdmath.savePath: "./html/${file.name}.html"`.
+* __Can I synchronously let the HTML source file update ?__
+  * Yes. Simply set the user setting `mdmath.autosave: true` for this (default is `false`).
+  * Now, whenever you save your markdown file, the corresponding Html file is also saved.
+  * The destination folder `mdmath.savePath` is used for this.
 
 * __Formula highlighting is broken ?__
-  * Math formula highlighting is experimental.
   * It is implemented only for `$` delimiters at present.
   * `$` characters in markdown text are sometimes confused with math delimiters. Enclose them by backticks (`) then.
   * Formula highlighting is possible only for formulas on a single line. It breaks with every newline character.
   * Math highlighting is completely different from LaTeX math parsing.
 * __Which functions does KaTeX support ?__
-  * See them listed at [KaTeX Reference](https://khan.github.io/KaTeX/docs/supported.html).
+  * See them listed at [KaTeX Supported Functions](https://khan.github.io/KaTeX/docs/supported.html) and [KaTeX Support Table](https://katex.org/docs/support_table.html).
 * __What if I need to use the currency symbol `$` also in my markup ?__
   * It should be safe to use it. If in doubt escape it.
 * __What are the restrictions with inline formulas ?__
@@ -140,7 +174,8 @@ npm install
 
 The following folks helped to make `mdmath` even better.
 
-* [colinfang](https://github.com/colinfang): Implemented global Macros with mdmath 2.3.0.
+* [elviswolcott](https://github.com/elviswolcott): Implemented the feature of directly saving HTML to the file system including `autosave` ability.
+* [colinfang](https://github.com/colinfang): helped with implementing macros for mdmath 2.3.5.
 * [lincr](https://github.com/LCAR979): Helped with fixing problems with `mdmath.clipToHtml` under Ubuntu.
 * [TonySFU](https://github.com/TonySFU): Helped with fixing encoding problems with Chinese language under macOS when using `mdmath.clipToHtml`.
 * [floatdrop](https://github.com/floatdrop): Verifying that [clipboardy](https://github.com/sindresorhus/clipboardy) is a better alternative to `copy-paste` by implementing.

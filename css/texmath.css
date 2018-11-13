@@ -1,13 +1,22 @@
 /* style for html inside of browsers */
-.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+/* align KaTeX font-size to surrounding text */
+.katex { font-size: 1em !important; }
+/* supress effect of display formulas with eqno having bigger margin */
+.katex-display { margin:0 !important; }
+/* overwrite github-markdown.css asymmetric margin values */
+.markdown-body blockquote, .markdown-body dl, .markdown-body ol, .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 eq { display: inline-block; }
-eqn { display: block}
+eqn { display: block; margin: 0; }
 section.eqno {
     display: flex;
     flex-direction: row;
     align-content: space-between;
     align-items: center;
+    
 }
 section.eqno > eqn {
     width: 100%;
