@@ -2,8 +2,8 @@
   "name": "mdmath",
   "displayName": "Markdown+Math",
   "description": "LaTeX Math for Markdown",
-  "icon": "./img/icon.png",
-  "version": "2.3.5",
+  "icon": "img/icon.png",
+  "version": "2.3.6",
   "author": "Stefan Goessner",
   "publisher": "goessner",
   "keywords": [
@@ -47,10 +47,7 @@
         },
         "mdmath.macros": {
           "type": "object",
-          "default": {
-            "\\RR": "\\mathbb{R}",
-            "\\vek": "{\\begin{pmatrix}#1\\\\#2\\end{pmatrix}}"
-          },
+          "default": {},
           "description": "TeX macros definition."
         },
         "mdmath.savePath": {
