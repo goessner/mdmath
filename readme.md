@@ -87,11 +87,7 @@ npm install
 ```json
   // Path to custom stylesheet file (css).
   "mdmath.delimiters": "dollars",
-  "mdmath.macros": {
-      "type": "object",
-      "default": {},
-      "description": "TeX macros definition."
-  },
+  "mdmath.macros": {},
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false
 ```
@@ -107,12 +103,8 @@ npm install
   * Define them in user settings. For example ...
   ```json
   "mdmath.macros": {
-      "type": "object",
-      "default": {
-          "\\RR": "\\mathbb{R}",
-          "\\vek": "{\\begin{pmatrix}#1\\\\#2\\end{pmatrix}}"
-      },
-      "description": "TeX macros definition."
+      "\\RR": "\\mathbb{R}",
+      "\\vek": "{\\begin{pmatrix}#1\\\\#2\\end{pmatrix}}"
   }
   ```
   * Use them in your markdown document. For example ...
