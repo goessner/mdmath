@@ -4,10 +4,6 @@
 
 ![](./img/triangle.png)
 
-Vectors in $\RR^2$ have a shape of
-
-$$\vek{x}{y}$$
-
 Let the right triangle hypothenuse be aligned with the coordinate system *x-axis*. 
 The vector loop closure equation running counter-clockwise then reads
 
