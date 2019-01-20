@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### [2.3.8]() on January 20, 2019
+* Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.5.4 due to resolved [blockquote bug](https://github.com/goessner/mdmath/issues/50).
+
 ### [2.3.5]() on October 25, 2018
 * Implemented macros supported by KaTeX.
 * Command to save HTML to file.

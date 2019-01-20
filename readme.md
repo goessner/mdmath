@@ -143,8 +143,7 @@ npm install
   * Blank lines before and behind required.
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
-  * We can use inline and display formulas in blockquote sections. In order to avoid the blockquote symbol `'>'` being part of a multiline display formula, display formulas have to be written on a single line in blockquote sections.
-  * Opening display formula in blockquote section and closing formula on a line behind the blockquote section resulted in a fatal error until VSCode 1.26.0. Now it is safe to do so.
+  * We can use inline and display formulas in blockquote sections. Starting with version 2.3.8 display formulas have to be written on a single line in blockquote sections. This might break only rarely some recent documents.
 * __Can I use math markup in code blocks ?__
   * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
 * __Can I access the HTML source of the markdown file ?__
