@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### [2.3.9]() on February 07, 2019
+* Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.5.5 due to resolved  [rendering bug with brackets delimiters](https://github.com/goessner/markdown-it-texmath/issues/9).
+
 ### [2.3.8]() on January 20, 2019
 * Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.5.4 due to resolved [blockquote bug](https://github.com/goessner/mdmath/issues/50).
 
