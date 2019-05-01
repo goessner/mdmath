@@ -127,7 +127,7 @@
     "get-stream": "^4.1.0",
     "is-stream": "^1.1.0",
     "isexe": "^2.0.0",
-    "katex": "^0.10.0",
+    "katex": "^0.10.1",
     "linkify-it": "^2.1.0",
     "lru-cache": "^5.1.1",
     "markdown-it": "^8.4.2",
