@@ -27,9 +27,11 @@ exports.activate = function activate(context) {
           tm = require('markdown-it-texmath').use(kt),
           path = require('path'),
           fs = require('fs'),
-          cfg = (key) => vscode.workspace.getConfiguration('mdmath')[key],
-          delimiters = cfg('delimiters') || 'dollars',
-          macros = JSON.parse(JSON.stringify(cfg('macros'))),  // wondering why this JSON stuff is necessary
+          markdownCfg = (key) => vscode.workspace.getConfiguration('markdown')[key],
+          mdmathCfg = (key) => vscode.workspace.getConfiguration('mdmath')[key],
+          delimiters = mdmathCfg('delimiters') || 'dollars',
+          macros = JSON.parse(JSON.stringify(mdmathCfg('macros'))),  // wondering why this JSON stuff is necessary
+          usrcss = markdownCfg('styles'),
           options = Object.keys(macros).length !== 0 ? {delimiters,macros} : {delimiters},
           runIf = (cond, f) => {
                 return () => {
@@ -50,12 +52,12 @@ exports.activate = function activate(context) {
                 if (!mdit)
                     return infoMsg('Corresponding markdown preview document needs to be opened at least once!');
                     
-                return htmlTmpl(mdit.render(doc.getText()))
+                return htmlTmpl(mdit.render(doc.getText()),usrcss)
           },
           outputLocationOf = (fsPath) => {
                 const root = vscode.workspace.getWorkspaceFolder(fsPath) || vscode.workspace.rootPath,
                       parsed = path.parse(fsPath),
-                      savePath = cfg('savePath')
+                      savePath = mdmathCfg('savePath')
                                     .replace('${file.name}', parsed.name)
                                     .replace('${file.ext}', parsed.ext),
                       out = savePath.startsWith('/') ? path.resolve(root, `.${savePath}`) : path.resolve(parsed.dir, savePath);
@@ -87,7 +89,7 @@ exports.activate = function activate(context) {
                 }
           },
           watch = (watcher) => {
-                const autosave = runIf(() => { return cfg('autosave') }, save);
+                const autosave = runIf(() => { return mdmathCfg('autosave') }, save);
                 watcher.onDidChange(autosave); 
                 watcher.onDidCreate(autosave);
                 watcher.onDidDelete((uri) => {
