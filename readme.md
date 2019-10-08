@@ -12,10 +12,12 @@ In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
-### What is new in **mdmath** 2.3.5 ...
-* KaTeX macros are supported. Simply define them by user settings `mdmath.macros`. See FAQ's for details.
-* Save corresponding HTML source to the file system. The markdown file name is used for this (extension `.html` though). The destination folder is the same, which is the default. You can change this behavior with help of user setting `mdmath.savePath`.
-* Activate `autosave` feature (default: `false`), so whenever you are saving the markdown file, its corresponding HTML file is also saved (to `mdmath.savePath`). Simply set user setting `mdmath.autosave: true` for this.
+### What is new in **mdmath** 2.4.0 ...
+* VScode native clipboard functionality is now used for clipping HTML source to the underlying systems clipboard.
+* Support for [Julia Markdown](https://docs.julialang.org/en/v1/stdlib/Markdown/) is added.
+* Dependency of third party `node.js` modules is drastically reduced.
+* User defined CSS style is working now.
+* Allow macro definition in a user defined JSON file in addition to macro definition inside of user settings.
 
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
@@ -43,6 +45,10 @@ document format.
     * display + equation number: `\[...\] (1)`
   * `'gitlab'`
     * inline: ``$`...`$``
+    * display: `` ```math ... ``` ``
+    * display + equation number: `` ```math ... ``` (1)``
+  * `'julia'`
+    * inline: `$...$`  or ``` ``...`` ```
     * display: `` ```math ... ``` ``
     * display + equation number: `` ```math ... ``` (1)``
   * `'kramdown'`
@@ -83,22 +89,28 @@ npm install
 * Press <kbd>Ctrl+K ,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
 * Press <kbd>Ctrl+K .</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
 
-## Default User Settings
+##  User Settings
+
+###  Default Settings
 ```json
-  // Path to custom stylesheet file (css).
   "mdmath.delimiters": "dollars",
   "mdmath.macros": {},
+  "mdmath.macroFile": "",
   "mdmath.savePath": "./${file.name}.html",
-  "mdmath.autosave": false
+  "mdmath.autosave": false,
+  "mdmath.style": ""
 ```
+###  Example Settings
+![mdmath example user settings](./img/usersettings.png)
 
 ## Dependencies
 
 * [`markdown-it`](https://github.com/markdown-it/markdown-it): The markdown renderer also used in VS Code.
 * [`katex`](https://github.com/Khan/KaTeX): This is where credits for fast rendering TeX math in HTML go to.
-* [`clipboardy`](https://github.com/sindresorhus/clipboardy): Access the system clipboard (copy/paste).
 
 ## FAQ
+* __How to define my own CSS file for HTML export ?__
+  * Define it by the user setting `mdmath.style` as an absolute URL. So for an example you might choose `mdmath.style: "file://c:/mystyle/mystyle.css"` with windows.
 * __How to define and use macros ?__
   * Define them in user settings. For example ...
   ```json
@@ -113,6 +125,13 @@ npm install
 
   $$\vek{x}{y}$$
   ```
+* __How to define macros in a user macro file?__
+  * Create a JSON file containing the macros and define its path in user settings. For example ...
+  ```json
+  "mdmath.macroFile": "c:/myfiles/mymacros.json"
+  ```
+  * Define the macros the same way as in the user settings.
+  * User macro definition file has priority over user defined macro settings, which are ignored then.
 * __Are there global predefined macros ?__
   * No. Macros are user defined with user settings `mdmath.macros`. So they are available in all user specific markdown documents.
 * __Can I write the HTML source to a file ?__
@@ -140,6 +159,7 @@ npm install
   * Line break inside is not allowed.
 * __What are the restrictions with display formulas ?__
   * Not allowed inline of text.
+  * Not allowed inside of tables. Use inline math there instead.
   * Blank lines before and behind required.
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
