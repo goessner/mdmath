@@ -86,8 +86,8 @@ npm install
 * Launch *VS Code*, create or open a markdown file (`.md`).
 * Open a preview window.
 * Typeset in your markdown source window and see the preview window live updating.
-* Press <kbd>Ctrl+K ,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
-* Press <kbd>Ctrl+K .</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
+* Press <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
+* Press <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>.</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
 
 ##  User Settings
 
@@ -135,7 +135,7 @@ npm install
 * __Are there global predefined macros ?__
   * No. Macros are user defined with user settings `mdmath.macros`. So they are available in all user specific markdown documents.
 * __Can I write the HTML source to a file ?__
-  * Yes. Use the <kbd>Markdown: Save Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K ,'`). 
+  * Yes. Use the `Markdown: Save Markdown+Math to Html` command or the key binding <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>,</kbd>. 
   * The Html file is written to the folder where the markdown file resides in. This is the default.
   * You can change the destination folder by specifying a relative path to your working directory with the help of the user setting `mdmath.savePath`. So for an example you might choose `mdmath.savePath: "./html/${file.name}.html"`.
 * __Can I synchronously let the HTML source file update ?__
@@ -167,7 +167,7 @@ npm install
 * __Can I use math markup in code blocks ?__
   * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
 * __Can I access the HTML source of the markdown file ?__
-  * Yes. Use the <kbd>Markdown: Clip Markdown+Math to Html</kbd> command or the key binding (`'ctrl+K .'`). 
+  * Yes. Use the `Markdown: Clip Markdown+Math to Html` command or the key binding <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>.</kbd>. 
   * The markdown preview window has to be opened once for this in order to function properly.
   * You need to have the markdown source window activated here (not the preview window!). 
   * Please note, that the resulting HTML source references 'CDN'-located remote css files. Change those references to local URL's if necessary.
