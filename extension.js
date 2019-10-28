@@ -110,7 +110,7 @@ const htmlTmpl = (html,usrcss) => `<!doctype html><html><head><meta charset="utf
 ${usrcss ? `<link rel="stylesheet" href="${usrcss}">` : ''}
 </head><body>
 ${html}
-</body></html>`.replace('vscode-resource:','');
+</body></html>`.replace(/<img src="vscode-resource:/g,'<img src="');
 
 
 //  class="markdown-body"
