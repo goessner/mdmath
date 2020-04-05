@@ -51,7 +51,7 @@ exports.activate = function activate(context) {
           outputLocationOf = (fsPath) => {
                 const root = vscode.workspace.getWorkspaceFolder(fsPath),
                       parsed = path.parse(fsPath),
-                      savePath = cfg('savePath')
+                      savePath = cfg('savePath')  // use https://code.visualstudio.com/updates/v1_31#_global-storage-path instead in future !
                                     .replace('${file.name}', parsed.name)
                                     .replace('${file.ext}', parsed.ext),
                       out = savePath.startsWith('/') ? path.resolve(root, `.${savePath}`) : path.resolve(parsed.dir, savePath);
@@ -101,16 +101,18 @@ exports.activate = function activate(context) {
 // this method is called when extension is deactivated ..
 exports.deactivate = function deactivate() {};
 
-const htmlTmpl = (html,usrcss) => `<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+const htmlTmpl = (html,usrcss) => `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/index.min.js">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath@0.6.5/css/texmath.css">
 <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
 ${usrcss ? `<link rel="stylesheet" href="${usrcss}">` : ''}
-</head><body>
+</head>
+<body class="markdown-body">
 ${html}
 </body></html>`.replace(/<img src="vscode-resource:/g,'<img src="');
 
-
-//  class="markdown-body"

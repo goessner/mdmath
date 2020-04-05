@@ -5,7 +5,7 @@
 * Removing dependency on node module `clipboardy` in favor of vscode native clipboard support.
 * code clean up and minimizing dependency on external node modules.
 * Finally support user defined CSS file for HTML export.
-* Allow macro definiion in an external file.
+* Allow macro definition in an external file.
 
 ### [2.3.9]() on February 07, 2019
 * Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.5.5 due to resolved  [rendering bug with brackets delimiters](https://github.com/goessner/markdown-it-texmath/issues/9).
