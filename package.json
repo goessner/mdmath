@@ -21,7 +21,7 @@
 	"homepage": "https://github.com/goessner/mdmath/blob/master/readme.md",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/goessner/mdmath.git"
+		"url": "https://github.com/goessner/mdmath.git"
 	},
 	"bugs": {
 		"url": "https://github.com/goessner/mdmath/issues"
