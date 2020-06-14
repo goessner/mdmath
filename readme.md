@@ -7,7 +7,7 @@
 
 ## What is it ...
 
-**mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.
+**mdmath** allows to use *Visual Studio Code* as a markdown editor capable of typesetting and rendering TeX math.K,
 In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast math renderer.
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).

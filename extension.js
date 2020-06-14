@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------------------------
- *  Copyright (c) Stefan Goessner - 2016-19. All rights reserved.
+ *  Copyright (c) Stefan Goessner - 2016-20. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 'use strict';
@@ -19,29 +19,32 @@ exports.activate = function activate(context) {
           errMsg = (msg) => {
                 vscode.window.showErrorMessage(`Markdown + Math: ${msg}`);
           },
-          asHTML = () => {
-                const doc = vscode.window.activeTextEditor
-                         && vscode.window.activeTextEditor.document,
-                      usrcss = cfg('style');
-
-                if (!doc || doc.languageId !== 'markdown')
-                    return infoMsg('Active document is no markdown source document!');
-                if (!mdit)
-                    return infoMsg('Corresponding markdown preview document needs to be opened at least once!');
-                    
+          asHTML = (doc) => {
+                const usrcss = cfg('style');
                 return htmlTmpl(mdit.render(doc.getText()), usrcss.length ? usrcss : false);
           },
           clip = () => {
-              vscode.env.clipboard.writeText(asHTML())
+                const doc = vscode.window.activeTextEditor
+                         && vscode.window.activeTextEditor.document;
+
+              vscode.env.clipboard.writeText(asHTML(doc))
                     .then(()=>infoMsg('Html copied to clipboard!'),
                           (err)=>errMsg('Html copying to clipboard failed: ' + err.message));
           },
-          save = (uri) => {
+          save = (arg) => {
                 try {
-                    const fs = require('fs');
-                    uri = uri || vscode.window.activeTextEditor.document.uri;
-                    fs.writeFileSync(outputLocationOf(uri.fsPath), asHTML(), 'utf8');
-                    infoMsg(`Html saved to ${outputLocationOf(uri.fsPath)} !`);
+                    const doc = arg && arg.uri ? arg : vscode.window.activeTextEditor && vscode.window.activeTextEditor.document;
+                    const uri = vscode.window.activeTextEditor.document.uri;
+                    if (!doc)
+                        errMsg('Saving html failed: invalid editor document!');
+                    else if (doc.languageId !== 'markdown')
+                        errMsg('Saving html failed: Active document is no markdown source document!');
+                    else if (doc.isUntitled)
+                        errMsg('Saving html failed: current untitled markdown document needs to be saved once first!');
+                    else {
+                        fs.writeFileSync(outputLocationOf(uri.fsPath), asHTML(doc), 'utf8');
+                        infoMsg(`Html saved to ${outputLocationOf(uri.fsPath)} !`);
+                    }
                 } catch (err) {
                     errMsg('Saving html failed: ' + err.message);
                 }
