@@ -6,7 +6,7 @@
 			"name":"block-dollars",
 			"begin": "(\\$\\$)",
 			"end": "(\\$\\$)",
-			"contentName": "markup.inline.raw"
+            "contentName": "markup.inline.raw"
 		},
 		{
 			"name":"inline-dollars",

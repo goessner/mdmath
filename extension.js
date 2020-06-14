@@ -10,9 +10,7 @@ const vscode = require('vscode');
 exports.activate = function activate(context) {
     let   mdit = null;   // markdown-it object ...
 
-    const kt = require('katex'),
-          tm = require('markdown-it-texmath').use(kt),
-          path = require('path'),
+    const path = require('path'),
           fs = require('fs'),
           cfg = (key) => vscode.workspace.getConfiguration('mdmath')[key],
           infoMsg = (msg) => {
@@ -60,20 +58,16 @@ exports.activate = function activate(context) {
           },
           loadMacros = () => {
                 try {
-                    const macroDef = JSON.stringify(cfg('macros')),
-                          macroUrl = cfg('macroFile'),
+                    const macroUrl = cfg('macroFile'),
                           macros = macroUrl.length ? fs.readFileSync(path.resolve(macroUrl),'utf8')
-                                                   : macroDef;
-
+                                                   : JSON.stringify(cfg('macros'))
                     return JSON.parse(macros);
                 } catch (err) {
                     errMsg('Loading macros failed: ' + err.message);
                 }
           },
           delimiters = JSON.parse(JSON.stringify(cfg('delimiters'))) || 'dollars', // wondering why this ...
-          macros = loadMacros(),  // ... JSON stuff is necessary ...
-          options = Object.keys(macros).length !== 0 ? {delimiters,macros} : {delimiters};
-
+          macros = loadMacros();  // ... JSON stuff is necessary ...
 
     context.subscriptions.push(vscode.commands.registerCommand('extension.clipToHtml', clip));
     context.subscriptions.push(vscode.commands.registerCommand('extension.saveToHtml', save));
@@ -94,7 +88,12 @@ exports.activate = function activate(context) {
 
     return {
         extendMarkdownIt: function(md) {
-            return (mdit = md).use(tm, options);
+            const options =  { engine: require('katex'),
+                               delimiters };
+
+            if (macros) options.macros = macros;
+
+            return (mdit = md).use(require('markdown-it-texmath'), options);
         }
     }
 }

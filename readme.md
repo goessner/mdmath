@@ -12,12 +12,12 @@ In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
-### What is new in **mdmath** 2.4.0 ...
-* VScode native clipboard functionality is now used for clipping HTML source to the underlying systems clipboard.
-* Support for [Julia Markdown](https://docs.julialang.org/en/v1/stdlib/Markdown/) is added.
-* Dependency of third party `node.js` modules is drastically reduced.
-* User defined CSS style is working now.
-* Allow macro definition in a user defined JSON file in addition to macro definition inside of user settings.
+### What is new in **mdmath** 2.5.0 ...
+* Markdown+Math is compatible with Pandoc. So with `dollars` namespace inline usage of `$$..$$` math expressions will result in display math notation (output on separate line).
+* Multiline math expressions in blockquote blocks are supported.
+* Code size is reduced.
+* Regular expressions were simplified.
+* Runtime performance is improved.
 
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
@@ -163,7 +163,9 @@ npm install
   * Blank lines before and behind required.
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
-  * We can use inline and display formulas in blockquote sections. Starting with version 2.3.8 display formulas have to be written on a single line in blockquote sections. This might break only rarely some recent documents.
+  * We can use inline and display formulas in blockquote sections. 
+  * Multiline display math expressions require leading `>` characters on each line. 
+  * Multilevel blockquote sections work as expected.
 * __Can I use math markup in code blocks ?__
   * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
 * __Can I access the HTML source of the markdown file ?__
@@ -176,8 +178,6 @@ npm install
   * See [Compiling Markdown into HTML](https://code.visualstudio.com/docs/languages/markdown).
 * __Can I use custom CSS styles for the preview window ?__
   *  Yes. Set `mdmath.style` in user settings to the location of your custom CSS file. Its path must be relative to this extension root.
-* __Cannot copy to clipboard on Linux ?__
-  * This may be because the upstream `clipboardy` needs `xsel` on Linux. Run `sudo apt-get install xsel` to install.
 * __Can we store Latex macros with mdmath ?__
   * Yes, there is a new section `mdmath.globalMacros` in `package.json`. Try to expand it with your own macros.
 

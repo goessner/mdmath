@@ -3,7 +3,7 @@
 	"displayName": "Markdown+Math",
 	"description": "LaTeX Math for Markdown ... with macros and more",
 	"icon": "img/icon.png",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"author": "Stefan Goessner",
 	"publisher": "goessner",
 	"keywords": [
@@ -75,7 +75,7 @@
 		},
 		"markdown.previewStyles": [
 			"./node_modules/katex/dist/katex.min.css",
-			"./css/texmath.css",
+			"./node_modules/markdown-it-texmath/css/texmath.css",
 			"./css/vscode-texmath.css"
 		],
 		"markdown.markdownItPlugins": true,
@@ -126,18 +126,17 @@
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"vscode": "^1.0.0"
+		"@types/vscode": "^1.45.0"
 	},
 	"dependencies": {
 		"argparse": "^1.0.9",
 		"commander": "^2.20.3",
-		"entities": "^2.0.0",
+		"entities": "^2.0.3",
 		"katex": "^0.11.1",
 		"linkify-it": "^2.2.0",
-		"markdown-it": "^10.0.0",
-		"markdown-it-texmath": "^0.6.5",
+		"markdown-it": "^11.0.0",
+		"markdown-it-texmath": "^0.7.0",
 		"mdurl": "^1.0.1",
-		"sprintf-js": "^1.1.2",
 		"uc.micro": "^1.0.6"
 	},
 	"__metadata": {

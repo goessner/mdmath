@@ -21,7 +21,9 @@ and squaring
 
 > finally results in the Pythagorean theorem (2)
 >
-> $$c^2 = a^2 + b^2$$ (2)
+> $$c^2 = 
+> a^2 + 
+> b^2$$ (2)
 
 ## More Triangle Stuff
 
@@ -31,3 +33,4 @@ Introducing the hypothenuse segments $p={\bold a}\cdot{\bold e}_x$ and  $q={\bol
 | segment *p* | segment *q* | height *h* | area |
 |:---:|:---:|:---:|:---:|
 |$cp = a^2$|$cq = b^2$|$pq = h^2$|$ab = ch$|
+

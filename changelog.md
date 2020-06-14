@@ -1,4 +1,14 @@
 ## CHANGELOG
+### [2.5.0]() on June 14, 2020
+* Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.7.0 due to support of Pandoc math syntax with `dollars` namespace.
+* Multiline math expressions in blockquote blocks are supported. Bug resolved.
+* Code size is reduced.
+* Regular expressions were simplified.
+* Runtime performance is improved.
+
+### [2.4.1]() on June 11, 2020
+* Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.6.9 due to support for multiline display math inside of blockquote blocks.
+* Update to `markdown-it` 11.0.0
 ### [2.4.0]() on October 06, 2019
 * Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.6.0 due to support for [Julia Markdown](https://docs.julialang.org/en/v1/stdlib/Markdown/).
 * Update to KaTeX 0.11.1
