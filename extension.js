@@ -14,10 +14,10 @@ exports.activate = function activate(context) {
           fs = require('fs'),
           cfg = (key) => vscode.workspace.getConfiguration('mdmath')[key],
           infoMsg = (msg) => {
-                vscode.window.showInformationMessage(`Markdown + Math: ${msg}`);
+                vscode.window.showInformationMessage(`Markdown+Math: ${msg}`);
           },
           errMsg = (msg) => {
-                vscode.window.showErrorMessage(`Markdown + Math: ${msg}`);
+                vscode.window.showErrorMessage(`Markdown+Math: ${msg}`);
           },
           asHTML = (doc) => {
                 const usrcss = cfg('style');
