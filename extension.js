@@ -34,7 +34,6 @@ exports.activate = function activate(context) {
           save = (arg) => {
                 try {
                     const doc = arg && arg.uri ? arg : vscode.window.activeTextEditor && vscode.window.activeTextEditor.document;
-                    const uri = vscode.window.activeTextEditor.document.uri;
                     if (!doc)
                         errMsg('Saving html failed: invalid editor document!');
                     else if (doc.languageId !== 'markdown')
@@ -42,8 +41,8 @@ exports.activate = function activate(context) {
                     else if (doc.isUntitled)
                         errMsg('Saving html failed: current untitled markdown document needs to be saved once first!');
                     else {
-                        fs.writeFileSync(outputLocationOf(uri), asHTML(doc), 'utf8');
-                        infoMsg(`Html saved to ${outputLocationOf(uri)} !`);
+                        fs.writeFileSync(outputLocationOf(doc.uri), asHTML(doc), 'utf8');
+                        infoMsg(`Html saved to ${outputLocationOf(doc.uri)} !`);
                     }
                 } catch (err) {
                     errMsg('Saving html failed: ' + err.message);
