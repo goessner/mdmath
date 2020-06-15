@@ -42,16 +42,16 @@ exports.activate = function activate(context) {
                     else if (doc.isUntitled)
                         errMsg('Saving html failed: current untitled markdown document needs to be saved once first!');
                     else {
-                        fs.writeFileSync(outputLocationOf(uri.fsPath), asHTML(doc), 'utf8');
-                        infoMsg(`Html saved to ${outputLocationOf(uri.fsPath)} !`);
+                        fs.writeFileSync(outputLocationOf(uri), asHTML(doc), 'utf8');
+                        infoMsg(`Html saved to ${outputLocationOf(uri)} !`);
                     }
                 } catch (err) {
                     errMsg('Saving html failed: ' + err.message);
                 }
           },
-          outputLocationOf = (fsPath) => {
-                const root = vscode.workspace.getWorkspaceFolder(fsPath),
-                      parsed = path.parse(fsPath),
+          outputLocationOf = (uri) => {
+                const root = vscode.workspace.getWorkspaceFolder(uri),
+                      parsed = path.parse(uri.fsPath),
                       savePath = cfg('savePath')  // use https://code.visualstudio.com/updates/v1_31#_global-storage-path instead in future !
                                     .replace('${file.name}', parsed.name)
                                     .replace('${file.ext}', parsed.ext),
