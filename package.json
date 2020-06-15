@@ -28,7 +28,7 @@
 	},
 	"license": "MIT",
 	"engines": {
-		"vscode": "^1.8.0"
+		"vscode": "^1.45.0"
 	},
 	"categories": [
 		"Programming Languages",
