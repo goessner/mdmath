@@ -96,6 +96,7 @@ npm install
   "mdmath.delimiters": "dollars",
   "mdmath.macros": {},
   "mdmath.macroFile": "",
+  "mdmath.options": {},
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false,
   "mdmath.style": ""
@@ -134,6 +135,26 @@ npm install
   * User macro definition file has priority over user defined macro settings, which are ignored then.
 * __Are there global predefined macros ?__
   * No. Macros are user defined with user settings `mdmath.macros`. So they are available in all user specific markdown documents.
+* __How to define and use Katex options ?__
+  * Define them in user settings. For example ...
+  ```json
+  "mdmath.options": {
+      "leqno": true
+  }
+  ```
+* __Can I define and use macros in Katex options together with the ones in a user macro file?__
+  * Yes. Macros can be defined using `mdmath.macros` and `mdmath.macroFile` together with `mdmath.options`. For example...
+  ```json
+  "mdmath.options": {
+      "leqno": true,
+      "macros": {
+          "\\RR": "\\mathbb{R}"
+      }
+  }
+  ```
+  * However, macros in `mdmath.options` will be overidden by those in `mdmath.macros` and `mdmath.macroFile` if there is any namespace collisions.
+* __Why don't I see changes in my preview window after editing Katex options?__
+  * Close your current windows and open new ones for the changes to be applied.
 * __Can I write the HTML source to a file ?__
   * Yes. Use the `Markdown: Save Markdown+Math to Html` command or the key binding <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>,</kbd>. 
   * The Html file is written to the folder where the markdown file resides in. This is the default.

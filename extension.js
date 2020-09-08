@@ -69,7 +69,9 @@ exports.activate = function activate(context) {
                 }
           },
           delimiters = JSON.parse(JSON.stringify(cfg('delimiters'))) || 'dollars', // wondering why this ...
-          macros = loadMacros();  // ... JSON stuff is necessary ...
+          macros = loadMacros(),  // ... JSON stuff is necessary ...
+          katexOptions = JSON.parse(JSON.stringify(cfg('options'))) || {}
+          katexOptions.macros = { ...katexOptions.macros, ...macros };
 
     context.subscriptions.push(vscode.commands.registerCommand('extension.clipToHtml', clip));
     context.subscriptions.push(vscode.commands.registerCommand('extension.saveToHtml', save));
@@ -91,9 +93,8 @@ exports.activate = function activate(context) {
     return {
         extendMarkdownIt: function(md) {
             const options =  { engine: require('katex'),
-                               delimiters };
-
-            if (macros) options.macros = macros;
+                               delimiters,
+                               katexOptions };
 
             return (mdit = md).use(require('markdown-it-texmath'), options);
         }
