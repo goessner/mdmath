@@ -55,6 +55,11 @@
 					"type": "string",
 					"default": "",
 					"description": "Absolute path of JSON file containing TeX macro definitions."
+                },
+                "mdmath.options": {
+					"type": "object",
+					"default": {},
+					"description": "Katex options definition."
 				},
 				"mdmath.savePath": {
 					"type": "string",
