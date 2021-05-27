@@ -3,7 +3,7 @@
 	"displayName": "Markdown+Math",
 	"description": "LaTeX Math for Markdown ... with macros and more",
 	"icon": "img/icon.png",
-	"version": "2.5.1",
+	"version": "2.5.5",
 	"author": "Stefan Goessner",
 	"publisher": "goessner",
 	"keywords": [
@@ -11,6 +11,7 @@
 		"LaTeX",
 		"KaTeX",
 		"markdown",
+	    "markdown-it",
 		"math",
 		"multi-root ready"
 	],
@@ -132,10 +133,10 @@
 		"argparse": "^1.0.9",
 		"commander": "^2.20.3",
 		"entities": "^2.0.3",
-		"katex": "^0.11.1",
+		"katex": "^0.13.11",
 		"linkify-it": "^2.2.0",
-		"markdown-it": "^11.0.0",
-		"markdown-it-texmath": "^0.7.0",
+		"markdown-it": "^12.0.6",
+		"markdown-it-texmath": "^0.9.0",
 		"mdurl": "^1.0.1",
 		"uc.micro": "^1.0.6"
 	},

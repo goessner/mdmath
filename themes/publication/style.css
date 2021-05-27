@@ -1,0 +1,389 @@
+/**
+ * microjam.latex.css
+ *
+ * Inspired by: https://github.com/vincentdoerig/latex-css
+ */
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LM-regular.woff2') format('woff2'),
+    url('./fonts/LM-regular.woff') format('woff'),
+    url('./fonts/LM-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LM-italic.woff2') format('woff2'),
+    url('./fonts/LM-italic.woff') format('woff'),
+    url('./fonts/LM-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('./fonts/LM-bold.woff2') format('woff2'),
+    url('./fonts/LM-bold.woff') format('woff'),
+    url('./fonts/LM-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('./fonts/LM-bold-italic.woff2') format('woff2'),
+    url('./fonts/LM-bold-italic.woff') format('woff'),
+    url('./fonts/LM-bold-italic.ttf') format('truetype');
+}
+
+
+/* Latin Modern (LaTeX default) font */
+/*
+@font-face {
+	font-family: 'Latin Modern Roman';
+	font-weight: normal;
+	font-style: normal;
+	src: url('./witex/lmroman10-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Latin Modern Roman';
+	font-weight: bold;
+	font-style: normal;
+	src: url('./witex/lmroman10-bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Latin Modern Roman';
+	font-weight: normal;
+	font-style: italic;
+	src: url('./witex/lmroman10-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Latin Modern Roman';
+	font-weight: bold;
+	font-style: italic;
+	src: url('./witex/lmroman10-bolditalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Latin Modern Mono';
+	font-weight: normal;
+	font-style: normal;
+	src: url('./witex/lmmono10-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Latin Modern Mono';
+	font-weight: normal;
+	font-style: italic;
+	src: url('./witex/lmmono10-italic.woff') format('woff');
+}
+*/
+html {
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
+/* Make default font-size 1rem and add smooth scrolling to anchors */
+
+body {
+  font-family: 'Latin Modern Roman', Palatino, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  color: #1f3939;
+  background-color: #fffff8;
+  word-wrap: break-word;
+
+  max-width: 640px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 20mm auto;
+  padding: 2rem 1.25rem;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* header section */
+
+/* main title */
+header h1 {
+  text-align: center;
+}
+/* subtitel */
+header h1 + h3 {
+  margin: 0.8em 0;
+  text-align: center;
+}
+/*  authors */
+header h1 + h4,
+header h1 + h3 + h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.625rem;
+  margin: 0.85rem auto;
+  font-variant-caps: small-caps;
+  text-align: center;
+}
+/* adresses&Date&Whatever */
+header h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0.85rem auto;
+  text-align: center;
+}
+/* end of header section */
+
+/* abstract heading (first child of main) */
+h3:first-child,
+#abstract {
+  font-size: 1.7rem;
+  text-align: center;
+}
+/* abstract text ... */
+h3:first-child + p,
+#abstract + p {
+  font-weight: 400; 
+  margin: 0.75em 2rem;
+}
+
+/* toc ... */
+#content + ul li {
+  list-style: none;
+}
+
+/* main content */
+main {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* read 'heading for'  */
+h4  {
+  font-weight: 400;
+  font-size: 0.95em;
+  text-align: center;
+  margin: 1em 0 0.75em 0;
+}
+/* table heading & table, code, image capture */
+h4 + table,
+table + h4,
+img + h4,
+pre + h4,
+figure + h4 {
+  margin-top: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  width: 55%;
+  border: 0;
+  border-top: 2px solid #ccc;
+  margin: 1em auto;
+  padding: 0; 
+}
+
+/* Justify and hyphenate all paragraphs */
+p {
+  text-align: justify;
+  hyphens: auto;
+  margin: 0.75em 0;
+}
+/* 'Abstract' paragraph ... */
+#abstract + p {
+  font-weight: 400;
+  margin: 0.75em 3rem;
+}
+
+a:link, a:visited, a:hover {
+  text-decoration-skip-ink: auto;
+  color: inherit;
+}
+
+blockquote {
+  font-size: 0.9em;
+  margin: 0.75em 3em;
+  padding: 0 0.5em;
+  border-left: 3px solid #999;
+}
+
+/* code sections */
+code, kbd {
+  font-family: 'Latin Modern Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.85em;
+}
+pre {
+  margin: 0.75em 0 0.5em 0;
+}
+pre > code > code > div,
+pre > code.code-line > div {
+  font-family: 'Latin Modern Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  background-color:#eee;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  white-space: pre-wrap;
+}
+kbd {
+  border-radius: 3px;
+  padding: 1px 2px 0;
+  margin: 0 2px;
+  color: #444;
+  border: 1px solid #999;
+  background-color: #eee;
+}
+
+img {
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+figure {
+  margin: 0.75em auto 0.5em auto;
+  text-align: center;
+}
+figcaption {
+  font-size: 0.95em;
+}
+
+table {
+  width: auto;
+  margin: 0.5em auto 0.5em auto;
+  border-collapse: collapse;
+}
+table th, table td {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+table th, table td {
+  padding: 0.25em 0.5em;
+}
+
+aside {
+  font-size: 0.9em;
+  width: 33%;
+  padding: 0 0 0 1em;
+  margin: 1em 0 1em 1em;
+  float: right;
+}
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Format the LaTeX symbol correctly (a higher up, e lower) */
+span q:nth-child(1) {
+  quotes: none;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-style: normal;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+span q:nth-child(2) {
+  quotes: none;
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+@media print {
+
+/** Setting margins */       
+@page {
+  size: A4;
+  margin: 17.5mm;
+}
+html, body {
+  height: auto;    /* avoid extra blank end page */
+  min-height: initial !important;
+  margin: 0 !important; 
+  padding: 0 !important;
+  overflow: hidden;
+}
+body {
+  width: 210mm; 
+  float: none;
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1.3;
+  color: black;
+  background-color:white;
+}
+main {
+  font-size: 10pt;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  break-after: avoid; 
+  break-inside: avoid;
+}
+
+/* toc ... */
+#content + ul li > a {
+  text-decoration: none;
+}
+
+a, pre, img, aside, figure, svg, canvas {
+  break-inside: avoid;
+}
+
+p, blockquote {
+   widows: 2;
+   orphans: 2;
+}
+
+pre > code > code > div,
+pre > code.code-line > div {
+  padding: 0.5em 1em;
+  white-space: pre-wrap;
+}
+
+/* Insert Author content */
+/*
+main:after {
+  content: "\ All rights reserved. © 2020 the authors";
+  color: #aaa !important;
+  font-size: 0.8em;
+  padding-top: 1em;
+  page-break-after: auto;
+}
+.print:last-child{
+    page-break-after: auto;
+    margin-bottom: 0px;
+}
+*/
+}  /* end @media print */
