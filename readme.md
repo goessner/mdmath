@@ -143,6 +143,7 @@ npm install
       "leqno": true
   }
   ```
+
 * __Can I define and use macros in Katex options together with the ones in a user macro file?__
   * Yes. Macros can be defined using `mdmath.macros` and `mdmath.macroFile` together with `mdmath.katexOptions`. For example...
   ```json
