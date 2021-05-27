@@ -96,7 +96,7 @@ npm install
   "mdmath.delimiters": "dollars",
   "mdmath.macros": {},
   "mdmath.macroFile": "",
-  "mdmath.options": {},
+  "mdmath.katexOptions": {},
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false,
   "mdmath.style": ""
@@ -113,7 +113,8 @@ npm install
 * __How to define my own CSS file for HTML export ?__
   * Define it by the user setting `mdmath.style` as an absolute URL. So for an example you might choose `mdmath.style: "file://c:/mystyle/mystyle.css"` with windows.
 * __How to define and use macros ?__
-  * Define them in user settings. For example ...
+  * Note: **This is deprecated**. Prefer using KaTeX options (s. below).
+   Define them in user settings. For example ...
   ```json
   "mdmath.macros": {
       "\\RR": "\\mathbb{R}",
@@ -138,21 +139,22 @@ npm install
 * __How to define and use Katex options ?__
   * Define them in user settings. For example ...
   ```json
-  "mdmath.options": {
+  "mdmath.katexOptions": {
       "leqno": true
   }
   ```
 * __Can I define and use macros in Katex options together with the ones in a user macro file?__
-  * Yes. Macros can be defined using `mdmath.macros` and `mdmath.macroFile` together with `mdmath.options`. For example...
+  * Yes. Macros can be defined using `mdmath.macros` and `mdmath.macroFile` together with `mdmath.katexOptions`. For example...
   ```json
-  "mdmath.options": {
+  "mdmath.katexOptions": {
       "leqno": true,
       "macros": {
           "\\RR": "\\mathbb{R}"
       }
   }
   ```
-  * However, macros in `mdmath.options` will be overidden by those in `mdmath.macros` and `mdmath.macroFile` if there is any namespace collisions.
+  * Note: Prefer them over deprecated `macro` definition!
+  * Macros in `mdmath.katexOptions` have priority over those in `mdmath.macros` and `mdmath.macroFile`. So there is an 'either / or'!
 * __Why don't I see changes in my preview window after editing Katex options?__
   * Close your current windows and open new ones for the changes to be applied.
 * __Can I write the HTML source to a file ?__

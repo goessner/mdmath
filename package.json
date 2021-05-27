@@ -47,6 +47,11 @@
 					"default": "dollars",
 					"description": "Math formula delimiters."
 				},
+				"mdmath.theme": {
+					"type": "string",
+					"default": "default",
+					"description": "Choose from available themes ['default','minimal','publication']."
+				},
 				"mdmath.macros": {
 					"type": "object",
 					"default": {},
@@ -57,10 +62,15 @@
 					"default": "",
 					"description": "Absolute path of JSON file containing TeX macro definitions."
                 },
-                "mdmath.options": {
+                "mdmath.outerspace": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enclose inline math `$` pair with space characters, as a guard against misinterpretation of single `$`'s in normal markdown (default: `false` for backward compatibility)."
+				},
+                "mdmath.katexoptions": {
 					"type": "object",
 					"default": {},
-					"description": "Katex options definition."
+					"description": "Katex options definition. (see https://katex.org/docs/options.html)"
 				},
 				"mdmath.savePath": {
 					"type": "string",
