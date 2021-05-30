@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="mdmath &ndash; how to use LaTex theme with markdown">
+<meta name="author" content="Stefan Gössner<sup>1</sup>">
+<meta name="date" content="Sat May 01 2021 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="keywords" content="mdmath,static page,publication,Journal,LaTeX,math">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/vs.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\stefan\.vscode\extensions\goessner.mdmath-2.5.1\themes\publication\style.css">
+
+<title>mdmath - <span>L<q>a</q>T<q>e</q>X</span> Style</title>
+</head>
+<body id="top">
+<header>
+<h1>mdmath - <span>L<q>a</q>T<q>e</q>X</span> Style</h1>
+<h3>Give your Web Publications <span>L<q>a</q>T<q>e</q>X</span> Style</h3>
+<h4>Stefan Gössner<sup>1</sup></h4>
+<h5><sup>1</sup>Dortmund University of Applied Sciences. Department of Mechanical Engineering</h5>
+<h5>May 2021</h5>
+<h5><b>Keywords:</b> mdmath, static page, publication, Journal, LaTeX, math</h5>
+</header>
+<main>
+
+<h3 id="abstract-1">Abstract</h3>
+<p>Now there is an easy way to have both, a possibly interactive, static web page containing math and a scientific print document for documentation and publication,
+each looking like a professional LaTeX document. All you need is the popular free, open source <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em> text editor</a> with its lightweight extension <a href="https://marketplace.visualstudio.com/items?itemName=goessner.mdmath"><em>Markdown+Math</em></a> for managing LaTeX style and math syntax as well as using meanwhile ubiquitous Markdown language. The resulting <em>HTML</em> document already containes prerendered math formulas, so browsers won't have the burden of math rendering via scripting.</p>
+<h2 id="content-1">Content</h2>
+<h2 id="1-introduction-1">1. Introduction</h2>
+<p>Motivation behind the idea of having a webpage looking like a LaTeX document is to style web articles in the same way as research papers or handouts. Intention is to generate both</p>
+<ul>
+<li>a graphical interactive static web page.</li>
+<li>a print document for documentation and publication.</li>
+</ul>
+<p>from a single Markdown source document [<a href="#1">1</a>].</p>
+<p>Markdown parsers usually export semantic HTML, i.e. meaningful HTML elements only, while avoiding artificial <code>&lt;div class=&quot;context&quot;&gt;</code> tags [<a href="#1">1-3</a>]. Styling those – from Markdown originated – HTML documents is accomplished then by using <em>classless</em> CSS stylesheets [<a href="#4">4,5</a>]. Styling semantic HTML with classless CSS ...</p>
+<ul>
+<li>makes HTML and CSS easy to read and understand.</li>
+<li>results in overall small code size.</li>
+<li>installs no rigid class name dependencies between HTML and CSS.</li>
+</ul>
+<p>This paper – styled itself as a LaTeX document – first lists the necessary installation aspects in short. After a tiny example of a LaTeX styled markdown document, it gives a short overview of Markdown for newcomers. Finally some useful features proposed for scientific publication are explained in more detail.</p>
+<p>Source code of the HTML template and its accompanying class-less CSS file can be found on GitHub [<a href="#6">6</a>].</p>
+<h2 id="editor-math-extension-and-configuration-1">Editor, Math Extension and Configuration</h2>
+<p>If you are a programmer, chances are high, that you already have installed and use <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em></a>. Otherwise you can install it from <a href="https://code.visualstudio.com/">here</a> and easily use it as a general non-wysiwyg text editor with excellent markdown support.</p>
+<p>Getting scientific now we install the VSCode extension <a href="https://marketplace.visualstudio.com/items?itemName=goessner.mdmath">markdown+math</a>. You can do it <a href="https://code.visualstudio.com/docs/editor/extension-marketplace">directly from within VSCode</a>.</p>
+<p>Now in VSCode we select the menu entry</p>
+<pre><code><code><div>File &gt; Preferences &gt; Settings
+</div></code></code></pre>
+<p>and choose the <em>mdmath</em> extension theme <code>'publication'</code>.</p>
+<figure> 
+   <img src="./img/publication-settings.png">
+</figure>  
+<figcaption>Fig 1: Setting theme for LaTeX output.</figcaption><br>
+<p>Now for verifying, that everything works as expected ...</p>
+<ul>
+<li>Open a new file in VSCode and save it as <code>euler.md</code>.</li>
+<li>Navigate your browser to the example file <a href="https://raw.githubusercontent.com/goessner/mdmath/master/docs/euler.md"><code>https://raw.githubusercontent.com/goessner/mdmath/master/docs/euler.md</code></a> and copy / paste the markdown text into your open VSCode document.</li>
+<li>Open a preview window to the side (<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>V</kbd>).</li>
+</ul>
+<p>You should see something similar to the following yet:</p>
+<figure> 
+   <img src="./img/euler-identity.png">
+</figure>  
+<figcaption>Fig 2: Markdown Example &ndash; Euler's Identity </figcaption><br>
+<p>Now from the VSCode Command Palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) run the command <code>Markdown: Save Markdown+Math to HTML</code> or more simply press (<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>,</kbd>).</p>
+<h2 id="markdown-to-html-1">Markdown to HTML</h2>
+<p>According to the CommonMark specification [<a href="#2">2</a>], basic Markdown translates into a limited set of semantic HTML elements.</p>
+<pre><code class="code-line language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">img</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+</div></code></pre>
+<p>For supporting these elements only, we would merely need a small CSS file. But we might recall, that Markdown allows to embed plain HTML code.
+So we can use HTML inline elements besides regular Markdown inline rules.</p>
+<h4 id="table-1-some-inline-markdown--markup-1"><strong>Table 1</strong>: Some Inline Markdown / Markup</h4>
+<table>
+<thead>
+<tr>
+<th>Markdown / Markup</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A [link to the top](#top)</code></td>
+<td>A <a href="#top">link to the top</a></td>
+</tr>
+<tr>
+<td><code>*italic text*</code></td>
+<td><em>italic text</em></td>
+</tr>
+<tr>
+<td><code>**strong text**</code></td>
+<td><strong>strong text</strong></td>
+</tr>
+<tr>
+<td><code>***strong italic text***</code></td>
+<td><em><strong>strong italic text</strong></em></td>
+</tr>
+<tr>
+<td><code>~~strike through~~</code></td>
+<td><s>strike through</s></td>
+</tr>
+<tr>
+<td><code>&lt;!--stripped comment--&gt;</code></td>
+<td><!--stripped comment--></td>
+</tr>
+<tr>
+<td><code>&lt;u&gt;underlining&lt;/u&gt;</code></td>
+<td><u>underlining</u></td>
+</tr>
+<tr>
+<td><code>Super&lt;sup&gt;script&lt;/sup&gt;</code></td>
+<td>Super<sup>script</sup></td>
+</tr>
+<tr>
+<td><code>Sub&lt;sub&gt;script&lt;/sub&gt;</code></td>
+<td>Sub<sub>script</sub></td>
+</tr>
+<tr>
+<td><code>&lt;small&gt;Small text for fine print&lt;/small&gt;</code></td>
+<td><small>Small text for fine print</small></td>
+</tr>
+<tr>
+<td><code>&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Del&lt;/kbd&gt;</code></td>
+<td><kbd>Alt</kbd>+<kbd>Ctrl</kbd> <kbd>Del</kbd></td>
+</tr>
+<tr>
+<td><code>&lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt;</code></td>
+<td><abbr title="Cascading Style Sheets">CSS</abbr></td>
+</tr>
+<tr>
+<td><code>Hilite text with &lt;mark&gt;mark&lt;/mark&gt;</code></td>
+<td>Hilite text with <mark>mark</mark></td>
+</tr>
+<tr>
+<td><code>Hard line&lt;br&gt;break</code> *</td>
+<td>Hard line<br>break</td>
+</tr>
+<tr>
+<td><code>&lt;q&gt;... If not now, when?&lt;/q&gt; &amp;ndash; JFK</code></td>
+<td><q>... If not now, when?</q> – JFK</td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;L&lt;q&gt;a&lt;/q&gt;T&lt;q&gt;e&lt;/q&gt;X&lt;/span&gt;</code> **</td>
+<td><span>L<q>a</q>T<q>e</q>X</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="beneath-the-br-element-we-can-also-use-two-trailing-spaces-at-the-end-of-linebr-topology-and-styling-of-this-logo-is-discussed-below-1">* Beneath the <code>&lt;br&gt;</code> element we can also use two trailing spaces at the end of line.<br>** Topology and styling of this logo is discussed below.</h4>
+<h2 id="document-structure-1">Document Structure</h2>
+<p>The visual part of this document has a simple semantic structure:</p>
+<pre><code class="code-line language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<p>The <code>&lt;header&gt;</code> section contains the paper's title, authors, author addresses, date and keywords. These data are to be found in a <em>frontmatter</em> metadata section at the beginning of the Markdown file. Those metadata will be processed via an HTML template file.</p>
+<p>Your Markdown content goes into the <code>&lt;main&gt;</code> section and will then be parsed by <a href="https://markdown-it.github.io/markdown-it/"><code>markdown-it</code></a>.
+Markdown does not assist you to structure your textual content any further. Especially it does not offer equivalent HTML <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> elements. But in fact it doesn't need to, as <em>headings</em> – the remaining structuring elements – are totally sufficient.</p>
+<h3 id="heading-1">Heading</h3>
+<p>The style used here only supports 4 different headings for logical sectioning content.</p>
+<pre><code class="code-line language-md"><div><span class="hljs-section"># `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span></span>` ... reserved for paper title</span>
+<span class="hljs-section">## `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span></span>` ... primary section headings </span>
+<span class="hljs-section">### `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span></span>` ... lower level headings</span>
+<span class="hljs-section">#### `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span></span>` ... special `heading` for tables, images, aside sections, source listings</span>
+</div></code></pre>
+<p>We want to adapt the conventions from <a href="https://edwardtufte.github.io/tufte-css/">Tufte-CSS</a>, where only two heading levels <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> are supported with reference to famous <em>Feynman</em> lectures on physics [<a href="#8">8</a>].</p>
+<h3 id="paragraph-1">Paragraph</h3>
+<p>Markdown interpretes a sequence of text lines, separated from others by a blank line, as a paragraph and translates it into an HTML <code>&lt;p&gt;</code> element.
+In the same way you can't control text wrap with HTML, you cannot do that with Markdown.
+But as already mentioned, you can – as an exception to that rule – force a <em>hard line break</em> by using <code>&lt;br&gt;</code> or appending at least two trailing spaces at the end of the line.</p>
+<h3 id="blockquote-1">Blockquote</h3>
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting.</p>
+<pre><code class="code-line language-md"><div><span class="hljs-quote">&gt; A human being is part of a whole called by us <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">q</span>&gt;</span></span>Universe<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">q</span>&gt;</span></span>.  </span>
+<span class="hljs-quote">&gt; -- <span class="hljs-emphasis">*Albert Einstein*</span></span>
+</div></code></pre>
+<blockquote>
+<p>A human being is part of a whole called by us <q>Universe</q>.<br>
+-- <em>Albert Einstein</em></p>
+</blockquote>
+<p>In scientific documents <em>Theorems</em>, <em>Lemmas</em> and <em>Proofs</em> are frequently written using blockquote syntax in Markdown.</p>
+<h3 id="table-1">Table</h3>
+<p>We can use a simple syntax for tables, which is a popular extension to the CommonMark standard [<a href="#9">9</a>].</p>
+<pre><code><code><div>#### Table 2:  Syntax
+| Left | Center | Right |
+|:---|:---:|--:|
+|L|C|R| 
+</div></code></code></pre>
+<p>Inline rules as shown in Table 1 apply to the table cells.</p>
+<h4 id="table-2-syntax-1">Table 2: Syntax</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Left</th>
+<th style="text-align:center">Center</th>
+<th style="text-align:right">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:center">C</td>
+<td style="text-align:right">R</td>
+</tr>
+</tbody>
+</table>
+<p>Tables as a whole are always center-aligned. Note, how <code>&lt;h4&gt;</code> heading is used as the table heading / caption. Also note, how the second line defines the cell content alignment.</p>
+<h3 id="code-blocks-1">Code Blocks</h3>
+<p>We can insert preformatted text in code blocks enclosed by three backticks <code>```</code> on its own single line each.</p>
+<pre><code class="code-line language-md"><div><span class="hljs-code">```
+M a t r i x
+ [ 1 0 0 ]
+ [ 0 1 0 ]
+ [ 0 0 1 ]
+```</span>
+</div></code></pre>
+<p>Immediatelly following the begin-backticks we may specify the language for syntax highlighting.</p>
+<pre><code><code><div>```js
+function print({x=0,y=0}) {
+    return `(${x},${y}`;
+};
+console.log(print({x:3,y:4}));
+```
+#### Code Listing
+</div></code></code></pre>
+<p>The <code>&lt;h4&gt;</code> heading again can be comfortably used as a code block caption.</p>
+<pre><code class="code-line language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params">{x=<span class="hljs-number">0</span>,y=<span class="hljs-number">0</span>}</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`(<span class="hljs-subst">${x}</span>,<span class="hljs-subst">${y}</span>`</span>;
+};
+<span class="hljs-built_in">console</span>.log(print({<span class="hljs-attr">x</span>:<span class="hljs-number">3</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">4</span>}));
+</div></code></pre>
+<h4 id="code-listing-1">Code Listing</h4>
+<h3 id="sidebar-1">Sidebar</h3>
+<aside>
+   <img src="./img/triangle.png">
+</aside>
+<p>The term &quot;sidebar&quot; describes &quot;a portion of a document whose content is only indirectly related to the document's main content&quot;. It comes from its frequently seen presentation as a visually separated box placed at the page's side.</p>
+<p>&quot;Sidebar&quot; is not a Markdown element. But we can make elegantly and via the semantic HTML <code>&lt;aside&gt;</code> element.</p>
+<pre><code class="code-line language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./img/triangle.png&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>We are allowed to use</p>
+<ul>
+<li>headings &amp; paragraphs</li>
+<li>lists &amp; tables</li>
+<li>blockquotes &amp; code blocks &amp; images</li>
+</ul>
+<p>with sidebars.</p>
+</blockquote>
+<h2 id="images-1">Images</h2>
+<p>Images are inline elements with the syntax <code>![alt text](/path/to/img &quot;title&quot;)</code>.</p>
+<pre><code><code><div>![logo](./img/md.32x20-solid.png &quot;logo&quot;) 
+![logo dimensions](./img/markdown-mark-spec.png &quot;logo dimensions&quot;) 
+</div></code></code></pre>
+<p>So these images are displayed side by side.</p>
+<p><img src="./img/md.32x20-solid.png" alt="logo" title="logo" class="loading" id="image-hash-1122324271">
+<img src="./img/markdown-mark-spec.png" alt="logo dimensions" title="logo dimensions" class="loading" id="image-hash--1722599794"></p>
+<p>If we want to center-align an image and give it a caption, we might want to use the semantic HTML <code>&lt;figure&gt;</code> element instead.</p>
+<pre><code><code><div>&lt;figure&gt;
+  &lt;img src=&quot;./img/triangle.png&quot;&gt;
+&lt;/figure&gt;
+</div></code></code></pre>
+<figure> 
+   <img src="./img/euler-identity.png">
+</figure>  
+<figcaption>Fig 1: Euler's Identity</figcaption>
+<p>The figure caption can be placed below via our meanwhile universal <code>&lt;h4&gt;</code> (read: '<em>heading for</em>' :) or in this case via the even more semantic HTML <code>&lt;figcaption&gt;</code> element.</p>
+<p>Images are responsive, which we can verify by changing the size of the browser window.</p>
+<h2 id="math-1">Math</h2>
+<p><em>Inline</em> and <em>display math</em> expressions are supported. The excerpt of a publication then might look like this [<a href="#11">11</a>]:</p>
+<pre><code class="code-line language-md"><div>The symplectic ... there is
+
+$$\bold J \frac{\partial\bold a}{\partial x} = \frac{\partial\bold a}{\partial y}\quad and \quad \bold J \frac{\partial\bold a}{\partial y} = -\frac{\partial\bold a}{\partial x}\,.$$
+
+Complex structure ... (see $\bold J^2 = -\bold I$) ... the expression
+
+$$c\,\bold a + d\,\tilde\bold a = \begin{pmatrix}c x - d y \\ c y + d x\end{pmatrix}\,,$$ (3.8)
+</div></code></pre>
+<p>The symplectic vector space is equipped with a complex structure <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">J</mi></mrow><annotation encoding="application/x-tex">\bold J</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">J</span></span></span></span></eq> according to (2.6).
+This also holds in general for tangent vectors, so for vector <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">a</mi><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><msup><mo stretchy="false">)</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">\bold a = (x, y)^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.44444em;vertical-align:0em;"></span><span class="mord mathbf">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span></eq> there is</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">J</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mspace width="1em"/><mi>a</mi><mi>n</mi><mi>d</mi><mspace width="1em"/><mi mathvariant="bold">J</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\bold J \frac{\partial\bold a}{\partial x} = \frac{\partial\bold a}{\partial y}\quad and \quad \bold J \frac{\partial\bold a}{\partial y} = -\frac{\partial\bold a}{\partial x}\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord mathbf">J</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:1em;"></span><span class="mord mathnormal">an</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:1em;"></span><span class="mord mathbf">J</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></eqn></section></math>
+<p>Complex structure <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">J</mi></mrow><annotation encoding="application/x-tex">\bold J</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord mathbf">J</span></span></span></span></eq> plays the role of the imaginary unit <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span></eq> (see <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="bold">J</mi><mn>2</mn></msup><mo>=</mo><mo>−</mo><mi mathvariant="bold">I</mi></mrow><annotation encoding="application/x-tex">\bold J^2 = -\bold I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">J</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathbf">I</span></span></span></span></eq>) performing a counterclockwise rotation by <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mtext> </mtext></mrow><annotation encoding="application/x-tex">\pi/2\,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord">/2</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span></span></span></span></eq>. We can write down the expression</p>
+<section class="eqno"><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>c</mi><mtext> </mtext><mi mathvariant="bold">a</mi><mo>+</mo><mi>d</mi><mtext> </mtext><mover accent="true"><mi mathvariant="bold">a</mi><mo>~</mo></mover><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.1600em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>c</mi><mi>x</mi><mo>−</mo><mi>d</mi><mi>y</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>c</mi><mi>y</mi><mo>+</mo><mi>d</mi><mi>x</mi></mrow></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mtext> </mtext><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">c\,\bold a + d\,\tilde{\bold a} = \begin{pmatrix}c x - d y \\ c y + d x\end{pmatrix}\,,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathbf">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6812999999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">a</span></span><span style="top:-3.36344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">~</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">cy</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span></span></span></span></span></eqn><span>(3.8)</span></section></math>
+<p>Math rendering takes place in parallel with the Markdown parsing process by the parser plugin <code>markdown-it-texmath</code> [<a href="#10">10</a>] in combination with the fast Math renderer KaTeX [<a href="#12">12</a>]. Benefit is here, that the resulting HTML document has the prerendered math formulas already included. So there is no need to load and use scripts for browser side math rendering.</p>
+<h2 id="styling-1">Styling</h2>
+<p>Upto here we were mainly talking about content elements and structure. Styling – and with that LaTeX look and feel – wasn't mentioned significantly so far, apart from some positioning aspects.</p>
+<h3 id="available-latex-stylesheets-1">Available LaTeX Stylesheets</h3>
+<p>In order to approach that LaTeX look and feel by Markdown authoring, we need a pure classless CSS stylesheet. Asking my search engine for '<code>latex css</code>' gives – after filtering – four relevant hits:</p>
+<ul>
+<li><em>Huy Nguyen</em>'s <strong>latex-simple-css</strong>, <a href="https://github.com/huyng/latex-simple-css">GitHub</a>, <a href="https://github.com/huyng/latex-simple-css/blob/master/custom.css">stylesheet</a>, <a href="https://everyhue.me/latex-simple-css/">Example</a>
+<ul>
+<li>Classless CSS, HTML example file is heavily class-dependent.</li>
+<li>No math.</li>
+<li>No Latex fonts.</li>
+</ul>
+</li>
+<li><em>Andrew Belt</em>'s <strong>WiTex</strong>, <a href="https://github.com/AndrewBelt/WiTeX">GitHub</a>, <a href="https://github.com/AndrewBelt/WiTeX/blob/master/style.css">stylesheet</a>, <a href="https://github.com/AndrewBelt/WiTeX/blob/master/screenshot.png">Example</a>
+<ul>
+<li>LaTeX CSS file copied and modified from Wikipedia, not classless.</li>
+<li>Math rendering via MathJax scripting.</li>
+<li><code>'Latin Modern Roman'</code> font files.</li>
+</ul>
+</li>
+<li><em>David Zollikofer</em>'s <strong>latexcss</strong>, <a href="https://github.com/davidrzs/latexcss">GitHub</a>, <a href="https://github.com/davidrzs/latexcss/blob/master/latex.css">stylesheet</a>, <a href="https://davidrzs.github.io/latexcss/">Example</a>
+<ul>
+<li>Classless CSS + classes for theorem, lemma, proof, ...</li>
+<li>Math rendering via MathJax scripting.</li>
+<li>Data-url embedded <code>'Latin Modern Roman'</code> fonts.</li>
+</ul>
+</li>
+<li><em>Vincent Dörig</em>'s <strong>latex-css</strong>, <a href="https://github.com/vincentdoerig/latex-css">GitHub</a>, <a href="https://github.com/vincentdoerig/latex-css/blob/master/style.css">stylesheet</a>, <a href="https://latex.now.sh/">Example</a>
+<ul>
+<li>Classless CSS + classes for theorem, lemma, proof, ...</li>
+<li>Math rendering via MathJax scripting.</li>
+<li><code>'Latin Modern Roman'</code> font files.</li>
+</ul>
+</li>
+</ul>
+<p>All of these four stylesheets seem to address handmade HTML exclusively. HTML as Markdown export is not mentioned.</p>
+<ul>
+<li>
+<p>The first CSS file from <em>Huy Nguyen</em> looks completely classless. Unfortunately its associated HTML example file is heavily class-dependent. No math is enabled. No special font files were used.</p>
+</li>
+<li>
+<p>Andrew Belt – the second – has copied and modified a LaTeX CSS file from Wikipedia, which is far away from being classless. He offers a set of good looking <code>'Latin Modern Roman'</code> fonts in his repository. He does math rendering via Mathjax scripting.</p>
+</li>
+<li>
+<p>Vincent Dörig – the last – has recently published a very promising LaTeX CSS file.</p>
+</li>
+</ul>
+<h2 id="conclusion-1">Conclusion</h2>
+<h2 id="references-1">References</h2>
+<p><span id='1'>[1]  <a href="https://daringfireball.net/projects/markdown/">Daring Fireball</a><br>
+<span id='2'>[2] <a href="https://commonmark.org/">CommonMark</a><br>
+<span id='3'>[3] <a href="https://github.com/commonmark/commonmark-spec/wiki/Deployed-Extensions">CommonMark - Deployed Extensions</a><br>
+<span id='4'>[4] <a href="https://css-tricks.com/no-class-css-frameworks/">No-Class CSS Frameworks </a><br>
+<span id='5'>[5] <a href="https://blog.usejournal.com/the-next-css-frontier-classless-5e66f3f25fdd">The Next CSS Frontier — Classless</a><br>
+<span id="6">[6]</span> <a href="https://github.com/goessner/mdmath">margdown+math</a>.<br>
+<span id="7">[7]</span> <a href="https://github.com/goessner/markdown-it-texmath">markdown-it-texmath</a>.<br>
+<span id='8'>[8] <a href="https://www.feynmanlectures.caltech.edu/">The Feyman Lectures on Physics</a><br>
+<span id="12">[11]</span> <a href="https://www.researchgate.net/publication/338124384_Symplectic_Geometry_for_Engineers_-_Fundamentals">Symplectic Geometry for Engineers - Fundamentals</a> .</p>
+
+</main>
+</body>
+</html>

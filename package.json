@@ -50,6 +50,7 @@
 				"mdmath.theme": {
 					"type": "string",
 					"default": "default",
+					"enum": ["default", "minimal", "publication"],
 					"description": "Choose from available themes ['default','minimal','publication']."
 				},
 				"mdmath.macros": {
