@@ -3,7 +3,7 @@
 	"displayName": "Markdown+Math",
 	"description": "LaTeX Math for Markdown ... with macros and more",
 	"icon": "img/icon.png",
-	"version": "2.5.5",
+	"version": "2.6.0",
 	"author": "Stefan Goessner",
 	"publisher": "goessner",
 	"keywords": [
@@ -11,7 +11,7 @@
 		"LaTeX",
 		"KaTeX",
 		"markdown",
-	    "markdown-it",
+		"markdown-it",
 		"math",
 		"multi-root ready"
 	],
@@ -50,7 +50,11 @@
 				"mdmath.theme": {
 					"type": "string",
 					"default": "default",
-					"enum": ["default", "minimal", "publication"],
+					"enum": [
+						"default",
+						"minimal",
+						"publication"
+					],
 					"description": "Choose from available themes ['default','minimal','publication']."
 				},
 				"mdmath.macros": {
@@ -62,13 +66,13 @@
 					"type": "string",
 					"default": "",
 					"description": "Absolute path of JSON file containing TeX macro definitions."
-                },
-                "mdmath.outerspace": {
+				},
+				"mdmath.outerspace": {
 					"type": "boolean",
 					"default": false,
 					"description": "Enclose inline math `$` pair with space characters, as a guard against misinterpretation of single `$`'s in normal markdown (default: `false` for backward compatibility)."
 				},
-                "mdmath.katexoptions": {
+				"mdmath.katexoptions": {
 					"type": "object",
 					"default": {},
 					"description": "Katex options definition. (see https://katex.org/docs/options.html)"

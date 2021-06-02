@@ -46,7 +46,7 @@ const ext = {
      */
     asHTML(markdown) {
         const usrcss = ext.cfg('style');
-        const theme = ext.cfg('default');
+        const theme = ext.cfg('theme');
         const extPath = vscode.extensions.getExtension("goessner.mdmath").extensionPath;
         const tmplturi = path.resolve(extPath, './themes/', theme, './theme.js');
         const cssuri = path.resolve(extPath, './themes/', theme, './style.css');
@@ -180,16 +180,14 @@ exports.activate = function activate(context) {
         extendMarkdownIt(md) {
             const tm = require('markdown-it-texmath');
             const delimiters = JSON.parse(JSON.stringify(ext.cfg('delimiters'))) || 'dollars'; // wondering why this JSON stuff is necessary ...
+            const katexOptions = JSON.parse(JSON.stringify(ext.cfg('katexoptions') || '')) || {};
             const macros = ext.loadMacros();
-            const katexOptions = JSON.parse(JSON.stringify(ext.cfg('katexOptions') || '')) 
-                              || macros && { macros }
-                              || {};
             const outerSpace = ext.cfg('outerspace') || false;
-            const options = { "engine": require('katex'),
+            const options =  { "engine": require('katex'),
                                "delimiters": delimiters,
                                "outerSpace": outerSpace,
-                               "katexOptions": katexOptions
-                            };
+                               "katexOptions": macros && !katexOptions.macros ? Object.assign(katexOptions, macros) : katexOptions
+                                };
 
            (ext.mdit = md).use(tm, options);
            return ext.mdit;

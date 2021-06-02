@@ -12,7 +12,7 @@ ${data.tags ? `<meta name="keywords" content="${data.tags.join()}">` : ''}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/vs.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
-<link rel="stylesheet" href="${data.cssuri}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/goessner/mdmath/themes/publication/style.css">
 ${data.usrcss ? `<link rel="stylesheet" href="${data.usrcss}">` : ''}
 <title>${data.title}</title>
 </head>

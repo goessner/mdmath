@@ -1,10 +1,14 @@
-p { text-align: justify; }
+p { 
+    text-align: justify; 
+    hyphens: auto;
+}
 
 table {
     display: table !important;
     width: auto !important;
     margin-left: auto !important;
-    margin-right: auto !important; 
+    margin-right: auto !important;
+    margin-bottom: 1em !important;
     border-collapse: collapse !important;
 }
 
@@ -22,9 +26,25 @@ figure > img {
     display: block;
     margin: 0 auto;
     page-break-inside: avoid;
+    text-align: center;
 }
 figcaption { 
-    display: block;
-    text-align: center;
+    font-size: 0.9em;
     margin-top: 0.5em;
+    text-align: center;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 300px;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
 }

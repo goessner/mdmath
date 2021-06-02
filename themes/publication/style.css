@@ -1,5 +1,5 @@
 /**
- * microjam.latex.css
+ * mdmath.latex.css
  *
  * Inspired by: https://github.com/vincentdoerig/latex-css
  */
@@ -269,6 +269,7 @@ figure {
 }
 figcaption {
   font-size: 0.95em;
+  text-align: center;
 }
 
 table {

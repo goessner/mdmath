@@ -3,9 +3,9 @@
 	"injectionSelector": "meta.paragraph.markdown",
 	"patterns": [
 		{
-			"name":"block-dollars",
-			"begin": "(\\$\\$)",
-			"end": "(\\$\\$)",
+			"name":"pandoc-dollars",
+			"begin": "(^|\\s*)\\$\\$",
+			"end": "\\$\\$",
             "contentName": "markup.inline.raw"
 		},
 		{

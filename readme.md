@@ -1,16 +1,9 @@
-# ![mdmath](img/icon.png) Markdown+Math
-
-[![License](https://img.shields.io/github/license/goessner/markdown-it-texmath.svg)](https://github.com/goessner/mdmath/blob/master/licence.txt)
-[![npm](https://img.shields.io/npm/v/markdown-it-texmath.svg)](https://www.npmjs.com/package/markdown-it-texmath)
-[![npm](https://img.shields.io/npm/dt/markdown-it-texmath.svg)](https://www.npmjs.com/package/markdown-it-texmath)
-[![](https://data.jsdelivr.com/v1/package/npm/markdown-it-texmath/badge)](https://www.jsdelivr.com/package/npm/markdown-it-texmath)
+# ![mdmath](https://github.com/goessner/mdmath/raw/master/img/icon.png) Markdown+Math
 
 [![marketplace](https://vsmarketplacebadge.apphb.com/version/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 [![marketplace](https://vsmarketplacebadge.apphb.com/installs-short/goessner.mdmath.svg)](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 [![License](https://img.shields.io/github/license/goessner/mdmath.svg)](https://github.com/goessner/mdmath/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/mdmath.svg)](https://www.npmjs.com/package/mdmath)
-[![npm](https://img.shields.io/npm/dt/mdmath.svg)](https://www.npmjs.com/package/mdmath)
-
 
 ## What is it ...
 
@@ -63,7 +56,7 @@ document format.
     * display: `$$...$$`
     * display + equation number: `$$...$$ (1)`
 
-![mdmath editing](./img/mdmath.gif)
+![mdmath editing](https://github.com/goessner/mdmath/raw/master/./img/mdmath.gif)
 
 ## Installation ...
 
@@ -103,13 +96,12 @@ npm install
   "mdmath.delimiters": "dollars",
   "mdmath.macros": {},
   "mdmath.macroFile": "",
-  "mdmath.katexOptions": {},
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false,
   "mdmath.style": ""
 ```
 ###  Example Settings
-![mdmath example user settings](./img/usersettings.png)
+![mdmath example user settings](https://github.com/goessner/mdmath/raw/master/./img/usersettings.png)
 
 ## Dependencies
 
@@ -120,8 +112,7 @@ npm install
 * __How to define my own CSS file for HTML export ?__
   * Define it by the user setting `mdmath.style` as an absolute URL. So for an example you might choose `mdmath.style: "file://c:/mystyle/mystyle.css"` with windows.
 * __How to define and use macros ?__
-  * Note: **This is deprecated**. Prefer using KaTeX options (s. below).
-   Define them in user settings. For example ...
+  * Define them in user settings. For example ...
   ```json
   "mdmath.macros": {
       "\\RR": "\\mathbb{R}",
@@ -143,28 +134,6 @@ npm install
   * User macro definition file has priority over user defined macro settings, which are ignored then.
 * __Are there global predefined macros ?__
   * No. Macros are user defined with user settings `mdmath.macros`. So they are available in all user specific markdown documents.
-* __How to define and use Katex options ?__
-  * Define them in user settings. For example ...
-  ```json
-  "mdmath.katexOptions": {
-      "leqno": true
-  }
-  ```
-
-* __Can I define and use macros in Katex options together with the ones in a user macro file?__
-  * Yes. Macros can be defined using `mdmath.macros` and `mdmath.macroFile` together with `mdmath.katexOptions`. For example...
-  ```json
-  "mdmath.katexOptions": {
-      "leqno": true,
-      "macros": {
-          "\\RR": "\\mathbb{R}"
-      }
-  }
-  ```
-  * Note: Prefer them over deprecated `macro` definition!
-  * Macros in `mdmath.katexOptions` have priority over those in `mdmath.macros` and `mdmath.macroFile`. So there is an 'either / or'!
-* __Why don't I see changes in my preview window after editing Katex options?__
-  * Close your current windows and open new ones for the changes to be applied.
 * __Can I write the HTML source to a file ?__
   * Yes. Use the `Markdown: Save Markdown+Math to Html` command or the key binding <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>,</kbd>. 
   * The Html file is written to the folder where the markdown file resides in. This is the default.
@@ -225,11 +194,11 @@ The following folks helped to make `mdmath` even better.
 
 ## Contributing
 
-See [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md)
+See [`.github/CONTRIBUTING.md`](https://github.com/goessner/mdmath/blob/master/.github/CONTRIBUTING.md)
 
 ## Changelog
 
-See [`changelog.md`](changelog.md)
+See [`changelog.md`](https://github.com/goessner/mdmath/blob/master/changelog.md)
 
 ## License
 
