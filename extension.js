@@ -116,7 +116,7 @@ const ext = {
                 ext.errMsg('Saving html failed: Active document is no markdown source document!');
             else if (doc.isUntitled)
                 ext.errMsg('Saving html failed: current untitled markdown document needs to be saved once first!');
-            else {
+            else if (!ext.cfg('silent')) {
                 fs.writeFileSync(ext.outputLocationOf(doc.uri), ext.asHTML(doc.getText()), 'utf8');
                 ext.infoMsg(`Html saved to ${ext.outputLocationOf(doc.uri)} !`);
             }

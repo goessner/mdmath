@@ -77,6 +77,11 @@
 					"default": {},
 					"description": "Katex options definition. (see https://katex.org/docs/options.html)"
 				},
+				"mdmath.silent": {
+					"type": "boolean",
+					"default": false,
+					"description": "Supress user notification while saving HTML file."
+				},
 				"mdmath.savePath": {
 					"type": "string",
 					"default": "./${file.name}.html",
