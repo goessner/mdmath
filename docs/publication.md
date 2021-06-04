@@ -30,6 +30,8 @@ each looking like a professional LaTeX document. All you need is the popular fre
   - [6. Conclusion](#6-conclusion)
   - [References](#references)
 
+<br><br><br><br><br><br>.
+
 ## 1. Introduction
 
 There has been an upward trend in using Markdown language not only for web content, but also for student notes, handouts and scientific papers of small to medium size. Markdown source files are benefitial for viewing, editing and archiving content. Additionally we can generate visually pleasing LaTeX style documents from it
@@ -196,9 +198,10 @@ Besides regular Markdown inline rules there are some beneficial HTML inline elem
 |`<q>... quotation ...</q>` | <q>... quotation ...</q> |
 |`<cite>... citation ...</cite>` | <cite>... citation ...</cite> |
 
+<br><br>
+
 ### 3.7 Table
 
-We can use a simple syntax for tables, which is a popular extension to the CommonMark standard [[3](#3)].
 ```
 <figcaption> Table 3: Column alignment </figcaption>
 
@@ -206,7 +209,7 @@ We can use a simple syntax for tables, which is a popular extension to the Commo
 |:---|:---:|--:|
 |L|C|R| 
 ```
-Inline rules as shown in Table 2 apply to the table cells.
+We can use a simple syntax for tables, which is a popular extension to the CommonMark standard [[3](#3)]. Inline rules as shown in Table 2 apply to the table cells. Tables as a whole are always center-aligned.
 
 <figcaption> Table 3: Column alignment </figcaption>
 
@@ -214,7 +217,6 @@ Inline rules as shown in Table 2 apply to the table cells.
 |:---|:---:|--:|
 |L|C|R| 
 
-Tables as a whole are always center-aligned.
 
 ### 3.8 Wrapping Text around figures, listings, etc.
 

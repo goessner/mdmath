@@ -4,19 +4,19 @@ p {
 }
 
 table {
-    display: table; /* !important */
-    width: auto; /* !important */
-    margin-left: auto; /* !important */
-    margin-right: auto; /* !important */
-    margin-bottom: 1em; /* !important */
-    border-collapse: collapse; /* !important */
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
 }
 
 table th, table td {
-    border-left: none; /* !important */
-    border-right: none; /* !important */
-    border-top: 1px solid #000; /* !important */
-    border-bottom: 1px solid #000; /* !important */
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 figure {

@@ -12,12 +12,17 @@ In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast
 
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
-### What is new in **mdmath** 2.5.0 ...
-* Markdown+Math is compatible with Pandoc. So with `dollars` namespace inline usage of `$$..$$` math expressions will result in display math notation (output on separate line).
-* Multiline math expressions in blockquote blocks are supported.
-* Code size is reduced.
-* Regular expressions were simplified.
-* Runtime performance is improved.
+### What is new in **mdmath** 2.6.0 ...
+* Different themes for HTML export are supported now. User can choose
+  * default
+  * minimal
+  * publication (LaTeX style)
+
+  theme in user settings.
+* Commutative diagrams are working now.
+* Insert *Table Of Content* command available. Inject ToC at cursor location via `Insert Table of Content` from Command Palette (<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>T</kbd>).
+* User notification on HTML export can be suppressed via boolean user setting `Silent` (default: `false`).
+* Enforce inline math `$...$` pair being enclosed by space characters as a guard against misinterpretation of single `$`'s in normal markdown via user setting `Outerspace` (default: `false` for backward compatibility).
 
 ## Features
 Simplify the process of authoring and live previewing markdown documents containing math formulas.
@@ -25,7 +30,7 @@ This extension is a comfortable tool for scientists, engineers and students with
 document format.
 
 * Inline math
-* Display math
+* Display math (Pandoc compatible)
 * Formula numbering
 * Inline math with tables
 * Works offline.
@@ -86,8 +91,9 @@ npm install
 * Launch *VS Code*, create or open a markdown file (`.md`).
 * Open a preview window.
 * Typeset in your markdown source window and see the preview window live updating.
-* Press <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
-* Press <kbd>Ctrl</kbd>+<kbd>K</kbd><kbd>.</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
+* Press <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>,</kbd> or run the command `Save Markdown+Math to HTML` to save the corresponding HTML source to the file system. 
+* Press <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>.</kbd> or run the command `Clip Markdown+Math to HTML` to copy the corresponding HTML source to the underlying systems clipboard.
+* Press <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>T</kbd> or run the command `Insert Table of Content` to insert a generated Table of Content at cursor location.
 
 ##  User Settings
 
@@ -98,7 +104,10 @@ npm install
   "mdmath.macroFile": "",
   "mdmath.savePath": "./${file.name}.html",
   "mdmath.autosave": false,
-  "mdmath.style": ""
+  "mdmath.style": "",
+  "mdmath.theme": "default",
+  "mdmath.silent": false,
+  "mdmath.outerspace": false
 ```
 ###  Example Settings
 ![mdmath example user settings](https://github.com/goessner/mdmath/raw/master/./img/usersettings.png)

@@ -1,4 +1,19 @@
 ## CHANGELOG
+### [2.6.0]() on June 04, 2021
+* Different themes for HTML export are supported now. User can choose
+  * default
+  * minimal
+  * publication (LaTeX style)
+
+  theme in user settings.
+* Commutative diagrams are working now.
+* Insert *Table Of Content* command available. Inject ToC at cursor location via `Insert Table of Content` from Command Palette (<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>T</kbd>).
+* User notification on HTML export can be suppressed via boolean user setting `Silent` (default: `false`).
+* Enforce inline math `$` pair being enclosed by space characters as a guard against misinterpretation of single `$`'s in normal markdown via user setting `Outerspace` (default: `false` for backward compatibility).
+* Update to KaTex version 0.13.11.
+* Update to `markdown-it` version 12.0.6.
+* Update to `markdown-it-texmath` version 0.9.0.
+
 ### [2.5.0]() on June 14, 2020
 * Update with respect to update of [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath) to version 0.7.0 due to support of Pandoc math syntax with `dollars` namespace.
 * Multiline math expressions in blockquote blocks are supported. Bug resolved.
