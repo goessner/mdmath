@@ -18,7 +18,7 @@ ${data.usrcss ? `<link rel="stylesheet" href="${data.usrcss}">` : ''}
 </head>
 <body id="top">
 <header>
-<h1>${data.title}</h1>
+${data.title ? `<h1>${data.title}</h1>` : ''}
 ${data.subtitle ? `<h3>${data.subtitle}</h3>` : ''}
 ${data.authors ? `<h4>${data.authors.join(', ')}</h4>` : ''}
 ${data.adresses ? `<h5>${data.adresses.join('<br>')}</h5>` : ''}

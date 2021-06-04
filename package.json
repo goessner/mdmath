@@ -102,7 +102,7 @@
 		"markdown.previewStyles": [
 			"./node_modules/katex/dist/katex.min.css",
 			"./node_modules/markdown-it-texmath/css/texmath.css",
-			"./css/vscode-texmath.css"
+			"./css/vscode-mdmath.css"
 		],
 		"markdown.markdownItPlugins": true,
 		"commands": [
@@ -115,17 +115,27 @@
 				"command": "extension.saveToHtml",
 				"title": "Save Markdown+Math to HTML",
 				"category": "Markdown"
+			},
+			{
+				"command": "extension.insertToc",
+				"title": "Insert Table of Content",
+				"category": "Markdown"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "extension.clipToHtml",
 				"key": "ctrl+K .",
+				"command": "extension.clipToHtml",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "extension.saveToHtml",
 				"key": "ctrl+K ,",
+				"command": "extension.saveToHtml",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "ctrl+K T",
+				"command": "extension.insertToc",
 				"when": "editorTextFocus"
 			}
 		],

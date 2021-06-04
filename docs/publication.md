@@ -1,6 +1,6 @@
 ---
 "lang": "en",
-"title": "mdmath - LaTeX Style",
+"title": "Web Publications &mdash; LaTeX Style",
 "subtitle": "Give your Web Publications <span>L<q>a</q>T<q>e</q>X</span> Style",
 "authors": ["Stefan Gössner<sup>1</sup>"],
 "adresses": ["<sup>1</sup>Dortmund University of Applied Sciences. Department of Mechanical Engineering"],
@@ -10,25 +10,25 @@
 ---
 ### Abstract
 Now there is an easy way to have both, a possibly interactive, static web page containing math and a scientific print document for documentation and publication,
-each looking like a professional LaTeX document. All you need is the popular free, open source [*Visual Studio Code* text editor](https://code.visualstudio.com/) with its lightweight extension [*Markdown+Math*](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath) for managing LaTeX style and math syntax as well as using meanwhile ubiquitous Markdown language. The resulting *HTML* document already containes prerendered math formulas, so browsers won't have the burden of math rendering via scripting.
+each looking like a professional LaTeX document. All you need is the popular free, open source [*Visual Studio Code* text editor](https://code.visualstudio.com/) with its lightweight extension [*Markdown+Math*](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath) for managing LaTeX style and math syntax as well as using meanwhile ubiquitous Markdown language. The resulting *HTML* document already contains prerendered math formulas, so browsers won't have the burden of math rendering via scripting.
 
 ## Content
-
-[1. Introduction](#1-introduction)  
-[2. Editor, Math Extension and Configuration](#2-editor-math-extension-and-configuration)   
-[3. Markdown Overview](#3-markdown-overview)  
-&nbsp;&nbsp;&nbsp;[3.1 Headings](#31-headings)  
-&nbsp;&nbsp;&nbsp;[3.2 Paragraph](#32-paragraph)  
-&nbsp;&nbsp;&nbsp;[3.3 Images](#33-images)  
-&nbsp;&nbsp;&nbsp;[3.4 Blockquote](#34-blockquote)  
-&nbsp;&nbsp;&nbsp;[3.5 Code Blocks](#35-code-blocks)  
-&nbsp;&nbsp;&nbsp;[3.6 Inline Markdown](#36-inline-markdown)  
-&nbsp;&nbsp;&nbsp;[3.7 Table](#37-table)  
-&nbsp;&nbsp;&nbsp;[3.8 Wrapping Text around figures, listings, etc.](#38-wrapping-text-around-figures-listings-etc)  
-&nbsp;&nbsp;&nbsp;[3.9 Math Support](#39-math-support)  
-[4. Document Structure](#4-document-structure)  
-[5. Styling](#5-styling)  
-[6. Conclusion](#6-conclusion)  
+  - [1. Introduction](#1-introduction)
+  - [2. Editor, Math Extension and Configuration](#2-editor-math-extension-and-configuration)
+  - [3. Markdown Overview](#3-markdown-overview)
+    - [3.1 Headings](#31-headings)
+    - [3.2 Paragraph](#32-paragraph)
+    - [3.3 Images](#33-images)
+    - [3.4 Blockquote](#34-blockquote)
+    - [3.5 Code Blocks](#35-code-blocks)
+    - [3.6 Inline Markdown](#36-inline-markdown)
+    - [3.7 Table](#37-table)
+    - [3.8 Wrapping Text around figures, listings, etc.](#38-wrapping-text-around-figures-listings-etc)
+    - [3.9 Math Support](#39-math-support)
+  - [4. Document Structure](#4-document-structure)
+  - [5. Styling](#5-styling)
+  - [6. Conclusion](#6-conclusion)
+  - [References](#references)
 
 ## 1. Introduction
 
@@ -143,11 +143,11 @@ Images are responsive regarding their size, which we can verify by changing the 
 Markdown uses email-style `>` characters for blockquoting.
 
 ```md
-> A human being is part of a whole called by us <q>Universe<q>.  
-> -- *Albert Einstein*
+> A human being is part of a whole called by us <q>Universe</q>.  
+> &mdash; Albert Einstein, *A Man of Many Parts*
 ```
 > A human being is part of a whole called by us <q>Universe</q>.  
-> -- *Albert Einstein*
+> &mdash; Albert Einstein, *A Man of Many Parts*.
 
 In scientific documents *Theorems*, *Lemmas* and *Proofs* are frequently written using blockquote syntax in Markdown.
 
@@ -194,6 +194,7 @@ Besides regular Markdown inline rules there are some beneficial HTML inline elem
 |`Hilite text with <mark>mark</mark>` | Hilite text with <mark>mark</mark> |
 |`Hard line<br>break` * | Hard line<br>break |
 |`<q>... quotation ...</q>` | <q>... quotation ...</q> |
+|`<cite>... citation ...</cite>` | <cite>... citation ...</cite> |
 
 ### 3.7 Table
 
@@ -279,7 +280,13 @@ The `<header>` section contains the paper's title, authors, author addresses, da
 ---
 ```
 
-> Note that Frontmatter syntax used here must strictly obey  `JSON` syntax. So it is more restrictive than YAML based Frontmatter syntaxes.
+> Note that Frontmatter syntax used here must strictly obey `JSON` syntax. So it is more restrictive than `YAML` based Frontmatter syntaxes.
+
+*mdmath* offers a very basic but useful *Table Of Content* command. While editing Markdown ... 
+
+1. Invoke comand `Insert Table of Content` from Command Palette or press <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>T</kbd>.
+2. Manually remove unwanted ToC entries.
+3. Done.
 
 ## 5. Styling
 
@@ -306,7 +313,7 @@ There are some LaTeX stylesheets on the web.
 
 All of these stylesheets seem to address handmade HTML exclusively. HTML as Markdown export is not mentioned.
 
-Vincent Dörig's approach looks very promising.  Acknowledgment goes to him for providing the *Latin Modern* typeface font reused with *mdmath*. 
+Vincent Dörig's approach looks very promising.  Acknowledgment goes to him for providing the *Latin Modern Roman* typeface font reused with *mdmath*. 
 
 ## 6. Conclusion
 
@@ -317,17 +324,15 @@ HTML output provided by the theme <q>publication</q> of *mdmath* offers a stylin
 
 
 ### References
-
-<span id='1'>[1]  [Daring Fireball](https://daringfireball.net/projects/markdown/)   
-<span id='2'>[2] [CommonMark](https://commonmark.org/)  
-<span id='3'>[3] [CommonMark - Deployed Extensions](https://github.com/commonmark/commonmark-spec/wiki/Deployed-Extensions)  
-<span id='4'>[4] [No-Class CSS Frameworks ](https://css-tricks.com/no-class-css-frameworks/)  
-<span id='5'>[5] [The Next CSS Frontier — Classless](https://blog.usejournal.com/the-next-css-frontier-classless-5e66f3f25fdd)  
-<span id='6'>[6] [Tufte-CSS](https://edwardtufte.github.io/tufte-css/), https://edwardtufte.github.io/tufte-css/  
-<span id="7">[7]</span> [markdown+math](https://github.com/goessner/mdmath).  
-<span id="8">[8]</span> [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath).  
-<span id='9'>[9] [KaTeX](https://katex.org/) (https://katex.org/)  
-<span id='10'>[10] [markdown-it](https://github.com/markdown-it/markdown-it) (https://github.com/markdown-it/markdown-it)  
-<span id='11'>[11] [The Feyman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)  
-
+<span id='1'>[1] Daring Fireball (https://daringfireball.net/projects/markdown/)  
+<span id='2'>[2] CommonMark (https://commonmark.org/)   
+<span id='3'>[3] CommonMark - Deployed Extensions,   (https://tinyurl.com/5bm568tn)   
+<span id='4'>[4] No-Class CSS Frameworks, (https://css-tricks.com/no-class-css-frameworks/)  
+<span id='5'>[5] The Next CSS Frontier — Classless, (https://tinyurl.com/vynsw3ew)  
+<span id='6'>[6] Tufte-CSS, (https://edwardtufte.github.io/tufte-css/)  
+<span id="7">[7]</span> Markdown+Math (https://github.com/goessner/mdmath)    
+<span id="8">[8]</span> markdown-it-texmath, (https://github.com/goessner/markdown-it-texmath).  
+<span id='9'>[9] KaTeX, (https://katex.org/)  
+<span id='10'>[10] markdown-it, (https://github.com/markdown-it/markdown-it)  
+<span id='11'>[11] The Feyman Lectures on Physics, (https://www.feynmanlectures.caltech.edu/)  
 
