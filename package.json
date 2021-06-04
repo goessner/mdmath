@@ -159,10 +159,15 @@
 	},
 	"main": "./extension",
 	"scripts": {
-		"postinstall": "node ./node_modules/vscode/bin/install"
+		"vscode:prepublish": "npm run -S esbuild-base -- --minify",
+		"esbuild-base": "esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+		"esbuild": "npm run -S esbuild-base -- --sourcemap",
+		"esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    	"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.45.0"
+		"@types/vscode": "^1.45.0",
+		"esbuild": "^0.12.6"
 	},
 	"dependencies": {
 		"argparse": "^1.0.9",
