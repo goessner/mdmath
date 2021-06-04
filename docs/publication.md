@@ -30,7 +30,7 @@ each looking like a professional LaTeX document. All you need is the popular fre
   - [6. Conclusion](#6-conclusion)
   - [References](#references)
 
-<br><br><br><br><br><br>.
+<br><br><br><br><br><br>
 
 ## 1. Introduction
 
