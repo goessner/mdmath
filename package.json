@@ -3,7 +3,7 @@
 	"displayName": "Markdown+Math",
 	"description": "LaTeX Math for Markdown ... with macros and more",
 	"icon": "img/icon.png",
-	"version": "2.6.0",
+	"version": "2.6.1",
 	"author": "Stefan Goessner",
 	"publisher": "goessner",
 	"keywords": [
@@ -159,11 +159,9 @@
 	},
 	"main": "./extension",
 	"scripts": {
-		"vscode:prepublish": "npm run -S esbuild-base -- --minify",
-		"esbuild-base": "esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+		"esbuild-base": "esbuild ./extension.js --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
 		"esbuild": "npm run -S esbuild-base -- --sourcemap",
-		"esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
-    	"postinstall": "node ./node_modules/vscode/bin/install"
+		"esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.45.0",
