@@ -1,5 +1,5 @@
 ## CHANGELOG
-### [2.6.0]() on June 04, 2021
+### [2.7.0]() on June 04, 2021
 * Different themes for HTML export are supported now. User can choose
   * default
   * minimal
