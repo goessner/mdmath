@@ -57,13 +57,14 @@ const ext = {
         if (usrcss)
            data.usrcss = usrcss;
 
-        data.cssuri = 'file:///' + cssuri;  // temporarily ... get from 'cnd' later
+        data.cssuri = 'file:///' + cssuri;  // temporarily ... get from 'cdn' later
 
         return template.html(data)
                        .replace(/\sclass=\"code-line\"/g,'')
                        .replace(/\sdata-line=\"[0-9]+\"/g,'')
                        .replace(/\sdata-href=\".+?\"/g,'')
-                       .replace(/<img src="vscode-resource:/g,'<img src="')
+                       .replace(/<img src=\"vscode-resource:/g,'<img src="')
+                       .replace(/(<h[1-6] id=\".+?)\-\d\"/g,'$1"')
     },
     /**
      * Extract frontmatter section from markdown content

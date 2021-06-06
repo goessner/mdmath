@@ -25,10 +25,10 @@
 </header>
 <main>
 
-<h3 id="abstract-1">Abstract</h3>
+<h3 id="abstract">Abstract</h3>
 <p>Now there is an easy way to have both, a possibly interactive, static web page containing math and a scientific print document for documentation and publication,
 each looking like a professional LaTeX document. All you need is the popular free, open source <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em> text editor</a> with its lightweight extension <a href="https://marketplace.visualstudio.com/items?itemName=goessner.mdmath"><em>Markdown+Math</em></a> for managing LaTeX style and math syntax as well as using meanwhile ubiquitous Markdown language. The resulting <em>HTML</em> document already contains prerendered math formulas, so browsers won't have the burden of math rendering via scripting.</p>
-<h2 id="content-1">Content</h2>
+<h2 id="content">Content</h2>
 <ul>
 <li><a href="#1-introduction">1. Introduction</a></li>
 <li><a href="#2-editor-math-extension-and-configuration">2. Editor, Math Extension and Configuration</a></li>
@@ -50,8 +50,8 @@ each looking like a professional LaTeX document. All you need is the popular fre
 <li><a href="#6-conclusion">6. Conclusion</a></li>
 <li><a href="#references">References</a></li>
 </ul>
-<p><br><br><br><br><br><br>.</p>
-<h2 id="1-introduction-1">1. Introduction</h2>
+<p><br><br><br><br><br><br></p>
+<h2 id="1-introduction">1. Introduction</h2>
 <p>There has been an upward trend in using Markdown language not only for web content, but also for student notes, handouts and scientific papers of small to medium size. Markdown source files are benefitial for viewing, editing and archiving content. Additionally we can generate visually pleasing LaTeX style documents from it</p>
 <ul>
 <li>as HTML pages possibly containing interactive graphics.</li>
@@ -66,7 +66,7 @@ each looking like a professional LaTeX document. All you need is the popular fre
 <p>Edward Tufte's conventions for styling papers and handouts are followed here as a guidline [<a href="#6">6</a>].</p>
 <p>This paper – styled itself as a LaTeX document – first lists the necessary installation aspects in short. After a tiny example of a LaTeX styled markdown document, it gives a quick overview of Markdown for newcomers. Finally some useful features proposed for scientific publication are explained in more detail.</p>
 <p>Source code of the HTML template and its accompanying class-less CSS file can be found on GitHub [<a href="#7">7</a>].</p>
-<h2 id="2-editor-math-extension-and-configuration-1">2. Editor, Math Extension and Configuration</h2>
+<h2 id="2-editor-math-extension-and-configuration">2. Editor, Math Extension and Configuration</h2>
 <p>If you are a programmer, chances are high, that you already have installed and use <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em></a>. Otherwise you can install it from <a href="https://code.visualstudio.com/">here</a> and easily use it as a general non-wysiwyg text editor with excellent Markdown support.</p>
 <p>Getting scientific now we install the VSCode extension <a href="https://marketplace.visualstudio.com/items?itemName=goessner.mdmath">markdown+math</a>. You can do it <a href="https://code.visualstudio.com/docs/editor/extension-marketplace">directly from within VSCode</a> via</p>
 <pre><code><code><div>View &gt; Extensions
@@ -97,23 +97,23 @@ each looking like a professional LaTeX document. All you need is the popular fre
 </figure>  
 <figcaption>Fig 3: HTML Output &ndash; Euler's Identity </figcaption><br>
 <p>Having this we can generate a print document <code>euler.pdf</code> quite easily using our browser's <em>print to PDF</em> functionality. You can <a href="" data-href="">download a version from here</a> for inspection.</p>
-<h2 id="3-markdown-overview-1">3. Markdown Overview</h2>
+<h2 id="3-markdown-overview">3. Markdown Overview</h2>
 <p>According to the CommonMark specification [<a href="#2">2</a>], basic Markdown translates into a limited set of semantic HTML elements.</p>
 <pre><code class="code-line language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">img</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
 </div></code></pre>
 <p>It may be noticeable that not very semantic HTML elements <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> are missing here. For supporting these list of elements, a small CSS file suffices. Please also take note that Markdown allows to embed plain HTML code when needed.</p>
-<h3 id="31-headings-1">3.1 Headings</h3>
+<h3 id="31-headings">3.1 Headings</h3>
 <p>Edward Tufte's conventions followed here recommend to use <code>&lt;h1&gt;</code> for the document title only, <code>&lt;h2&gt;</code> for section headings, and <code>&lt;h3&gt;</code> for lower level headings [<a href="#6">6</a>]. So for document structuring only two heading levels <code>'##'</code> (<code>&lt;h2&gt;</code>) and <code>'###'</code> (<code>&lt;h3&gt;</code>) are totally sufficient – with reference to famous <em>Feynman</em> lectures on physics [<a href="#11">11</a>].</p>
 <pre><code class="code-line language-md"><div><span class="hljs-section"># Reserved for Document Title `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span></span>`</span>
 <span class="hljs-section">## Primary Section Headings `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span></span>`</span>
 <span class="hljs-section">### Secondary Lower Level Headings `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span></span>`</span>
 <span class="hljs-section">#### Not Recommended for Use `<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span></span> - <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span></span>`</span>
 </div></code></pre>
-<h3 id="32-paragraph-1">3.2 Paragraph</h3>
+<h3 id="32-paragraph">3.2 Paragraph</h3>
 <p>Markdown interpretes a sequence of text lines, separated from others by a blank line, as a paragraph and translates it into an HTML <code>&lt;p&gt;</code> element.
 In the same way you can't control text wrap with HTML, you cannot do that with Markdown.</p>
 <p>But you might – as an exception to that rule – force a <em>hard line break</em> by using HTML <code>&lt;br&gt;</code> or append at least two trailing spaces at the end of a line.</p>
-<h3 id="33-images-1">3.3 Images</h3>
+<h3 id="33-images">3.3 Images</h3>
 <p>Markdown images are inline elements with the syntax <code>![alt text](/path/to/img &quot;title&quot;)</code>. These images are displayed side by side.</p>
 <p>If we want to center-align an image and give it a caption, we use the semantic HTML <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements instead.</p>
 <pre><code><code><div>&lt;figure&gt;
@@ -126,7 +126,7 @@ In the same way you can't control text wrap with HTML, you cannot do that with M
    <figcaption>Fig 4: Right triangle</figcaption>
 </figure>  
 <p>Images are responsive regarding their size, which we can verify by changing the size of the browser window.</p>
-<h3 id="34-blockquote-1">3.4 Blockquote</h3>
+<h3 id="34-blockquote">3.4 Blockquote</h3>
 <p>Markdown uses email-style <code>&gt;</code> characters for blockquoting.</p>
 <pre><code class="code-line language-md"><div><span class="hljs-quote">&gt; A human being is part of a whole called by us <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">q</span>&gt;</span></span>Universe<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span></span>.  </span>
 <span class="hljs-quote">&gt; &amp;mdash; Albert Einstein, <span class="hljs-emphasis">*A Man of Many Parts*</span></span>
@@ -136,7 +136,7 @@ In the same way you can't control text wrap with HTML, you cannot do that with M
 — Albert Einstein, <em>A Man of Many Parts</em>.</p>
 </blockquote>
 <p>In scientific documents <em>Theorems</em>, <em>Lemmas</em> and <em>Proofs</em> are frequently written using blockquote syntax in Markdown.</p>
-<h3 id="35-code-blocks-1">3.5 Code Blocks</h3>
+<h3 id="35-code-blocks">3.5 Code Blocks</h3>
 <p>We can insert preformatted text in code blocks enclosed by three backticks <code>```</code> on its own single line each. Immediatelly following the begin-backticks we may specify the language for syntax highlighting.</p>
 <pre><code><code><div>```js
 function print({x=0,y=0}) {
@@ -152,7 +152,7 @@ function print({x=0,y=0}) {
 <span class="hljs-built_in">console</span>.log(print({<span class="hljs-attr">x</span>:<span class="hljs-number">3</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">4</span>}));
 </div></code></pre>
 <figcaption>Listing 1: JavaScript function</figcaption>
-<h3 id="36-inline-markdown-1">3.6 Inline Markdown</h3>
+<h3 id="36-inline-markdown">3.6 Inline Markdown</h3>
 <p>Besides regular Markdown inline rules there are some beneficial HTML inline elements.</p>
 <figcaption> Table 2: Some Inline Markdown / Markup </figcaption>
 <table>
@@ -226,7 +226,7 @@ function print({x=0,y=0}) {
 </tbody>
 </table>
 <p><br><br></p>
-<h3 id="37-table-1">3.7 Table</h3>
+<h3 id="37-table">3.7 Table</h3>
 <pre><code><code><div>&lt;figcaption&gt; Table 3: Column alignment &lt;/figcaption&gt;
 
 | Left | Center | Right |
@@ -251,7 +251,7 @@ function print({x=0,y=0}) {
 </tr>
 </tbody>
 </table>
-<h3 id="38-wrapping-text-around-figures-listings-etc-1">3.8 Wrapping Text around figures, listings, etc.</h3>
+<h3 id="38-wrapping-text-around-figures-listings-etc">3.8 Wrapping Text around figures, listings, etc.</h3>
 <aside>
 <p><img src="./img/triangle.png" alt="aside image" title="triangle aside" class="loading" id="image-hash-818045753"></p>
    <figcaption> Fig. 6: Triangle aside</figcaption>
@@ -269,7 +269,7 @@ HTML specification recommends to <q>use <code>&lt;aside&gt;</code> only for cont
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
 </div></code></pre>
-<h3 id="39-math-support-1">3.9 Math Support</h3>
+<h3 id="39-math-support">3.9 Math Support</h3>
 <p>Math support is the core functionality of <em>mdmath</em>. Inline math <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">r = \sqrt{x^2 + y^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.2821659999999999em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9578340000000001em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.917834em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119
 c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
 c340,-704.7,510.7,-1060.3,512,-1067
@@ -293,7 +293,7 @@ M0 50 h400000 v40H0z m0 194h40000v40H0z'/></svg></span></span></span></span></sp
 
 $$\begin{CD} A @&gt;a&gt;&gt; B \\ @VbVV @AAcA \\ C @= D \end{CD}$$
 </div></code></pre>
-<h2 id="4-document-structure-1">4. Document Structure</h2>
+<h2 id="4-document-structure">4. Document Structure</h2>
 <p>The visual part of exported HTML document is provided by <em>mdmath</em> template <code>themes/publication/theme.js</code>, which has a simple semantic structure:</p>
 <pre><code class="code-line language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
@@ -323,7 +323,7 @@ $$\begin{CD} A @&gt;a&gt;&gt; B \\ @VbVV @AAcA \\ C @= D \end{CD}$$
 <li>Manually remove unwanted ToC entries.</li>
 <li>Done.</li>
 </ol>
-<h2 id="5-styling-1">5. Styling</h2>
+<h2 id="5-styling">5. Styling</h2>
 <p>In order to approach LaTeX look and feel by Markdown authoring, a pure classless CSS stylesheet is needed. You might want to have a look into <a href="https://github.com/goessner/mdmath/blob/master/themes/publication/style.css"><em>mdmath</em>'s stylesheet</a>.</p>
 <p>There are some LaTeX stylesheets on the web.</p>
 <ul>
@@ -358,11 +358,11 @@ $$\begin{CD} A @&gt;a&gt;&gt; B \\ @VbVV @AAcA \\ C @= D \end{CD}$$
 </ul>
 <p>All of these stylesheets seem to address handmade HTML exclusively. HTML as Markdown export is not mentioned.</p>
 <p>Vincent Dörig's approach looks very promising.  Acknowledgment goes to him for providing the <em>Latin Modern Roman</em> typeface font reused with <em>mdmath</em>.</p>
-<h2 id="6-conclusion-1">6. Conclusion</h2>
+<h2 id="6-conclusion">6. Conclusion</h2>
 <p>HTML output provided by the theme <q>publication</q> of <em>mdmath</em> offers a styling with LaTeX look and feel. With it student notes, handouts and scientific papers can be comfortably authored using the Markdown language, while previewing the result in texteditor VSCode. During the Markdown → HTML conversion process math formulas are converted to browser understandable markup. So no script based math renderer is finally needed on the browser side. In fact no script at all is used within resulting HTML output.</p>
 <p><em>mdmath</em> addresses small to medium sized documents. However for large work as theses and books, available powerful LaTeX packages or – if you want to stick with Markdown –
 <a href="https://pandoc.org/">Pandoc</a> is highly recommended.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references">References</h3>
 <p><span id='1'>[1] Daring Fireball (<a href="https://daringfireball.net/projects/markdown/">https://daringfireball.net/projects/markdown/</a>)<br>
 <span id='2'>[2] CommonMark (<a href="https://commonmark.org/">https://commonmark.org/</a>)<br>
 <span id='3'>[3] CommonMark - Deployed Extensions,   (<a href="https://tinyurl.com/5bm568tn">https://tinyurl.com/5bm568tn</a>)<br>

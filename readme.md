@@ -13,12 +13,16 @@ In fact it now reuses the built in markdown viewer. KaTeX works inside as a fast
 You can install the extension directly from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath).
 
 ### What is new in **mdmath** 2.7.0 ...
-* Different themes for HTML export are supported now. User can choose
+* Different themes for HTML export are supported now. Users can choose
   * default
   * minimal
   * publication (LaTeX style)
+
   theme in user settings.
-* Read more about [LaTeX style publication theme](https://goessner.github.io/mdmath/publication.html).
+* about *LaTeX style publication theme*: 
+   * view [HTML publication](https://goessner.github.io/mdmath/publication.html).
+   * view [PDF publication](https://www.researchgate.net/publication/352151169_Web_Publications_-_LaTeX_Style)
+   * Download [PDF paper](https://goessner.github.io/mdmath/publication.pdf)
 * Commutative diagrams are working now.
 * Insert *Table Of Content* command available. Inject ToC at cursor location via `Insert Table of Content` from Command Palette (<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>T</kbd>).
 * User notification on HTML export can be suppressed via boolean user setting `Silent` (default: `false`).
