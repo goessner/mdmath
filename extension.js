@@ -210,12 +210,12 @@ exports.activate = function activate(context) {
             const tm = require('markdown-it-texmath');
             const delimiters = JSON.parse(JSON.stringify(ext.cfg('delimiters'))) || 'dollars'; // wondering why this JSON stuff is necessary ...
             const katexOptions = JSON.parse(JSON.stringify(ext.cfg('katexoptions') || '')) || {};
-            const macros = ext.loadMacros();
+            const macros = katexOptions.macros = ext.loadMacros();
             const outerSpace = ext.cfg('outerspace') || false;
             const options =  { "engine": require('katex'),
                                "delimiters": delimiters,
                                "outerSpace": outerSpace,
-                               "katexOptions": macros && !katexOptions.macros ? Object.assign(katexOptions, macros) : katexOptions
+                               "katexOptions": katexOptions
                              };
 
            (ext.mdit = md).use(tm, options);

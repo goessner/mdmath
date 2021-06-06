@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### [2.7.3]() on June 06, 2021
+### [2.7.4]() on June 06, 2021
 * Table of Content links bug removed.
 * macros settings bug removed.
 
