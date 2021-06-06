@@ -2,6 +2,7 @@
 
 ### [2.7.3]() on June 06, 2021
 * Table of Content links bug removed.
+* macros settings bug removed.
 
 ### [2.7.0]() on June 04, 2021
 * Different themes for HTML export are supported now. User can choose

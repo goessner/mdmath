@@ -34,7 +34,6 @@ each looking like a professional LaTeX document. All you need is the popular fre
 
 ## 1. Introduction
 
-
 There has been an upward trend in using Markdown language not only for web content, but also for student notes, handouts and scientific papers of small to medium size. Markdown source files are benefitial for viewing, editing and archiving content. Additionally we can generate visually pleasing LaTeX style documents from it
 
 * as HTML pages possibly containing interactive graphics.
