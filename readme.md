@@ -138,6 +138,8 @@ npm install
 
   $$\vek{x}{y}$$
   ```
+  * BTW: KaTeX now supports `\R` natively, so macro `\RR` makes sense only for demonstration reasons.
+
 * __How to define macros in a user macro file?__
   * Create a JSON file containing the macros and define its path in user settings. For example ...
   ```json
@@ -177,7 +179,6 @@ npm install
   * Restrictions for inline formulas do not apply.
 * __Can I use math markup in blockquotes ?__
   * We can use inline and display formulas in blockquote sections. 
-  * Multiline display math expressions require leading `>` characters on each line. 
   * Multilevel blockquote sections work as expected.
 * __Can I use math markup in code blocks ?__
   * No, math markup in code blocks is shown - as expected - as markup. This is consistent now, but in contrast to `mdmath` versions prior to 2.0.
