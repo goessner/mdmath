@@ -3,7 +3,7 @@
 	"displayName": "Markdown+Math",
 	"description": "LaTeX Math for Markdown ... with macros and more",
 	"icon": "img/icon.png",
-	"version": "2.7.4",
+	"version": "2.7.5",
 	"author": "Stefan Goessner",
 	"publisher": "goessner",
 	"keywords": [
@@ -117,7 +117,7 @@
 				"category": "Markdown"
 			},
 			{
-				"command": "extension.insertToc",
+				"command": "extension.insertToC",
 				"title": "Insert Table of Content",
 				"category": "Markdown"
 			}
@@ -135,7 +135,7 @@
 			},
 			{
 				"key": "ctrl+K T",
-				"command": "extension.insertToc",
+				"command": "extension.insertToC",
 				"when": "editorTextFocus"
 			}
 		],

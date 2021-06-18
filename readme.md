@@ -140,6 +140,11 @@ npm install
   ```
   * BTW: KaTeX now supports `\R` natively, so macro `\RR` makes sense only for demonstration reasons.
 
+* __Macros not working?__
+  * Be sure to have at least version 2.7.4 installed.
+  * Be sure to have closed and opened VSCode again after having changed settings.
+  * Due to possible collision with extension [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) disable ` "markdown.extension.math.enabled": false,` there.
+
 * __How to define macros in a user macro file?__
   * Create a JSON file containing the macros and define its path in user settings. For example ...
   ```json

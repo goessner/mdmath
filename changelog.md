@@ -1,4 +1,6 @@
 ## CHANGELOG
+### [2.7.5]() on June 06, 2021
+* Name collision with extension `microJam` removed.
 
 ### [2.7.4]() on June 06, 2021
 * Table of Content links bug removed.

@@ -143,7 +143,7 @@ const ext = {
             ext.errMsg('Saving html failed: ' + err.message);
         }
     },
-    insertToc(arg) {
+    insertToC(arg) {
         const doc = arg && arg.uri ? arg : vscode.window.activeTextEditor && vscode.window.activeTextEditor.document;
         const headings = ext.extractHeadings(doc.getText());
         let   toc = '';
@@ -200,7 +200,7 @@ const ext = {
 exports.activate = function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.clipToHtml', ext.clip));
     context.subscriptions.push(vscode.commands.registerCommand('extension.saveToHtml', ext.save));
-    context.subscriptions.push(vscode.commands.registerCommand('extension.insertToc', ext.insertToc));
+    context.subscriptions.push(vscode.commands.registerCommand('extension.insertToC', ext.insertToC));
     if (ext.cfg('autosave')) {  // Initialize autosave functionality ... if user defined !
         context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(ext.initAutoSave));
     }
