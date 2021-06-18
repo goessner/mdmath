@@ -143,7 +143,7 @@ npm install
 * __Macros not working?__
   * Be sure to have at least version 2.7.4 installed.
   * Be sure to have closed and opened VSCode again after having changed settings.
-  * Due to possible collision with extension [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) disable ` "markdown.extension.math.enabled": false,` there.
+  * Due to possible macro collision with extension [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) disable `"markdown.extension.math.enabled": false,` there.
 
 * __How to define macros in a user macro file?__
   * Create a JSON file containing the macros and define its path in user settings. For example ...
@@ -162,6 +162,7 @@ npm install
   * Yes. Simply set the user setting `mdmath.autosave: true` for this (default is `false`).
   * Now, whenever you save your markdown file, the corresponding Html file is also saved.
   * The destination folder `mdmath.savePath` is used for this.
+  * Be sure to have closed and opened VSCode again after having changed settings.
 
 * __Formula highlighting is broken ?__
   * It is implemented only for `$` delimiters at present.
