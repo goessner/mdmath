@@ -204,7 +204,7 @@ npm install
 ## Thank You
 
 The following folks helped to make `mdmath` even better.
-
+* [rjmigliori](https://github.com/rjmigliori): Found naming collision with [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) regarding macros.
 * [elviswolcott](https://github.com/elviswolcott): Implemented the feature of directly saving HTML to the file system including `autosave` ability.
 * [colinfang](https://github.com/colinfang): helped with implementing macros for mdmath 2.3.5.
 * [lincr](https://github.com/LCAR979): Helped with fixing problems with `mdmath.clipToHtml` under Ubuntu.
