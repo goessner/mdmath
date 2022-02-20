@@ -2,12 +2,18 @@
 /* align KaTeX font-size to surrounding text */
 .katex { font-size: 1em !important; }
 /* supress effect of display formulas with eqno having bigger margin */
-.katex-display { margin:0 !important; }
+.katex-display { margin: 0em !important; }
 /* overwrite github-markdown.css asymmetric margin values */
-.markdown-body blockquote, .markdown-body dl, .markdown-body ol, .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
+.markdown-body .markdown-body dl, .markdown-body ol, .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+.markdown-body blockquote {
+    font-size: 0.9em;
+    margin: 0.75em 1em;
+    padding: 0.1em 0.5em;
+}
+
 
 eq { display: inline-block; }
 eqn { display: block; margin: 0; }
@@ -23,6 +29,6 @@ section.eqno > eqn {
     margin-left: 3em;
 }
 section.eqno > span {
-    width:3em;
-    text-align:right;
+    width: 3em;
+    text-align: right;
 }

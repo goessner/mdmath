@@ -229,6 +229,7 @@ blockquote {
   margin: 0.75em 3em;
   padding: 0 0.5em;
   border-left: 3px solid #999;
+  background-color: #eee;
 }
 
 /* code sections */

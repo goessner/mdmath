@@ -63,6 +63,7 @@ const ext = {
                        .replace(/\sclass=\"code-line\"/g,'')
                        .replace(/\sdata-line=\"[0-9]+\"/g,'')
                        .replace(/\sdata-href=\".+?\"/g,'')
+                       .replace(/\dir=\"auto\"/g,'')
                        .replace(/<img src=\"vscode-resource:/g,'<img src="')
                        .replace(/(<h[1-6] id=\".+?)\-\d\"/g,'$1"')
     },

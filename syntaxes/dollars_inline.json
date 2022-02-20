@@ -1,0 +1,13 @@
+{
+	"fileTypes": ["md","markdown"],
+	"injectionSelector": "meta.paragraph.markdown",
+	"patterns": [
+		{
+			"name":"inline-dollars",
+			"begin": "(^|\\s*)\\${1,2}",
+			"end": "\\${1,2}",
+            "contentName": "markup.inline.raw"
+		}
+	],
+	"scopeName": "markdown.math.inline"
+}

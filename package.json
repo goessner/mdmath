@@ -152,8 +152,15 @@
 				"injectTo": [
 					"text.html.markdown"
 				],
-				"scopeName": "markdown.math",
-				"path": "./syntaxes/dollars.json"
+				"scopeName": "markdown.math.inline",
+				"path": "./syntaxes/dollars_inline.json"
+			},
+			{
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"scopeName": "markdown.math.display",
+				"path": "./syntaxes/dollars_display.json"
 			}
 		]
 	},
@@ -180,7 +187,8 @@
 	},
 	"__metadata": {
 		"id": "1d66faf4-3266-4fce-b7c9-df60aecf496d",
+		"publisherId": "b49843a2-25e3-49f0-a037-519a07c3178d",
 		"publisherDisplayName": "goessner",
-		"publisherId": "b49843a2-25e3-49f0-a037-519a07c3178d"
+		"installedTimestamp": 1622978917740
 	}
 }

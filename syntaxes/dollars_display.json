@@ -1,0 +1,13 @@
+{
+	"fileTypes": ["md","markdown"],
+	"injectionSelector": "L:text.html.markdown",
+	"patterns": [
+		{
+			"name":"display-dollars",
+			"begin": "(^|\\G)\\${1,2}",
+			"end": "\\${1,2}",
+            "contentName": "markup.inline.raw"
+		}
+	],
+	"scopeName": "markdown.math.display"
+}
