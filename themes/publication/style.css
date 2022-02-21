@@ -226,10 +226,10 @@ a:link, a:visited, a:hover {
 
 blockquote {
   font-size: 0.9em;
-  margin: 0.75em 3em;
-  padding: 0 0.5em;
+  margin: 0.75em 1.5em;
+  padding: 0.1em 0.5em;
   border-left: 3px solid #999;
-  background-color: #eee;
+  background-color: #f7f7f7;
 }
 
 /* code sections */
@@ -324,7 +324,9 @@ span q:nth-child(2) {
 }
 
 @media print {
-
+    a[href]:after {
+      content: none !important;
+    }
 /** Setting margins */       
 @page {
   size: A4;
