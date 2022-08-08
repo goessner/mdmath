@@ -6,7 +6,7 @@
 			"name":"display-dollars",
 			"begin": "(^|\\G)\\${1,2}",
 			"end": "\\${1,2}",
-            "contentName": "markup.inline.raw"
+            "contentName": "markup.math.inline.raw"
 		}
 	],
 	"scopeName": "markdown.math.display"
